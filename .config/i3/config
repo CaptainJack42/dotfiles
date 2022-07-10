@@ -73,10 +73,8 @@ set $secondMonitor DP-0
 #set $firstMonitor HDMI-1
 #set $secondMonitor HDMI-2
 
-workspace $ws1 output $firstMonitor
-workspace $ws2 output $secondMonitor
-workspace $ws3 output $firstMonitor
-workspace $ws4 output $secondMonitor
+workspace $ws1 output $firstMonitor     white:   '0x828791'
+
 workspace 1 output $firstMonitor
 workspace 2 output $secondMonitor
 workspace 3 output $firstMonitor
@@ -128,7 +126,7 @@ bindsym $mod+mod1+y move workspace to output $firstMonitor $secondMonitor
 ################# menu's in arcolinux
 
 # start dmenu
-bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#131620' -nf '#61AFEF' -sb '#61AFEF' -sf '#131620' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 # start xfce4-appfinder
 # bindsym mod1+F2 exec --no-startup-id xfce4-appfinder --collapsed
