@@ -672,7 +672,7 @@ bindsym $mod+b bar mode toggle
 ################# border control                   
 
 # Border control
-hide_edge_borders smart
+hide_edge_borders none
 bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 
 # changing border style
@@ -700,8 +700,8 @@ popup_during_fullscreen smart
 # https://github.com/Airblader/i3/tree/gaps-next
 # delete or uncomment the following lines if you do not have it or do not
 # want it
-set $gap_size 2
-set $border_size 1
+set $gap_size 4
+set $border_size 2
 
 for_window [class="^.*"] border normal
 gaps inner $gap_size
@@ -823,15 +823,15 @@ bar {
     # variable border background Text
 
     colors {
-        background #202A2E
-        statusline #F9FAF9
-        separator  #454947
+        background #131620
+        statusline #abb2bf
+        separator  #56b6c2
 
         # colorclass           border  backgr. text
-        focused_workspace     #F9FAF9 #16a085 #292F34
-        active_workspace      #595B5B #353836 #FDF6E3
-        inactive_workspace    #595B5B #202A2E #EEE8D5
-        urgent_workspace      #e82951 #e82951 #FDF6E3
+        focused_workspace     #828791 #56b6c2 #131620
+        active_workspace      #56b6c2 #5A5D63 #e6efff
+        inactive_workspace    #828791 #131620 #abb2bf
+        urgent_workspace      #e06c75 #c678dd #FDF6E3
         }
 
     }
@@ -842,13 +842,13 @@ bar {
 
     # Window color settings
     # class                 border  backgr. text    indicator
-    client.focused          #556064 #556064 #80FFF9 #FDF6E3
-    client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-    client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-    client.placeholder      #2F3D44 #2F3D44 #1ABC9C #454948
-    client.urgent           #CB4B16 #FDF6E3 #1ABC9C #CB4B16
+    client.focused          #56b6c2 #131620 #56b6c2 #C678DD
+    client.unfocused        #131620 #131620 #56b6c2 #56b6c2
+    client.focused_inactive #131620 #131620 #56b6c2 #56b6c2
+    client.placeholder      #131620 #131620 #56b6c2 #56b6c2
+    client.urgent           #DA6567 #C678DD #56b6c2 #56b6c2
 
-    client.background       #242424
+    client.background       #131620
 
     ##STOP THEMING WM
 

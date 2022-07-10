@@ -72,7 +72,7 @@ opacity: 0.9
 schemes:
   one_dark: &one_dark
     primary:
-      background: '0x1e2127'
+      background: '0x131620'
       foreground: '0xabb2bf'
 
       # Bright and dim foreground colors
@@ -93,12 +93,12 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '0x1e2127'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
+      black:   '0x131620'
+      red:     '0xDA6567'
+      green:   '0x60B076'
+      yellow:  '0xE1D10C'
+      blue:    '0x61AFEF'
+      magenta: '0xC678DD'
       cyan:    '0x56b6c2'
       white:   '0x828791'
 
