@@ -73,7 +73,10 @@ set $secondMonitor DP-0
 #set $firstMonitor HDMI-1
 #set $secondMonitor HDMI-2
 
-workspace $ws1 output $firstMonitor     white:   '0x828791'
+workspace $ws1 output $firstMonitor 
+workspace $ws2 output $secondMonitor
+workspace $ws3 output $firstMonitor
+workspace $ws4 output $secondMonitor
 
 workspace 1 output $firstMonitor
 workspace 2 output $secondMonitor
