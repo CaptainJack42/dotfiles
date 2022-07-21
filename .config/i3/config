@@ -17,7 +17,7 @@
 
 # Key to rule them all : Super(Windows) or Alt key - see definition above
 # set Super key
-set $mod Mod4
+set $mod Mod4 
 
 ################# Define the movements keys - variables
 
@@ -88,6 +88,18 @@ workspace 7 output $firstMonitor
 workspace 8 output $secondMonitor
 workspace 9 output $firstMonitor
 workspace 10 output $secondMonitor
+workspace 11 output $firstMonitor
+workspace 12 output $secondMonitor
+workspace 13 output $firstMonitor
+workspace 14 output $secondMonitor
+workspace 15 output $firstMonitor
+workspace 16 output $secondMonitor
+workspace 17 output $firstMonitor
+workspace 18 output $secondMonitor
+workspace 19 output $firstMonitor
+workspace 20 output $secondMonitor
+workspace 21 output $firstMonitor
+workspace 22 output $secondMonitor
 
 # switch to workspace
 bindsym $mod+less workspace $ws1
@@ -104,8 +116,21 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+F1 workspace 11
+bindsym $mod+F2 workspace 12
+bindsym $mod+F3 workspace 13
+bindsym $mod+F4 workspace 14
+bindsym $mod+F5 workspace 15
+bindsym $mod+F6 workspace 16
+bindsym $mod+F7 workspace 17
+bindsym $mod+F8 workspace 18
+bindsym $mod+F9 workspace 19
+bindsym $mod+F10 workspace 20
+bindsym $mod+F11 workspace 21
+bindsym $mod+F12 workspace 22
 
-# move focused container to workspace
+
+# move focused container to workspace and focus workspace
 bindsym $mod+Shift+less move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+y move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+x move container to workspace $ws3; workspace $ws3
@@ -120,6 +145,46 @@ bindsym $mod+Shift+7 move container to workspace 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+bindsym $mod+Shift+F1 move container to workspace 11; workspace 11
+bindsym $mod+Shift+F2 move container to workspace 12; workspace 12
+bindsym $mod+Shift+F3 move container to workspace 13; workspace 13
+bindsym $mod+Shift+F4 move container to workspace 14; workspace 14
+bindsym $mod+Shift+F5 move container to workspace 15; workspace 15
+bindsym $mod+Shift+F6 move container to workspace 16; workspace 16
+bindsym $mod+Shift+F7 move container to workspace 17; workspace 17
+bindsym $mod+Shift+F8 move container to workspace 18; workspace 18
+bindsym $mod+Shift+F9 move container to workspace 19; workspace 19
+bindsym $mod+Shift+F10 move container to  workspace 20; workspace 20
+bindsym $mod+Shift+F11 move container to  workspace 21; workspace 21
+bindsym $mod+Shift+F12 move container to  workspace 22; workspace 22
+
+# move focused container to workspace without focusing workspace
+bindsym $mod+Ctrl+less move container to workspace $ws1
+bindsym $mod+Ctrl+y move container to workspace $ws2
+bindsym $mod+Ctrl+x move container to workspace $ws3
+bindsym $mod+Ctrl+c move container to workspace $ws4
+bindsym $mod+Ctrl+1 move container to workspace 1
+bindsym $mod+Ctrl+2 move container to workspace 2
+bindsym $mod+Ctrl+3 move container to workspace 3
+bindsym $mod+Ctrl+4 move container to workspace 4
+bindsym $mod+Ctrl+5 move container to workspace 5
+bindsym $mod+Ctrl+6 move container to workspace 6
+bindsym $mod+Ctrl+7 move container to workspace 7
+bindsym $mod+Ctrl+8 move container to workspace 8
+bindsym $mod+Ctrl+9 move container to workspace 9
+bindsym $mod+Ctrl+0 move container to workspace 10
+bindsym $mod+Ctrl+F1 move container to workspace 11
+bindsym $mod+Ctrl+F2 move container to workspace 12
+bindsym $mod+Ctrl+F3 move container to workspace 13
+bindsym $mod+Ctrl+F4 move container to workspace 14
+bindsym $mod+Ctrl+F5 move container to workspace 15
+bindsym $mod+Ctrl+F6 move container to workspace 16
+bindsym $mod+Ctrl+F7 move container to workspace 17
+bindsym $mod+Ctrl+F8 move container to workspace 18
+bindsym $mod+Ctrl+F9 move container to workspace 19
+bindsym $mod+Ctrl+F10 move container to  workspace 20
+bindsym $mod+Ctrl+F11 move container to  workspace 21
+bindsym $mod+Ctrl+F12 move container to  workspace 22
 
 workspace_auto_back_and_forth yes
 
@@ -356,7 +421,7 @@ font pango:monospace 12
 # USER APPLICATIONS TO START AT BOOT
 
 # ArcoLinux Welcome App
-exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
+# exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 
 # Autotiling
 exec_always --no-startup-id autotiling
@@ -378,8 +443,10 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
 
 # VSCode
 assign [class="Code"] $ws3
-exec --no-startup-id i3-msg 'workspace $ws3; layout toggle stabbed; exec code'
+#exec --no-startup-id '~/.config/i3/scripts/on_workspace_init.py "$ws3","i3-msg layout tabbed; exec code"'
+# exec --no-startup-id i3-msg 'workspace $ws3; layout toggle tabbed; exec code'
 # for_window [class="Code"] focus parent; layout tabbed; focus
+exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/layouts/workspace-code.json; exec code'
 
 # Terminal
 # assign [class="Terminator"] $ws1
@@ -404,16 +471,16 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # exec --no-startup-id pamac-tray
 
 # bluetooth
-exec --no-startup-id blueberry-tray
+# exec --no-startup-id blueberry-tray
 
 # network
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # num lock activated
 exec_always --no-startup-id numlockx on
 
-# dropbox
-# exec --no-startup-id dropbox start
+# nextcloud
+exec --no-startup-id nextcloud
 
 # insync
 # exec --no-startup-id insync start
@@ -447,6 +514,9 @@ exec --no-startup-id xfce4-power-manager &
 # IF xfsettingsd is activated you can not change themes
 # exec --no-startup-id xfsettingsd &
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+
+#### Audio Effects + Control
+exec_always --no-startup-id i3-msg "easyeffects --gapplication-service -l mic_noise_reduction"
 
 ################# applications keyboard shortcuts  
 
@@ -496,7 +566,7 @@ bindsym control+mod1+r exec --no-startup-id rofi-theme-selector
 # bindsym $mod+h exec --no-startup-id htop;focus
 
 # pavucontrol
-bindsym control+mod1+u exec --no-startup-id pavucontrol
+# bindsym control+mod1+u exec --no-startup-id pavucontrol
 
 # start xfce-appfinder
 # arcolinux does not seem to work
@@ -672,6 +742,8 @@ bindsym $mod+b bar mode toggle
 
 ################# border control                   
 
+set $border_size 2
+
 # Border control
 hide_edge_borders none
 bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
@@ -682,13 +754,15 @@ bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 # bindsym $mod+y border pixel 1
 # bindsym $mod+u border none
 
-# new_window pixel 1
-new_window normal
+new_window pixel $border_size
+#new_window normal
 # new_window none
 
 # new_float pixel 1
 new_float normal
 # new_float none
+
+# hide_edge_borders smart
 
 ################# Popups  control                  
 
@@ -702,9 +776,8 @@ popup_during_fullscreen smart
 # delete or uncomment the following lines if you do not have it or do not
 # want it
 set $gap_size 4
-set $border_size 2
 
-for_window [class="^.*"] border normal
+for_window [class="^.*"] border pixel $border_size
 gaps inner $gap_size
 gaps outer $gap_size
 # smart_gaps on
@@ -763,6 +836,16 @@ exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
 ################# bar appearance                   
+set $col_black   #131620
+set $col_red     #DA6567
+set $col_green   #60B067
+set $col_yellow  #E1D10C
+set $col_blue 	 #61AFEF
+set $col_magenta #C678DD
+set $col_cyan    #56b6c2
+set $col_white   #828791
+set $col_grey    #ABB2BF
+
 
 bar {
     height 25
@@ -824,15 +907,15 @@ bar {
     # variable border background Text
 
     colors {
-        background #131620
-        statusline #abb2bf
-        separator  #56b6c2
+        background $col_black
+        statusline $col_white
+        separator  $col_cyan
 
-        # colorclass           border  backgr. text
-        focused_workspace     #828791 #56b6c2 #131620
-        active_workspace      #56b6c2 #5A5D63 #e6efff
-        inactive_workspace    #828791 #131620 #abb2bf
-        urgent_workspace      #e06c75 #c678dd #FDF6E3
+        # colorclass           border     backgr.    text
+        focused_workspace      $col_white $col_cyan  $col_black
+        active_workspace       $col_cyan  $col_black $col_cyan
+        inactive_workspace     $col_white $col_black $col_white
+        urgent_workspace       $col_white $col_red   $col_black
         }
 
     }
@@ -843,11 +926,11 @@ bar {
 
     # Window color settings
     # class                 border  backgr. text    indicator
-    client.focused          #56b6c2 #131620 #56b6c2 #C678DD
-    client.unfocused        #131620 #131620 #56b6c2 #56b6c2
-    client.focused_inactive #131620 #131620 #56b6c2 #56b6c2
-    client.placeholder      #131620 #131620 #56b6c2 #56b6c2
-    client.urgent           #DA6567 #C678DD #56b6c2 #56b6c2
+    client.focused          $col_cyan  $col_cyan    $col_black $col_magenta
+    client.unfocused        $col_black $col_black   $col_cyan  $col_blue
+    client.focused_inactive $col_black $col_black   $col_cyan  $col_blue
+    client.placeholder      $col_black $col_black   $col_cyan  $col_blue
+    client.urgent           $col_red   $col_magenta $col_cyan  $col_blue
 
     client.background       #131620
 

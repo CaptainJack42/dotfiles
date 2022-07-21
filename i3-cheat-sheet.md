@@ -88,11 +88,12 @@ Workspaces with *odd* numbers, the Terminal and Code Workspace will always be on
 - Workspace Browser:        `mod + y`
 - Workspace Code:           `mod + x`
 - Workspace Spotify:        `mod + c`
-- Other Workspaces:         `mod + <1-10>`
+- Other Workspaces:         `mod + <1-10, F1-F12, '<', y, x, c>`
 - Next Workspace:           `alt_left + tab` / `ctrl + alt_left + up`
 - Previous Workspace:       `alt_left + Shift + tab` / `ctrl + alt_left + down`
 - Workspace back and forth: `mod + tab`
-- Move focused window (container) to Workspace: `mod + ctrl + <1-10>`.
+- Move focused window (container) to Workspace: `mod + ctrl + <1-10, F1-F12, '<', y, x, c>`
+- Move focused window (container) to Workspace: `mod + Shift + <1-10, F1-F12, '<', y, x, c>`
 - Move entire Workspace to other Monitor: `mod + alt_left + y`
 
 The previous Workspace can also be accessed by pressing the Keybind to the current Workspace (e.g. Start on **Workspace 1** -> `mod + 5` -> **Workspace 5** -> `mod + 5` -> **Workspace 1**)
