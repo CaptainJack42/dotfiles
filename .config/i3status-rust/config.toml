@@ -35,6 +35,7 @@ name = "awesome"
 [[block]]
 block = "net"
 format = "{ssid}: {signal_strength} {speed_down;K*b} {graph_down:4;M*_b#30} {speed_up;K*b} {graph_up:4;M*_b#15}"
+on_click = "nm-connection-editor"
 
 [[block]]
 block = "disk_space"
@@ -45,6 +46,7 @@ interval = 20
 warning = 70.0
 alert = 80.0
 format = "root: {used}/{total} ({available} free)"
+on_click = "alacritty -e ranger /"
 
 [[block]]
 block = "disk_space"
@@ -55,6 +57,7 @@ interval = 20
 warning = 75.0
 alert = 85.0
 format = "home: {used}/{total} ({available} free)"
+on_click = "alacritty -e ranger $HOME"
 
 [[block]]
 block = "memory"
@@ -63,6 +66,7 @@ warning_mem = 75
 critical_mem = 85
 format_mem = "{mem_used}/{mem_total} ({mem_used_percents} )"
 format_swap = "{swap_used}/{swap_total} ({swap_used_percents})"
+on_click = "alacritty -e btm"
 
 [[block]]
 block = "cpu"
@@ -70,6 +74,7 @@ info = 35
 warning = 65
 critical = 85
 format = "{boost} {utilization} {barchart} {frequency}"
+on_click = "alacritty -e btm"
 [block.theme_overrides]
 info_bg = "#60B067"
 info_fg = "#131620"
@@ -78,6 +83,7 @@ info_fg = "#131620"
 block = "temperature"
 collapsed = false
 chip = "*-isa-*"
+on_click = "alacritty -e btm"
 
 # [[block]]
 # block = "load"
@@ -92,13 +98,16 @@ on_click = "easyeffects"
 block = "pacman"
 format = "{pacman} + {aur} = {both} updates"
 aur_command = "yay -Qua"
-warning_updates_regex = "(linux)"
+# warning_updates_regex = "*"
+critical_updates_regex = "(linux)"
+on_click = "alacritty"
 [block.theme_overrides]
 idle_bg = "#60B067"
 idle_fg = "#131620"
 
 [[block]]
 block = "uptime"
+on_click = "archlinux-logout"
 
 [[block]]
 block = "time"
