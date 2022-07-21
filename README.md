@@ -8,11 +8,11 @@
 - Terminal: [Alacritty](https://github.com/alacritty/alacritty)
 - Shell: [ZSH](https://github.com/zsh-users/zsh)
 - WM: [i3](https://i3wm.org/) (see [i3-cheat-sheet](i3-cheat-sheet.md) for bindings)
-- Status Bar: default i3bar (with [py3status](https://github.com/ultrabug/py3status))
+- Status Bar: [i3status-rust](https://github.com/greshake/i3status-rust) (not shown in Screenshot, will be updated soon :tm:, Screenshot is with default i3bar (with [py3status](https://github.com/ultrabug/py3status)))
 
 ---
 
-- Editor: [VSCode](https://code.visualstudio.com/)
+- Editor: [VSCode](https://code.visualstudio.com/) and [neovim](https://github.com/neovim/neovim)
 - File Manager: [Ranger](https://github.com/ranger/ranger#getting-started)
 - Music: [Spotify-TUI](https://github.com/Rigellute/spotify-tui)
 - System Monitor: [bottom](https://github.com/clementtsang/bottom)

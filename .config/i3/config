@@ -454,7 +454,8 @@ exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/layouts/
 exec i3-msg 'workspace $ws1; exec alacritty; exec alacritty -e ranger'
 
 # Music
-for_window [class="^Spotify$"] floating disable, move container to workspace $ws4
+assign [class="^Spotify$|^spotify$"] $ws4
+for_window [class="^Spotify$"] floating disable
 exec --no-startup-id spotify
 # for_window [class="Spotify"] focus
 
@@ -848,9 +849,10 @@ set $col_grey    #ABB2BF
 
 
 bar {
-    height 25
+    height 24
     workspace_buttons yes
-	font pango:Noto Sans 10
+	font pango:Noto Sans, FontAwesome 10
+    # font pango:DejaVu Sans Mono, material-nf 12
 	# position top
     position bottom
 
@@ -898,7 +900,11 @@ bar {
 
     # OPTION 5 : py3status
 
-    status_command py3status -c ~/.config/i3/i3status.conf
+    # status_command py3status -c ~/.config/i3/i3status.conf
+
+    # OPTION 6: i3status-rust
+
+    status_command i3status-rs ~/.config/i3status-rust/config.toml
 
     ##START THEMING BAR
     #Theme name : ArcoLinux Mind
@@ -932,7 +938,7 @@ bar {
     client.placeholder      $col_black $col_black   $col_cyan  $col_blue
     client.urgent           $col_red   $col_magenta $col_cyan  $col_blue
 
-    client.background       #131620
+    client.background       $col_black
 
     ##STOP THEMING WM
 

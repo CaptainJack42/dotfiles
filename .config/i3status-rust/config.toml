@@ -1,0 +1,106 @@
+[theme]
+name = "bad-wolf"
+[theme.overrides]
+idle_bg = "#090B10"
+idle_fg = "#828791"
+info_bg = "#C678DD"
+info_fg = "#131620"
+good_bg = "#60B067"
+good_fg = "#131620"
+warning_bg = "#E1D10C"
+warning_fg = "#131620"
+critical_bg = "#DA6567"
+critical_fg = "#131620"
+separator = "\ue0b2"
+separator_bg = "auto"
+separator_fg = "auto"
+alternating_tint_bg = "#090B10"
+alternating_tint_fg = "#090B10"
+
+[icons]
+name = "awesome"
+
+# [[block]]
+# block = "github"
+# format = "\uf09b {total}"
+
+# [[block]]
+# block = "music"
+# player = "spotify"
+# # dynamic_width = true
+# # buttons = ["play", "next"]
+# # format = "{artist}  {title}"
+# on_collapsed_click = "spotify"
+
+[[block]]
+block = "net"
+format = "{ssid}: {signal_strength} {speed_down;K*b} {graph_down:4;M*_b#30} {speed_up;K*b} {graph_up:4;M*_b#15}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "used"
+# unit = "GB"
+interval = 20
+warning = 70.0
+alert = 80.0
+format = "root: {used}/{total} ({available} free)"
+
+[[block]]
+block = "disk_space"
+path = "/home"
+info_type = "used"
+# unit = "GB"
+interval = 20
+warning = 75.0
+alert = 85.0
+format = "home: {used}/{total} ({available} free)"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+warning_mem = 75
+critical_mem = 85
+format_mem = "{mem_used}/{mem_total} ({mem_used_percents} )"
+format_swap = "{swap_used}/{swap_total} ({swap_used_percents})"
+
+[[block]]
+block = "cpu"
+info = 35
+warning = 65
+critical = 85
+format = "{boost} {utilization} {barchart} {frequency}"
+[block.theme_overrides]
+info_bg = "#60B067"
+info_fg = "#131620"
+
+[[block]]
+block = "temperature"
+collapsed = false
+chip = "*-isa-*"
+
+# [[block]]
+# block = "load"
+# interval = 5
+
+[[block]]
+block = "sound"
+format = "{output_description} {volume}"
+on_click = "easyeffects"
+
+[[block]]
+block = "pacman"
+format = "{pacman} + {aur} = {both} updates"
+aur_command = "yay -Qua"
+warning_updates_regex = "(linux)"
+[block.theme_overrides]
+idle_bg = "#60B067"
+idle_fg = "#131620"
+
+[[block]]
+block = "uptime"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d-%m-%C %R"
