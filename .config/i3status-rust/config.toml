@@ -34,7 +34,7 @@ name = "awesome"
 
 [[block]]
 block = "net"
-format = "{ssid}: {signal_strength} {speed_down;K*b} {graph_down:4;M*_b#30} {speed_up;K*b} {graph_up:4;M*_b#15}"
+format = "{ssid}: {signal_strength} {speed_down;K*b} {graph_down:4;M*_b#250} {speed_up;K*b} {graph_up:4;M*_b#50}"
 on_click = "nm-connection-editor"
 
 [[block]]
