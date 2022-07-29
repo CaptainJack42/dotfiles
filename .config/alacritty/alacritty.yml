@@ -10,67 +10,61 @@
 # to the user's home directory starting with `~/`.
 #import:
 #  - /path/to/alacritty.yml
-
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 #env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
-
+# TERM variable
+#
+# This value is used to set the `$TERM` environment variable for
+# each instance of Alacritty. If it is not present, alacritty will
+# check the local terminfo database and use `alacritty` if it is
+# available, otherwise `xterm-256color` is used.
+#TERM: alacritty
 #window:
-  # Window dimensions (changes require restart)
-  #
-  # Number of lines/columns (not pixels) in the terminal. The number of columns
-  # must be at least `2`, while using a value of `0` for columns and lines will
-  # fall back to the window manager's recommended size.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
-
-  # Window position (changes require restart)
-  #
-  # Specified in number of pixels.
-  # If the position is not set, the window manager will handle the placement.
-  #position:
-  #  x: 0
-  #  y: 0
-
-  # Window padding (changes require restart)
-  #
-  # Blank space added around the window in pixels. This padding is scaled
-  # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
-
-  # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
-
-  # Window decorations
-  #
-  # Values for `decorations`:
-  #     - full: Borders and title bar
-  #     - none: Neither borders nor title bar
-  #
-  # Values for `decorations` (macOS only):
-  #     - transparent: Title bar, transparent background and title bar buttons
-  #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
-
-  # Background opacity
-  #
-  # Window opacity as a floating point number from `0.0` to `1.0`.
-  # The value `0.0` is completely transparent and `1.0` is opaque.
-opacity: 0.9
+# Window dimensions (changes require restart)
+#
+# Number of lines/columns (not pixels) in the terminal. The number of columns
+# must be at least `2`, while using a value of `0` for columns and lines will
+# fall back to the window manager's recommended size.
+#dimensions:
+#  columns: 0
+#  lines: 0
+# Window position (changes require restart)
+#
+# Specified in number of pixels.
+# If the position is not set, the window manager will handle the placement.
+#position:
+#  x: 0
+#  y: 0
+# Window padding (changes require restart)
+#
+# Blank space added around the window in pixels. This padding is scaled
+# by DPI and the specified value is always added at both opposing sides.
+#padding:
+#  x: 0
+#  y: 0
+# Spread additional padding evenly around the terminal content.
+#dynamic_padding: false
+# Window decorations
+#
+# Values for `decorations`:
+#     - full: Borders and title bar
+#     - none: Neither borders nor title bar
+#
+# Values for `decorations` (macOS only):
+#     - transparent: Title bar, transparent background and title bar buttons
+#     - buttonless: Title bar, transparent background and no title bar buttons
+#decorations: full
+# Background opacity
+#
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+opacity: 1.0
 
 schemes:
-  one_dark: &one_dark
+  one_dark:
+    &one_dark
     primary:
       background: '0x131620'
       foreground: '0xabb2bf'
@@ -90,44 +84,44 @@ schemes:
     #cursor:
     #  text: '0x000000'
     #  cursor: '0xffffff'
-
     # Normal colors
     normal:
-      black:   '0x131620'
-      red:     '0xDA6567'
-      green:   '0x60B076'
-      yellow:  '0xE1D10C'
-      blue:    '0x61AFEF'
+      black: '0x131620'
+      red: '0xDA6567'
+      green: '0x60B076'
+      yellow: '0xE1D10C'
+      blue: '0x61AFEF'
       magenta: '0xC678DD'
-      cyan:    '0x56b6c2'
-      white:   '0x828791'
+      cyan: '0x56b6c2'
+      white: '0x828791'
 
     # Bright colors
     bright:
-      black:   '0x5c6370'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
+      black: '0x5c6370'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xd19a66'
+      blue: '0x61afef'
       magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0xe6efff'
+      cyan: '0x56b6c2'
+      white: '0xe6efff'
 
     # Dim colors
     #
     # If the dim colors are not set, they will be calculated automatically based
     # on the `normal` colors.
     dim:
-      black:   '0x1e2127'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
+      black: '0x1e2127'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xd19a66'
+      blue: '0x61afef'
       magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0x828791'
-  
-  catppuccin_frappe: &catppuccin_frappe
+      cyan: '0x56b6c2'
+      white: '0x828791'
+
+  catppuccin_frappe:
+    &catppuccin_frappe
     primary:
       background: '#303446' # base
       foreground: '#C6D0F5' # text
@@ -171,42 +165,43 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#51576D' # surface1
-      red:     '#E78284' # red
-      green:   '#A6D189' # green
-      yellow:  '#E5C890' # yellow
-      blue:    '#8CAAEE' # blue
+      black: '#51576D' # surface1
+      red: '#E78284' # red
+      green: '#A6D189' # green
+      yellow: '#E5C890' # yellow
+      blue: '#8CAAEE' # blue
       magenta: '#F4B8E4' # pink
-      cyan:    '#81C8BE' # teal
-      white:   '#B5BFE2' # subtext1
+      cyan: '#81C8BE' # teal
+      white: '#B5BFE2' # subtext1
 
     # Bright colors
     bright:
-      black:   '#626880' # surface2
-      red:     '#E78284' # red
-      green:   '#A6D189' # green
-      yellow:  '#E5C890' # yellow
-      blue:    '#8CAAEE' # blue
+      black: '#626880' # surface2
+      red: '#E78284' # red
+      green: '#A6D189' # green
+      yellow: '#E5C890' # yellow
+      blue: '#8CAAEE' # blue
       magenta: '#F4B8E4' # pink
-      cyan:    '#81C8BE' # teal
-      white:   '#A5ADCE' # subtext0
+      cyan: '#81C8BE' # teal
+      white: '#A5ADCE' # subtext0
 
     # Dim colors
     dim:
-      black:   '#51576D' # surface1
-      red:     '#E78284' # red
-      green:   '#A6D189' # green
-      yellow:  '#E5C890' # yellow
-      blue:    '#8CAAEE' # blue
+      black: '#51576D' # surface1
+      red: '#E78284' # red
+      green: '#A6D189' # green
+      yellow: '#E5C890' # yellow
+      blue: '#8CAAEE' # blue
       magenta: '#F4B8E4' # pink
-      cyan:    '#81C8BE' # teal
-      white:   '#B5BFE2' # subtext1
+      cyan: '#81C8BE' # teal
+      white: '#B5BFE2' # subtext1
 
     indexed_colors:
       - { index: 16, color: '#EF9F76' }
       - { index: 17, color: '#F2D5CF' }
-      
-  catppuccin_latte: &catppuccin_latte
+
+  catppuccin_latte:
+    &catppuccin_latte
     primary:
       background: '#EFF1F5' # base
       foreground: '#4C4F69' # text
@@ -250,42 +245,43 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#5C5F77' # subtext1
-      red:     '#D20F39' # red
-      green:   '#40A02B' # green
-      yellow:  '#DF8E1D' # yellow
-      blue:    '#1E66F5' # blue
+      black: '#5C5F77' # subtext1
+      red: '#D20F39' # red
+      green: '#40A02B' # green
+      yellow: '#DF8E1D' # yellow
+      blue: '#1E66F5' # blue
       magenta: '#EA76CB' # pink
-      cyan:    '#179299' # teal
-      white:   '#ACB0BE' # surface2
+      cyan: '#179299' # teal
+      white: '#ACB0BE' # surface2
 
     # Bright colors
     bright:
-      black:   '#6C6F85' # subtext0
-      red:     '#D20F39' # red
-      green:   '#40A02B' # green
-      yellow:  '#DF8E1D' # yellow
-      blue:    '#1E66F5' # blue
+      black: '#6C6F85' # subtext0
+      red: '#D20F39' # red
+      green: '#40A02B' # green
+      yellow: '#DF8E1D' # yellow
+      blue: '#1E66F5' # blue
       magenta: '#EA76CB' # pink
-      cyan:    '#179299' # teal
-      white:   '#BCC0CC' # surface1
+      cyan: '#179299' # teal
+      white: '#BCC0CC' # surface1
 
     # Dim colors
     dim:
-      black:   '#5C5F77' # subtext1
-      red:     '#D20F39' # red
-      green:   '#40A02B' # green
-      yellow:  '#DF8E1D' # yellow
-      blue:    '#1E66F5' # blue
+      black: '#5C5F77' # subtext1
+      red: '#D20F39' # red
+      green: '#40A02B' # green
+      yellow: '#DF8E1D' # yellow
+      blue: '#1E66F5' # blue
       magenta: '#EA76CB' # pink
-      cyan:    '#179299' # teal
-      white:   '#ACB0BE' # surface2
+      cyan: '#179299' # teal
+      white: '#ACB0BE' # surface2
 
     indexed_colors:
       - { index: 16, color: '#FE640B' }
       - { index: 17, color: '#DC8A78' }
 
-  catppuccin_macchiato: &catppuccin_macchiato
+  catppuccin_macchiato:
+    &catppuccin_macchiato
     primary:
       background: '#181926' # base
       foreground: '#CAD3F5' # text
@@ -329,42 +325,43 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#494D64' # surface1
-      red:     '#ED8796' # red
-      green:   '#A6DA95' # green
-      yellow:  '#EED49F' # yellow
-      blue:    '#8AADF4' # blue
+      black: '#494D64' # surface1
+      red: '#ED8796' # red
+      green: '#A6DA95' # green
+      yellow: '#EED49F' # yellow
+      blue: '#8AADF4' # blue
       magenta: '#F5BDE6' # pink
-      cyan:    '#8BD5CA' # teal
-      white:   '#B8C0E0' # subtext1
+      cyan: '#8BD5CA' # teal
+      white: '#B8C0E0' # subtext1
 
     # Bright colors
     bright:
-      black:   '#5B6078' # surface2
-      red:     '#ED8796' # red
-      green:   '#A6DA95' # green
-      yellow:  '#EED49F' # yellow
-      blue:    '#8AADF4' # blue
+      black: '#5B6078' # surface2
+      red: '#ED8796' # red
+      green: '#A6DA95' # green
+      yellow: '#EED49F' # yellow
+      blue: '#8AADF4' # blue
       magenta: '#F5BDE6' # pink
-      cyan:    '#8BD5CA' # teal
-      white:   '#A5ADCB' # subtext0
+      cyan: '#8BD5CA' # teal
+      white: '#A5ADCB' # subtext0
 
     # Dim colors
     dim:
-      black:   '#494D64' # surface1
-      red:     '#ED8796' # red
-      green:   '#A6DA95' # green
-      yellow:  '#EED49F' # yellow
-      blue:    '#8AADF4' # blue
+      black: '#494D64' # surface1
+      red: '#ED8796' # red
+      green: '#A6DA95' # green
+      yellow: '#EED49F' # yellow
+      blue: '#8AADF4' # blue
       magenta: '#F5BDE6' # pink
-      cyan:    '#8BD5CA' # teal
-      white:   '#B8C0E0' # subtext1
+      cyan: '#8BD5CA' # teal
+      white: '#B8C0E0' # subtext1
 
     indexed_colors:
       - { index: 16, color: '#F5A97F' }
       - { index: 17, color: '#F4DBD6' }
 
-  catppuccin_mocha: &catppuccin_mocha
+  catppuccin_mocha:
+    &catppuccin_mocha
     primary:
       background: '#1E1E2E' # base
       foreground: '#CDD6F4' # text
@@ -408,38 +405,39 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#45475A' # surface1
-      red:     '#F38BA8' # red
-      green:   '#A6E3A1' # green
-      yellow:  '#F9E2AF' # yellow
-      blue:    '#89B4FA' # blue
+      black: '#45475A' # surface1
+      red: '#F38BA8' # red
+      green: '#A6E3A1' # green
+      yellow: '#F9E2AF' # yellow
+      blue: '#89B4FA' # blue
       magenta: '#F5C2E7' # pink
-      cyan:    '#94E2D5' # teal
-      white:   '#BAC2DE' # subtext1
+      cyan: '#94E2D5' # teal
+      white: '#BAC2DE' # subtext1
 
     # Bright colors
     bright:
-      black:   '#585B70' # surface2
-      red:     '#F38BA8' # red
-      green:   '#A6E3A1' # green
-      yellow:  '#F9E2AF' # yellow
-      blue:    '#89B4FA' # blue
+      black: '#585B70' # surface2
+      red: '#F38BA8' # red
+      green: '#A6E3A1' # green
+      yellow: '#F9E2AF' # yellow
+      blue: '#89B4FA' # blue
       magenta: '#F5C2E7' # pink
-      cyan:    '#94E2D5' # teal
-      white:   '#A6ADC8' # subtext0
+      cyan: '#94E2D5' # teal
+      white: '#A6ADC8' # subtext0
 
     # Dim colors
     dim:
-      black:   '#45475A' # surface1
-      red:     '#F38BA8' # red
-      green:   '#A6E3A1' # green
-      yellow:  '#F9E2AF' # yellow
-      blue:    '#89B4FA' # blue
+      black: '#45475A' # surface1
+      red: '#F38BA8' # red
+      green: '#A6E3A1' # green
+      yellow: '#F9E2AF' # yellow
+      blue: '#89B4FA' # blue
       magenta: '#F5C2E7' # pink
-      cyan:    '#94E2D5' # teal
-      white:   '#BAC2DE' # subtext1
+      cyan: '#94E2D5' # teal
+      white: '#BAC2DE' # subtext1
 
-  DoomOne: &DoomOne
+  DoomOne:
+    &DoomOne
     primary:
       background: '#282c34'
       foreground: '#bbc2cf'
@@ -450,25 +448,26 @@ schemes:
       text: CellForeground
       background: '#3e4451'
     normal:
-      black:   '#1c1f24'
-      red:     '#ff6c6b'
-      green:   '#98be65'
-      yellow:  '#da8548'
-      blue:    '#51afef'
+      black: '#1c1f24'
+      red: '#ff6c6b'
+      green: '#98be65'
+      yellow: '#da8548'
+      blue: '#51afef'
       magenta: '#c678dd'
-      cyan:    '#5699af'
-      white:   '#202328'
+      cyan: '#5699af'
+      white: '#202328'
     bright:
-      black:   '#5b6268'
-      red:     '#da8548'
-      green:   '#4db5bd'
-      yellow:  '#ecbe7b'
-      blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
+      black: '#5b6268'
+      red: '#da8548'
+      green: '#4db5bd'
+      yellow: '#ecbe7b'
+      blue: '#3071db' # This is 2257a0 in Doom Emacs but I lightened it.
       magenta: '#a9a1e1'
-      cyan:    '#46d9ff'
-      white:   '#dfdfdf'
+      cyan: '#46d9ff'
+      white: '#dfdfdf'
 
-  dracula: &dracula
+  dracula:
+    &dracula
     primary:
       background: '#282a36'
       foreground: '#f8f8f2'
@@ -494,8 +493,8 @@ schemes:
         foreground: '#282a36'
         background: '#f1fa8c'
       end:
-         foreground: '#f1fa8c'
-         background: '#282a36'
+        foreground: '#f1fa8c'
+        background: '#282a36'
     line_indicator:
       foreground: None
       background: None
@@ -521,7 +520,8 @@ schemes:
       cyan: '#a4ffff'
       white: '#ffffff'
 
-  nord: &nord
+  nord:
+    &nord
     primary:
       background: '#2e3440'
       foreground: '#d8dee9'
@@ -570,7 +570,8 @@ schemes:
       cyan: '#6d96a5'
       white: '#aeb3bb'
 
-  catppuccin: &catppuccin
+  catppuccin:
+    &catppuccin
     primary:
       background: '#1E1D2F'
       foreground: '#D9E0EE'
@@ -578,55 +579,57 @@ schemes:
       text: '#1E1D2F'
       cursor: '#F5E0DC'
     normal:
-      black:   '#6E6C7E'
-      red:     '#F28FAD'
-      green:   '#ABE9B3'
-      yellow:  '#FAE3B0'
-      blue:    '#96CDFB'
+      black: '#6E6C7E'
+      red: '#F28FAD'
+      green: '#ABE9B3'
+      yellow: '#FAE3B0'
+      blue: '#96CDFB'
       magenta: '#F5C2E7'
-      cyan:    '#89DCEB'
-      white:   '#D9E0EE'
+      cyan: '#89DCEB'
+      white: '#D9E0EE'
     bright:
-      black:   '#988BA2'
-      red:     '#F28FAD'
-      green:   '#ABE9B3'
-      yellow:  '#FAE3B0'
-      blue:    '#96CDFB'
+      black: '#988BA2'
+      red: '#F28FAD'
+      green: '#ABE9B3'
+      yellow: '#FAE3B0'
+      blue: '#96CDFB'
       magenta: '#F5C2E7'
-      cyan:    '#89DCEB'
-      white:   '#D9E0EE'
+      cyan: '#89DCEB'
+      white: '#D9E0EE'
     indexed_colors:
       - { index: 16, color: '#F8BD96' }
       - { index: 17, color: '#F5E0DC' }
 
-  reddy: &reddy
+  reddy:
+    &reddy
     primary:
       background: '#100c08'
       foreground: '#D9E0EE'
     cursor:
-      text:   '#1E1D2F'
+      text: '#1E1D2F'
       cursor: '#FFFFFF'
     normal:
-      black:   '#6E6C7E'
-      red:     '#ff6666'
-      green:   '#7fff00'
-      yellow:  '#ffef00'
-      blue:    '#73c2fb'
+      black: '#6E6C7E'
+      red: '#ff6666'
+      green: '#7fff00'
+      yellow: '#ffef00'
+      blue: '#73c2fb'
       magenta: '#F5C2E7'
-      cyan:    '#00ffff'
-      white:   '#ffffff'
+      cyan: '#00ffff'
+      white: '#ffffff'
     bright:
-      black:   '#988BA2'
-      red:     '#ff6666'
-      green:   '#7fff00'
-      yellow:  '#ffef00'
-      blue:    '#73c2fb'
+      black: '#988BA2'
+      red: '#ff6666'
+      green: '#7fff00'
+      yellow: '#ffef00'
+      blue: '#73c2fb'
       magenta: '#F5C2E7'
-      cyan:    '#00ffff'
-      white:   '#ffffff'
+      cyan: '#00ffff'
+      white: '#ffffff'
 
-  tokyo-night: &tokyo-night
-        # COLORSCHEME: tokyo-night.yaml
+  tokyo-night:
+    # COLORSCHEME: tokyo-night.yaml
+    &tokyo-night
     primary:
       background: '0x1a1b26'
       foreground: '0xa9b1d6'
@@ -652,7 +655,6 @@ schemes:
       magenta: '0xbb9af7'
       cyan: '0x0db9d7'
       white: '0xacb0d0'
-
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -664,104 +666,93 @@ schemes:
   #   - SimpleFullscreen
 startup_mode: Windowed
 
-  # Window title
+# Window title
 title: Alacritty
 
-  # Allow terminal applications to change Alacritty's window title.
+# Allow terminal applications to change Alacritty's window title.
 dynamic_title: true
 
-  # Window class (Linux/BSD only):
-  #class:
-    # Application instance name
-    # instance: Alacritty
-    # General application class
-    # general: Alacritty
-
-  # GTK theme variant (Linux/BSD only)
-  #
-  # Override the variant of the GTK theme. Commonly supported values are `dark`
-  # and `light`. Set this to `None` to use the default theme variant.
-  # gtk_theme_variant: dark
-
+# Window class (Linux/BSD only):
+#class:
+# Application instance name
+# instance: Alacritty
+# General application class
+# general: Alacritty
+# GTK theme variant (Linux/BSD only)
+#
+# Override the variant of the GTK theme. Commonly supported values are `dark`
+# and `light`. Set this to `None` to use the default theme variant.
+# gtk_theme_variant: dark
 #scrolling:
-  # Maximum number of lines in the scrollback buffer.
-  # Specifying '0' will disable scrolling.
+# Maximum number of lines in the scrollback buffer.
+# Specifying '0' will disable scrolling.
 history: 10000
 
-  # Scrolling distance multiplier.
-  #multiplier: 3
-
+# Scrolling distance multiplier.
+#multiplier: 3
 # Font configuration
 #font:
-  # Normal (roman) font face
+# Normal (roman) font face
 normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
+  # Font family
+  #
+  # Default:
+  #   - (macOS) Menlo
+  #   - (Linux/BSD) monospace
+  #   - (Windows) Consolas
   family: JetBrains Mono
 
-    # The `style` can be specified to pick a specific face.
+  # The `style` can be specified to pick a specific face.
   style: Regular
-
   # Bold font face
 bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
+  # Font family
+  #
+  # If the bold family is not specified, it will fall back to the
+  # value specified for the normal font.
   family: JetBrains Mono
 
-    # The `style` can be specified to pick a specific face.
+  # The `style` can be specified to pick a specific face.
   style: Bold
-
   # Italic font face
 italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
+  # Font family
+  #
+  # If the italic family is not specified, it will fall back to the
+  # value specified for the normal font.
   family: JetBrains Mono
 
-    # The `style` can be specified to pick a specific face.
+  # The `style` can be specified to pick a specific face.
   style: Italic
-
   # Bold italic font face
 bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
+  # Font family
+  #
+  # If the bold italic family is not specified, it will fall back to the
+  # value specified for the normal font.
   family: JetBrains Mono
 
-    # The `style` can be specified to pick a specific face.
+  # The `style` can be specified to pick a specific face.
   style: Bold Italic
-
   # Point size
   #size: 11.0
-
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
   #offset:
   #  x: 0
   #  y: 0
-
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
   # right, increasing `y` moves the glyph upward.
   #glyph_offset:
   #  x: 0
   #  y: 0
-
   # Thin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
-
   # Use built-in font for box drawing characters.
   #
   # If `true`, Alacritty will use a custom built-in font for box drawing
@@ -771,303 +762,299 @@ builtin_box_drawing: true
 
 # If `true`, bold text is drawn using the bright color variants.
 # draw_bold_text_with_bright_colors: true
-
 # Colors (Tomorrow Night)
 colors: *one_dark
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not
-    # present. If the bright foreground color is not set, or
-    # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
-    # color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground/CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Vi mode cursor colors
-  #
-  # Colors for the cursor when the vi mode is active.
-  #
-  # Allowed values are CellForeground/CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #vi_mode_cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Search colors
-  #
-  # Colors used for the search bar and match highlighting.
-  #search:
-    # Allowed values are CellForeground/CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    #matches:
-    #  foreground: '#000000'
-    #  background: '#ffffff'
-    #focused_match:
-    #  foreground: '#ffffff'
-    #  background: '#000000'
-
-    #bar:
-    #  background: '#c5c8c6'
-    #  foreground: '#1d1f21'
-
-  # Keyboard regex hints
-  #hints:
-    # First character in the hint label
-    #
-    # Allowed values are CellForeground/CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    #start:
-    #  foreground: '#1d1f21'
-    #  background: '#e9ff5e'  background: '0x1e2127'
-    # foreground: '0xabb2bf'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '0x9a9a9a'
-    # bright_foreground: '0xe6efff'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor. If these are unset,
-  # the cursor color will be the inverse of the cell color.
-  #cursor:
-  #  text: '0x000000'
-  #  cursor: '0xffffff'
-
-  # Normal colors
-  # normal:
-  #   black:   '0x1e2127'
-  #   red:     '0xe06c75'
-  #   green:   '0x98c379'
-  #   yellow:  '0xd19a66'
-  #   blue:    '0x61afef'
-  #   magenta: '0xc678dd'
-  #   cyan:    '0x56b6c2'
-  #   white:   '0x828791'
-
-  # # Bright colors
-  # bright:
-  #   black:   '0x5c6370'
-  #   red:     '0xe06c75'
-  #   green:   '0x98c379'
-  #   yellow:  '0xd19a66'
-  #   blue:    '0x61afef'
-  #   magenta: '0xc678dd'
-  #   cyan:    '0x56b6c2'
-  #   white:   '0xe6efff'
-
-  # # Dim colors
-  # #
-  # # If the dim colors are not set, they will be calculated automatically based
-  # # on the `normal` colors.
-  # dim:
-  #   black:   '0x1e2127'
-  #   red:     '0xe06c75'
-  #   green:   '0x98c379'
-  #   yellow:  '0xd19a66'
-  #   blue:    '0x61afef'
-  #   magenta: '0xc678dd'
-  #   cyan:    '0x56b6c2'
-  
-  #
-  # Colors which should be used to draw the selection area.
-  #
-  # Allowed values are CellForeground/CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
-
-  # Normal colors
-  # normal:
-  #   black:   '#1d1f21'
-  #   red:     '#cc6666'
-  #   green:   '#b5bd68'
-  #   yellow:  '#f0c674'
-  #   blue:    '#81a2be'
-  #   magenta: '#b294bb'
-  #   cyan:    '#8abeb7'
-  #   white:   '#c5c8c6'
-
-  # # Bright colors
-  # bright:
-  #   black:   '#666666'
-  #   red:     '#d54e53'
-  #   green:   '#b9ca4a'
-  #   yellow:  '#e7c547'
-  #   blue:    '#7aa6da'
-  #   magenta: '#c397d8'
-  #   cyan:    '#70c0b1'
-  #   white:   '#eaeaea'
-
-  # # Dim colors
-  # #
-  # # If the dim colors are not set, they will be calculated automatically based
-  # # on the `normal` colors.
-  # dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '#ff00ff' }`
-  #
-  #indexed_colors: []
-
-  # Transparent cell backgrounds
-  #
-  # Whether or not `window.opacity` applies to all cell backgrounds or only to
-  # the default background. When set to `true` all cells will be transparent
-  # regardless of their background color.
-  #transparent_background_colors: false
-
+#  primary:
+#    background: '#1E1E3F'
+#    foreground: '#FFFFFF'
+#
+#  # Colors the cursor will use if `custom_cursor_colors` is true
+#  cursor:
+#    text: '#1E1E3F'
+#    cursor: '#FAD000'
+#
+#  # Normal colors
+#  normal:
+#    black: '#000000'
+#    red: '#D52822'
+#    green: '#3DB72A'
+#    yellow: '#FAD000'
+#    blue: '#6943FF'
+#    magenta: '#FF628C'
+#    cyan: '#9EFFFF'
+#    white: '#DBDBE0'
+#
+#  # Bright colors
+#  bright:
+#    black: '#5C5C61'
+#    red: '#FF000D'
+#    green: '#3AD900'
+#    yellow: '#FAD000'
+#    blue: '#6943FF'
+#    magenta: '#FF628C'
+#    cyan: '#9EFFFF'
+#    white: '#FFFFFF'
+# Default colors
+#primary:
+#  background: '#1d1f21'
+#  foreground: '#c5c8c6'
+# Bright and dim foreground colors
+#
+# The dimmed foreground color is calculated automatically if it is not
+# present. If the bright foreground color is not set, or
+# `draw_bold_text_with_bright_colors` is `false`, the normal foreground
+# color will be used.
+#dim_foreground: '#828482'
+#bright_foreground: '#eaeaea'
+# Cursor colors
+#
+# Colors which should be used to draw the terminal cursor.
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#cursor:
+#  text: CellBackground
+#  cursor: CellForeground
+# Vi mode cursor colors
+#
+# Colors for the cursor when the vi mode is active.
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#vi_mode_cursor:
+#  text: CellBackground
+#  cursor: CellForeground
+# Search colors
+#
+# Colors used for the search bar and match highlighting.
+#search:
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#matches:
+#  foreground: '#000000'
+#  background: '#ffffff'
+#focused_match:
+#  foreground: '#ffffff'
+#  background: '#000000'
+#bar:
+#  background: '#c5c8c6'
+#  foreground: '#1d1f21'
+# Keyboard regex hints
+#hints:
+# First character in the hint label
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#start:
+#  foreground: '#1d1f21'
+#  background: '#e9ff5e'  background: '0x1e2127'
+# foreground: '0xabb2bf'
+# Bright and dim foreground colors
+#
+# The dimmed foreground color is calculated automatically if it is not present.
+# If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+# is `false`, the normal foreground color will be used.
+#dim_foreground: '0x9a9a9a'
+# bright_foreground: '0xe6efff'
+# Cursor colors
+#
+# Colors which should be used to draw the terminal cursor. If these are unset,
+# the cursor color will be the inverse of the cell color.
+#cursor:
+#  text: '0x000000'
+#  cursor: '0xffffff'
+# Normal colors
+# normal:
+#   black:   '0x1e2127'
+#   red:     '0xe06c75'
+#   green:   '0x98c379'
+#   yellow:  '0xd19a66'
+#   blue:    '0x61afef'
+#   magenta: '0xc678dd'
+#   cyan:    '0x56b6c2'
+#   white:   '0x828791'
+# # Bright colors
+# bright:
+#   black:   '0x5c6370'
+#   red:     '0xe06c75'
+#   green:   '0x98c379'
+#   yellow:  '0xd19a66'
+#   blue:    '0x61afef'
+#   magenta: '0xc678dd'
+#   cyan:    '0x56b6c2'
+#   white:   '0xe6efff'
+# # Dim colors
+# #
+# # If the dim colors are not set, they will be calculated automatically based
+# # on the `normal` colors.
+# dim:
+#   black:   '0x1e2127'
+#   red:     '0xe06c75'
+#   green:   '0x98c379'
+#   yellow:  '0xd19a66'
+#   blue:    '0x61afef'
+#   magenta: '0xc678dd'
+#   cyan:    '0x56b6c2'
+#
+# Colors which should be used to draw the selection area.
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#selection:
+#  text: CellBackground
+#  background: CellForeground
+# Normal colors
+# normal:
+#   black:   '#1d1f21'
+#   red:     '#cc6666'
+#   green:   '#b5bd68'
+#   yellow:  '#f0c674'
+#   blue:    '#81a2be'
+#   magenta: '#b294bb'
+#   cyan:    '#8abeb7'
+#   white:   '#c5c8c6'
+# # Bright colors
+# bright:
+#   black:   '#666666'
+#   red:     '#d54e53'
+#   green:   '#b9ca4a'
+#   yellow:  '#e7c547'
+#   blue:    '#7aa6da'
+#   magenta: '#c397d8'
+#   cyan:    '#70c0b1'
+#   white:   '#eaeaea'
+# # Dim colors
+# #
+# # If the dim colors are not set, they will be calculated automatically based
+# # on the `normal` colors.
+# dim:
+#  black:   '#131415'
+#  red:     '#864343'
+#  green:   '#777c44'
+#  yellow:  '#9e824c'
+#  blue:    '#556a7d'
+#  magenta: '#75617b'
+#  cyan:    '#5b7d78'
+#  white:   '#828482'
+# Indexed Colors
+#
+# The indexed colors include all colors from 16 to 256.
+# When these are not set, they're filled with sensible defaults.
+#
+# Example:
+#   `- { index: 16, color: '#ff00ff' }`
+#
+#indexed_colors: []
+# Transparent cell backgrounds
+#
+# Whether or not `window.opacity` applies to all cell backgrounds or only to
+# the default background. When set to `true` all cells will be transparent
+# regardless of their background color.
+#transparent_background_colors: false
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
 #bell:
-  # Visual Bell Animation
-  #
-  # Animation effect for flashing the screen when the visual bell is rung.
-  #
-  # Values for `animation`:
-  #   - Ease
-  #   - EaseOut
-  #   - EaseOutSine
-  #   - EaseOutQuad
-  #   - EaseOutCubic
-  #   - EaseOutQuart
-  #   - EaseOutQuint
-  #   - EaseOutExpo
-  #   - EaseOutCirc
-  #   - Linear
-  #animation: EaseOutExpo
-
-  # Duration of the visual bell flash in milliseconds. A `duration` of `0` will
-  # disable the visual bell animation.
-  #duration: 0
-
-  # Visual bell animation color.
-  #color: '#ffffff'
-
-  # Bell Command
-  #
-  # This program is executed whenever the bell is rung.
-  #
-  # When set to `command: None`, no command will be executed.
-  #
-  # Example:
-  #   command:
-  #     program: notify-send
-  #     args: ["Hello, World!"]
-  #
-  #command: None
-
+# Visual Bell Animation
+#
+# Animation effect for flashing the screen when the visual bell is rung.
+#
+# Values for `animation`:
+#   - Ease
+#   - EaseOut
+#   - EaseOutSine
+#   - EaseOutQuad
+#   - EaseOutCubic
+#   - EaseOutQuart
+#   - EaseOutQuint
+#   - EaseOutExpo
+#   - EaseOutCirc
+#   - Linear
+#animation: EaseOutExpo
+# Duration of the visual bell flash in milliseconds. A `duration` of `0` will
+# disable the visual bell animation.
+#duration: 0
+# Visual bell animation color.
+#color: '#ffffff'
+# Bell Command
+#
+# This program is executed whenever the bell is rung.
+#
+# When set to `command: None`, no command will be executed.
+#
+# Example:
+#   command:
+#     program: notify-send
+#     args: ["Hello, World!"]
+#
+#command: None
 #selection:
-  # This string contains all characters that are used as separators for
-  # "semantic words" in Alacritty.
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-
-  # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
-
+# This string contains all characters that are used as separators for
+# "semantic words" in Alacritty.
+#semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+# When set to `true`, selected text will be copied to the primary clipboard.
+#save_to_clipboard: false
 #cursor:
-  # Cursor style
+# Cursor style
 style:
-    # Cursor shape
-    #
-    # Values for `shape`:
-    #   - ▇ Block
-    #   - _ Underline
-    #   - | Beam
+  # Cursor shape
+  #
+  # Values for `shape`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
   shape: Block
 
-    # Cursor blinking state
-    #
-    # Values for `blinking`:
-    #   - Never: Prevent the cursor from ever blinking
-    #   - Off: Disable blinking by default
-    #   - On: Enable blinking by default
-    #   - Always: Force the cursor to always blink
+  # Cursor blinking state
+  #
+  # Values for `blinking`:
+  #   - Never: Prevent the cursor from ever blinking
+  #   - Off: Disable blinking by default
+  #   - On: Enable blinking by default
+  #   - Always: Force the cursor to always blink
   blinking: On
-
   # Vi mode cursor style
   #
   # If the vi mode cursor style is `None` or not specified, it will fall back to
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-# vi_mode_style: None
-
+  # vi_mode_style: None
   # Cursor blinking interval in milliseconds.
   #blink_interval: 750
-
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
   #unfocused_hollow: true
-
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.
   #thickness: 0.15
-
-# Live config reload (changes require restart)
-#live_config_reload: true
-
-# Shell
-#
-# You can set `shell.program` to the path of your favorite shell, e.g.
-# `/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
-# shell.
-#
-# Default:
-#   - (macOS) /bin/bash --login
-#   - (Linux/BSD) user login shell
-#   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
-
-# Startup directory
-#
-# Directory the shell is started in. If this is unset, or `None`, the working
-# directory of the parent process will be used.
-#working_directory: None
-
-# Send ESC (\x1b) before characters when alt is pressed.
-#alt_send_esc: true
-
-# Offer IPC using `alacritty msg` (unix only)
-#ipc_socket: true
-
-#mouse:
+  # Live config reload (changes require restart)
+  #live_config_reload: true
+  # Shell
+  #
+  # You can set `shell.program` to the path of your favorite shell, e.g.
+  # `/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
+  # shell.
+  #
+  # Default:
+  #   - (macOS) /bin/bash --login
+  #   - (Linux/BSD) user login shell
+  #   - (Windows) powershell
+  #shell:
+  #  program: /bin/bash
+  #  args:
+  #    - --login
+  # Startup directory
+  #
+  # Directory the shell is started in. If this is unset, or `None`, the working
+  # directory of the parent process will be used.
+  #working_directory: None
+  # Send ESC (\x1b) before characters when alt is pressed.
+  #alt_send_esc: true
+  # Offer IPC using `alacritty msg` (unix only)
+  #ipc_socket: true
+  #mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
@@ -1075,18 +1062,15 @@ style:
   # or triple click.
   #double_click: { threshold: 300 }
   #triple_click: { threshold: 300 }
-
   # If this is `true`, the cursor is temporarily hidden when typing.
   #hide_when_typing: false
-
-# Regex hints
-#
-# Terminal hints can be used to find text in the visible part of the terminal
-# and pipe it to other applications.
-#hints:
+  # Regex hints
+  #
+  # Terminal hints can be used to find text in the visible part of the terminal
+  # and pipe it to other applications.
+  #hints:
   # Keys used for the hint labels.
   #alphabet: "jfkdls;ahgurieowpq"
-
   # List with all available hints
   #
   # Each hint must have a `regex` and either an `action` or a `command` field.
@@ -1122,226 +1106,224 @@ style:
   #   binding:
   #     key: U
   #     mods: Control|Shift
-
-# Mouse bindings
-#
-# Mouse bindings are specified as a list of objects, much like the key
-# bindings further below.
-#
-# To trigger mouse bindings when an application running within Alacritty
-# captures the mouse, the `Shift` modifier is automatically added as a
-# requirement.
-#
-# Each mouse binding will specify a:
-#
-# - `mouse`:
-#
-#   - Middle
-#   - Left
-#   - Right
-#   - Numeric identifier such as `5`
-#
-# - `action` (see key bindings for actions not exclusive to mouse mode)
-#
-# - Mouse exclusive actions:
-#
-#   - ExpandSelection
-#       Expand the selection to the current mouse cursor location.
-#
-# And optionally:
-#
-# - `mods` (see key bindings)
-#mouse_bindings:
-#  - { mouse: Right,                 action: ExpandSelection }
-#  - { mouse: Right,  mods: Control, action: ExpandSelection }
-#  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
-
-# Key bindings
-#
-# Key bindings are specified as a list of objects. For example, this is the
-# default paste binding:
-#
-# `- { key: V, mods: Control|Shift, action: Paste }`
-#
-# Each key binding will specify a:
-#
-# - `key`: Identifier of the key pressed
-#
-#    - A-Z
-#    - F1-F24
-#    - Key0-Key9
-#
-#    A full list with available key codes can be found here:
-#    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
-#
-#    Instead of using the name of the keys, the `key` field also supports using
-#    the scancode of the desired key. Scancodes have to be specified as a
-#    decimal number. This command will allow you to display the hex scancodes
-#    for certain keys:
-#
-#       `showkey --scancodes`.
-#
-# Then exactly one of:
-#
-# - `chars`: Send a byte sequence to the running application
-#
-#    The `chars` field writes the specified string to the terminal. This makes
-#    it possible to pass escape sequences. To find escape codes for bindings
-#    like `PageUp` (`"\x1b[5~"`), you can run the command `showkey -a` outside
-#    of tmux. Note that applications use terminfo to map escape sequences back
-#    to keys. It is therefore required to update the terminfo when changing an
-#    escape sequence.
-#
-# - `action`: Execute a predefined action
-#
-#   - ToggleViMode
-#   - SearchForward
-#       Start searching toward the right of the search origin.
-#   - SearchBackward
-#       Start searching toward the left of the search origin.
-#   - Copy
-#   - Paste
-#   - IncreaseFontSize
-#   - DecreaseFontSize
-#   - ResetFontSize
-#   - ScrollPageUp
-#   - ScrollPageDown
-#   - ScrollHalfPageUp
-#   - ScrollHalfPageDown
-#   - ScrollLineUp
-#   - ScrollLineDown
-#   - ScrollToTop
-#   - ScrollToBottom
-#   - ClearHistory
-#       Remove the terminal's scrollback history.
-#   - Hide
-#       Hide the Alacritty window.
-#   - Minimize
-#       Minimize the Alacritty window.
-#   - Quit
-#       Quit Alacritty.
-#   - ToggleFullscreen
-#   - SpawnNewInstance
-#       Spawn a new instance of Alacritty.
-#   - CreateNewWindow
-#       Create a new Alacritty window from the current process.
-#   - ClearLogNotice
-#       Clear Alacritty's UI warning and error notice.
-#   - ClearSelection
-#       Remove the active selection.
-#   - ReceiveChar
-#   - None
-#
-# - Vi mode exclusive actions:
-#
-#   - Open
-#       Perform the action of the first matching hint under the vi mode cursor
-#       with `mouse.enabled` set to `true`.
-#   - ToggleNormalSelection
-#   - ToggleLineSelection
-#   - ToggleBlockSelection
-#   - ToggleSemanticSelection
-#       Toggle semantic selection based on `selection.semantic_escape_chars`.
-#
-# - Vi mode exclusive cursor motion actions:
-#
-#   - Up
-#       One line up.
-#   - Down
-#       One line down.
-#   - Left
-#       One character left.
-#   - Right
-#       One character right.
-#   - First
-#       First column, or beginning of the line when already at the first column.
-#   - Last
-#       Last column, or beginning of the line when already at the last column.
-#   - FirstOccupied
-#       First non-empty cell in this terminal row, or first non-empty cell of
-#       the line when already at the first cell of the row.
-#   - High
-#       Top of the screen.
-#   - Middle
-#       Center of the screen.
-#   - Low#ff
-#   - SearchPrevious
-#       Beginning of the previous match.
-#   - SearchStart
-#       Start of the match to the left of the vi mode cursor.
-#   - SearchEnd
-#       End of the match to the right of the vi mode cursor.
-#
-# - Search mode exclusive actions:
-#   - SearchFocusNext
-#       Move the focus to the next search match.
-#   - SearchFocusPrevious
-#       Move the focus to the previous search match.
-#   - SearchConfirm
-#   - SearchCancel
-#   - SearchClear
-#       Reset the search regex.
-#   - SearchDeleteWord
-#       Delete the last word in the search regex.
-#   - SearchHistoryPrevious
-#       Go to the previous regex in the search history.
-#   - SearchHistoryNext
-#       Go to the next regex in the search history.
-#
-# - macOS exclusive actions:
-#   - ToggleSimpleFullscreen
-#       Enter fullscreen without occupying another space.
-#
-# - Linux/BSD exclusive actions:
-#
-#   - CopySelection
-#       Copy from the selection buffer.
-#   - PasteSelection
-#       Paste from the selection buffer.
-#
-# - `command`: Fork and execute a specified command plus arguments
-#
-#    The `command` field must be a map containing a `program` string and an
-#    `args` array of command line parameter strings. For example:
-#       `{ program: "alacritty", args: ["-e", "vttest"] }`
-#
-# And optionally:
-#
-# - `mods`: Key modifiers to filter binding actions
-#
-#    - Command
-#    - Control
-#    - Option
-#    - Super
-#    - Shift
-#    - Alt
-#
-#    Multiple `mods` can be combined using `|` like this:
-#       `mods: Control|Shift`.
-#    Whitespace and capitalization are relevant and must match the example.
-#
-# - `mode`: Indicate a binding for only specific terminal reported modes
-#
-#    This is mainly used to send applications the correct escape sequences
-#    when in different modes.
-#
-#    - AppCursor
-#    - AppKeypad
-#    - Search
-#    - Alt
-#    - Vi
-#
-#    A `~` operator can be used before a mode to apply the binding whenever
-#    the mode is *not* active, e.g. `~Alt`.
-#
-# Bindings are always filled by default, but will be replaced when a new
-# binding with the same triggers is defined. To unset a default binding, it can
-# be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
-# a no-op if you do not wish to receive input characters for that binding.
-#
-# If the same trigger is assigned to multiple actions, all of them are executed
-# in the order they were defined in.
-#key_bindings:
+  # Mouse bindings
+  #
+  # Mouse bindings are specified as a list of objects, much like the key
+  # bindings further below.
+  #
+  # To trigger mouse bindings when an application running within Alacritty
+  # captures the mouse, the `Shift` modifier is automatically added as a
+  # requirement.
+  #
+  # Each mouse binding will specify a:
+  #
+  # - `mouse`:
+  #
+  #   - Middle
+  #   - Left
+  #   - Right
+  #   - Numeric identifier such as `5`
+  #
+  # - `action` (see key bindings for actions not exclusive to mouse mode)
+  #
+  # - Mouse exclusive actions:
+  #
+  #   - ExpandSelection
+  #       Expand the selection to the current mouse cursor location.
+  #
+  # And optionally:
+  #
+  # - `mods` (see key bindings)
+  #mouse_bindings:
+  #  - { mouse: Right,                 action: ExpandSelection }
+  #  - { mouse: Right,  mods: Control, action: ExpandSelection }
+  #  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
+  # Key bindings
+  #
+  # Key bindings are specified as a list of objects. For example, this is the
+  # default paste binding:
+  #
+  # `- { key: V, mods: Control|Shift, action: Paste }`
+  #
+  # Each key binding will specify a:
+  #
+  # - `key`: Identifier of the key pressed
+  #
+  #    - A-Z
+  #    - F1-F24
+  #    - Key0-Key9
+  #
+  #    A full list with available key codes can be found here:
+  #    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
+  #
+  #    Instead of using the name of the keys, the `key` field also supports using
+  #    the scancode of the desired key. Scancodes have to be specified as a
+  #    decimal number. This command will allow you to display the hex scancodes
+  #    for certain keys:
+  #
+  #       `showkey --scancodes`.
+  #
+  # Then exactly one of:
+  #
+  # - `chars`: Send a byte sequence to the running application
+  #
+  #    The `chars` field writes the specified string to the terminal. This makes
+  #    it possible to pass escape sequences. To find escape codes for bindings
+  #    like `PageUp` (`"\x1b[5~"`), you can run the command `showkey -a` outside
+  #    of tmux. Note that applications use terminfo to map escape sequences back
+  #    to keys. It is therefore required to update the terminfo when changing an
+  #    escape sequence.
+  #
+  # - `action`: Execute a predefined action
+  #
+  #   - ToggleViMode
+  #   - SearchForward
+  #       Start searching toward the right of the search origin.
+  #   - SearchBackward
+  #       Start searching toward the left of the search origin.
+  #   - Copy
+  #   - Paste
+  #   - IncreaseFontSize
+  #   - DecreaseFontSize
+  #   - ResetFontSize
+  #   - ScrollPageUp
+  #   - ScrollPageDown
+  #   - ScrollHalfPageUp
+  #   - ScrollHalfPageDown
+  #   - ScrollLineUp
+  #   - ScrollLineDown
+  #   - ScrollToTop
+  #   - ScrollToBottom
+  #   - ClearHistory
+  #       Remove the terminal's scrollback history.
+  #   - Hide
+  #       Hide the Alacritty window.
+  #   - Minimize
+  #       Minimize the Alacritty window.
+  #   - Quit
+  #       Quit Alacritty.
+  #   - ToggleFullscreen
+  #   - SpawnNewInstance
+  #       Spawn a new instance of Alacritty.
+  #   - CreateNewWindow
+  #       Create a new Alacritty window from the current process.
+  #   - ClearLogNotice
+  #       Clear Alacritty's UI warning and error notice.
+  #   - ClearSelection
+  #       Remove the active selection.
+  #   - ReceiveChar
+  #   - None
+  #
+  # - Vi mode exclusive actions:
+  #
+  #   - Open
+  #       Perform the action of the first matching hint under the vi mode cursor
+  #       with `mouse.enabled` set to `true`.
+  #   - ToggleNormalSelection
+  #   - ToggleLineSelection
+  #   - ToggleBlockSelection
+  #   - ToggleSemanticSelection
+  #       Toggle semantic selection based on `selection.semantic_escape_chars`.
+  #
+  # - Vi mode exclusive cursor motion actions:
+  #
+  #   - Up
+  #       One line up.
+  #   - Down
+  #       One line down.
+  #   - Left
+  #       One character left.
+  #   - Right
+  #       One character right.
+  #   - First
+  #       First column, or beginning of the line when already at the first column.
+  #   - Last
+  #       Last column, or beginning of the line when already at the last column.
+  #   - FirstOccupied
+  #       First non-empty cell in this terminal row, or first non-empty cell of
+  #       the line when already at the first cell of the row.
+  #   - High
+  #       Top of the screen.
+  #   - Middle
+  #       Center of the screen.
+  #   - Low#ff
+  #   - SearchPrevious
+  #       Beginning of the previous match.
+  #   - SearchStart
+  #       Start of the match to the left of the vi mode cursor.
+  #   - SearchEnd
+  #       End of the match to the right of the vi mode cursor.
+  #
+  # - Search mode exclusive actions:
+  #   - SearchFocusNext
+  #       Move the focus to the next search match.
+  #   - SearchFocusPrevious
+  #       Move the focus to the previous search match.
+  #   - SearchConfirm
+  #   - SearchCancel
+  #   - SearchClear
+  #       Reset the search regex.
+  #   - SearchDeleteWord
+  #       Delete the last word in the search regex.
+  #   - SearchHistoryPrevious
+  #       Go to the previous regex in the search history.
+  #   - SearchHistoryNext
+  #       Go to the next regex in the search history.
+  #
+  # - macOS exclusive actions:
+  #   - ToggleSimpleFullscreen
+  #       Enter fullscreen without occupying another space.
+  #
+  # - Linux/BSD exclusive actions:
+  #
+  #   - CopySelection
+  #       Copy from the selection buffer.
+  #   - PasteSelection
+  #       Paste from the selection buffer.
+  #
+  # - `command`: Fork and execute a specified command plus arguments
+  #
+  #    The `command` field must be a map containing a `program` string and an
+  #    `args` array of command line parameter strings. For example:
+  #       `{ program: "alacritty", args: ["-e", "vttest"] }`
+  #
+  # And optionally:
+  #
+  # - `mods`: Key modifiers to filter binding actions
+  #
+  #    - Command
+  #    - Control
+  #    - Option
+  #    - Super
+  #    - Shift
+  #    - Alt
+  #
+  #    Multiple `mods` can be combined using `|` like this:
+  #       `mods: Control|Shift`.
+  #    Whitespace and capitalization are relevant and must match the example.
+  #
+  # - `mode`: Indicate a binding for only specific terminal reported modes
+  #
+  #    This is mainly used to send applications the correct escape sequences
+  #    when in different modes.
+  #
+  #    - AppCursor
+  #    - AppKeypad
+  #    - Search
+  #    - Alt
+  #    - Vi
+  #
+  #    A `~` operator can be used before a mode to apply the binding whenever
+  #    the mode is *not* active, e.g. `~Alt`.
+  #
+  # Bindings are always filled by default, but will be replaced when a new
+  # binding with the same triggers is defined. To unset a default binding, it can
+  # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
+  # a no-op if you do not wish to receive input characters for that binding.
+  #
+  # If the same trigger is assigned to multiple actions, all of them are executed
+  # in the order they were defined in.
+  #key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -1350,7 +1332,6 @@ style:
   #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
   #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop    }
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
-
   # Vi Mode
   #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
@@ -1399,7 +1380,6 @@ style:
   #- { key: Slash,  mods: Shift,         mode: Vi|~Search, action: SearchBackward          }
   #- { key: N,                           mode: Vi|~Search, action: SearchNext              }
   #- { key: N,      mods: Shift,         mode: Vi|~Search, action: SearchPrevious          }
-
   # Search Mode
   #- { key: Return,                mode: Search|Vi,  action: SearchConfirm         }
   #- { key: Escape,                mode: Search,     action: SearchCancel          }
@@ -1412,7 +1392,6 @@ style:
   #- { key: Down,                  mode: Search,     action: SearchHistoryNext     }
   #- { key: Return,                mode: Search|~Vi, action: SearchFocusNext       }
   #- { key: Return, mods: Shift,   mode: Search|~Vi, action: SearchFocusPrevious   }
-
   # (Windows, Linux, and BSD only)
   #- { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
   #- { key: C,              mods: Control|Shift,                   action: Copy             }
@@ -1426,10 +1405,8 @@ style:
   #- { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
   #- { key: Minus,          mods: Control,                         action: DecreaseFontSize }
   #- { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
-
   # (Windows only)
   #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
-
   # (macOS only)
   #- { key: K,              mods: Command, mode: ~Vi|~Search, chars: "\x0c"                 }
   #- { key: K,              mods: Command, mode: ~Vi|~Search, action: ClearHistory          }
@@ -1451,14 +1428,11 @@ style:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
-
-#debug:
+  #debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
-
   # Keep the log file after quitting Alacritty.
   #persistent_logging: false
-
   # Log level
   #
   # Values for `log_level`:
@@ -1469,9 +1443,8 @@ style:
   #   - Debug
   #   - Trace
   #log_level: Warn
-
   # Print all received window events.
   #print_events: false
-
   # Highlight window damage information.
   #highlight_damage: false
+theme: ShadesOfPurple
