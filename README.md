@@ -7,7 +7,7 @@
 - OS: [ArcoLinux](https://arcolinux.com/)
 - Terminal: [Alacritty](https://github.com/alacritty/alacritty)
 - Shell: [ZSH](https://github.com/zsh-users/zsh)
-- WM: [i3](https://i3wm.org/) (see [i3-cheat-sheet](i3-cheat-sheet.md) for bindings)
+- WM: [i3-gaps](https://i3wm.org/) (see [i3-cheat-sheet](i3-cheat-sheet.md) for bindings)
 - Status Bar: [i3status-rust](https://github.com/greshake/i3status-rust) (not shown in Screenshot, will be updated soon :tm:, Screenshot is with default i3bar (with [py3status](https://github.com/ultrabug/py3status)))
 
 ---
