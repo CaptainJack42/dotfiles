@@ -231,7 +231,7 @@ mode "$mode_system" {
 }
 
 # ArcoLinux Logout
-bindsym $mod+Ctrl+s exec --no-startup-id archlinux-logout
+# bindsym $mod+Ctrl+s exec --no-startup-id archlinux-logout
 # bindsym $mod+X exec --no-startup-id archlinux-logout
 
 ################# reload changed configuration     
@@ -411,9 +411,9 @@ font pango:monospace 12
 # assign [class="Geary|Evolution"]                                                    → 9
 
 # Workspace 10 music related
-# assign [class="Spotify|spotify"]                                                    → 10
+assign [class="Spotify|spotify"]                                                    → $ws4
 # fix for spotify not moving to workspace 10
-# for_window [class="Spotify"] move to workspace 10
+for_window [class="Spotify"] move to workspace $ws4
 
 ################# autostart - execute applications at boot time
 
@@ -441,7 +441,7 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
 # exec --no-startup-id evolution
 
 # VSCode
-# assign [class="Code"] $ws3
+assign [class="Code"] $ws3
 #exec --no-startup-id '~/.config/i3/scripts/on_workspace_init.py "$ws3","i3-msg layout tabbed; exec code"'
 # exec --no-startup-id i3-msg 'workspace $ws3; layout toggle tabbed; exec code'
 # for_window [class="Code"] focus parent; layout tabbed; focus
@@ -453,8 +453,8 @@ exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/layouts/
 exec i3-msg 'workspace $ws1; exec alacritty; exec alacritty -e ranger'
 
 # Music
-assign [class="^Spotify$ | ^spotify$"] $ws4
-for_window [class="^Spotify$"] floating disable
+# assign [class="^Spotify$"] $ws4
+for_window [class="^Spotify$"] floating disable; assign $ws4
 exec --no-startup-id spotify
 # for_window [class="Spotify"] focus
 
@@ -480,6 +480,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id numlockx on
 
 # nextcloud
+for_window [class="^Nextcloud$"] move scratchpad
 exec --no-startup-id nextcloud
 
 # insync
