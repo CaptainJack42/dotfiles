@@ -7,7 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+source $HOME/.profile
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -92,6 +92,10 @@ plugins=(
 # Config for history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^ ' autosuggest-accept
+
+# Vim bindings instead of emacs
+bindkey -v
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,11 +109,13 @@ eval "$(starship init zsh)"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='code'
-else
-  export EDITOR='nano'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='nvim'
+#else
+#  export EDITOR='nvim'
+#fi
+
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -124,15 +130,20 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias find="fd"
 alias cat="bat"
-
+alias sl="sl -adeF"
+alias vi="nvim"
+alias vim="nvim"
+alias sudo=$'nocorrect sudo\t'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PAGER="less"
 export LESS="-FXR"
+# source $HOME/.config/i3status-rust/gh_token.sh
 
 # ENV Variables needed for Xilinx SDK
 export LC_ALL=C
-source ~/.xilinx/SDK/2019.1/settings64.sh
-export PATH=$PATH:/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin/
+#source ~/.xilinx/SDK/2019.1/settings64.sh
+export PATH=$PATH:$HOME/.xilinx/SDK/2019.1/bin:$HOME/.xilinx/Vivado/2019.1/bin
+export PATH=$PATH:/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin
 #neofetch
