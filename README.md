@@ -12,8 +12,8 @@
 
 ---
 
-- Editor: [VSCode](https://code.visualstudio.com/) and [neovim](https://github.com/neovim/neovim)
-- File Manager: [Ranger](https://github.com/ranger/ranger#getting-started)
+- Editor: [VSCode](https://code.visualstudio.com/) and [neovim](https://github.com/neovim/neovim) (with [AstroNvim](https://github.com/AstroNvim/AstroNvim))
+- File Manager: [Ranger](https://github.com/ranger/ranger)
 - Music: [Spotify-TUI](https://github.com/Rigellute/spotify-tui)
 - System Monitor: [bottom](https://github.com/clementtsang/bottom)
 - Shell prompt: [starship](https://starship.rs)
