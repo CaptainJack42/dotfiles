@@ -31,7 +31,7 @@ Operators can be combined with numbers to repeat them that many times (e.g. `d2w
 
 ### Operator List
 
-- d + *[motion](#Motions)* : [delete](#Deleting))
+- d + *[motion](#Motions)* : [delete](#Deleting)
 - y + *[motion](#Motions)* : yank (copy) 
 - u : undo last command
 - U : Fix (undo) whole line
