@@ -46,9 +46,9 @@ exec --no-startup-id xrandr --output DP-0 --mode 3840x2160+0+0 HDMI-0 --res 1920
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 # using names instead of numbers for the workspaces
-set $ws1 "Terminal"
+set $ws1 "shell"
 set $ws2 "Browser"
-set $ws3 "Code"
+set $ws3 "Vim"
 set $ws4 "Spotify"
 
 # current setup
@@ -441,16 +441,19 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
 # exec --no-startup-id evolution
 
 # VSCode
-assign [class="Code"] $ws3
+# assign [class="Code"] $ws3
 #exec --no-startup-id '~/.config/i3/scripts/on_workspace_init.py "$ws3","i3-msg layout tabbed; exec code"'
 # exec --no-startup-id i3-msg 'workspace $ws3; layout toggle tabbed; exec code'
 # for_window [class="Code"] focus parent; layout tabbed; focus
-exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/layouts/workspace-code.json; exec code'
+# exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/layouts/workspace-code.json; exec code'
 
 # Terminal
 # assign [class="Terminator"] $ws1
 # exec --no-startup-id i3-msg "workspace $ws1; exec alacritty"
-exec i3-msg 'workspace $ws1; exec alacritty; exec alacritty -e ranger'
+exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty'
+
+# Vim / Terminal
+exec --no-startup-id i3-msg 'workspace $ws3; exec alacritty'
 
 # Music
 # assign [class="^Spotify$"] $ws4
@@ -483,6 +486,9 @@ exec_always --no-startup-id numlockx on
 for_window [class="^Nextcloud$"] move scratchpad
 exec --no-startup-id nextcloud
 
+# timeshift
+for_window [class="^Timeshift-gtk$"] move scratchpad
+# exec --no-startup-id timeshift-launcher # doesn't work, needs root privileges
 # insync
 # exec --no-startup-id insync start
 
