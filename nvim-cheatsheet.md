@@ -2,6 +2,11 @@
 
 ## Movements
 
+### General
+
+- Ctrl + Z brings nvim to the background (opens the Terminal).
+- It can be brought back by typing `fg` in the Terminal.
+
 ### Motions
 
 - h : left
@@ -65,6 +70,7 @@ Commands can be combined (e.g. `:wq` -> save and quit)
 - N : repeat search backwards
 - :s/*word*/*replace* : replace *word* with *replace*, add `/g` flag to replace in the whole line
 - :%s/*word*/*replace*/g : replace *word* with *replace* in the whole file, add `/gc` instead of `/g` for a prompt on every *word*.
+- :noh will disable highlighting until the next search.
 
 ## Editing
 
