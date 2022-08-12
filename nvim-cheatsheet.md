@@ -32,7 +32,7 @@ Motions can be combined by typing a number + [motion](#Motions) (e.g. `2w` move 
 
 ### Movement between splits
 
-- Ctrl + h / j / k / l : move between splits (or NeoTree for example).j
+- Ctrl + h / j / k / l : move between splits (or NeoTree for example).
 
 ## Operators
 
