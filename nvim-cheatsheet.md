@@ -30,6 +30,10 @@
 
 Motions can be combined by typing a number + [motion](#Motions) (e.g. `2w` move forward two words).
 
+### Movement between splits
+
+- <Ctrl> + h / j / k / l : move between splits (or NeoTree for example).j
+
 ## Operators
 
 Operators can be combined with numbers to repeat them that many times (e.g. `d2w` delete two words).
@@ -59,6 +63,8 @@ Commands can be combined (e.g. `:wq` -> save and quit)
 - N : repeat command backwards (e.g. for search)
 - :!*external command* : execute external (shell) command
 - :r *file*/*command* : retrieve content/output of *file*/*command* and paste below cursor
+- :sp : open horizontal split
+- :vsp : open vertical split
 
 ### Searching
 
@@ -110,7 +116,18 @@ Once text is selected it can be manipulated with an [operator](#Operators)
 - is : show partial matches for search phrase
 - hls : highlight all matching phrases
 
+### Views / Sessions
+
+- :mkvie[w] [nr] : create a vim script that restores the current window view, if `nr` is given the view for a file is stored.
+- :lo[adview] [nr] : load the saved view, if number is ommited load the saved view for the entire window, otherwise load the view `nr` for the file.
+- :mks[ession][!] [file] : save the current session to a file.
+
 ## Plugin specifics
+
+### Bufferline
+
+- <Shift> + h / l : cycle through buffers
+- :BufferLinePickClose : Close specific tab (choose with the keys that are displayed in the top bar)
 
 ### Neotree
 
