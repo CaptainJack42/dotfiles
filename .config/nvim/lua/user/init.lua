@@ -106,6 +106,9 @@ local config = {
 		    after = "nvim-web-devicons",
 		    config = function() require "user.configs.feline" end,
 		  },
+		  ["simrat39/rust-tools.nvim"] = { disable = false },
+		  ["nvim-lua/plenary.nvim"] = { disable = false },
+		  ["mfussenegger/nvim-dap"] = { disable = false },
 --      {"vimwiki/vimwiki",
 --        config = function()
 --          require("vimwiki").setup({})
@@ -118,6 +121,17 @@ local config = {
 --        end
 --      },
     },
+	  ["neo-tree"] = {
+	    filesystem = {
+	      filtered_items = {
+	        hide_gitignored = true,
+	        hide_dotfiles = false,
+	      },
+	    },
+	    config = function()
+	      require("neo-tree").setup()
+	    end,
+	  },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
       local null_ls = require "null-ls"
