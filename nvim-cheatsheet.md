@@ -32,7 +32,7 @@ Motions can be combined by typing a number + [motion](#Motions) (e.g. `2w` move 
 
 ### Movement between splits
 
-- <Ctrl> + h / j / k / l : move between splits (or NeoTree for example).j
+- Ctrl + h / j / k / l : move between splits (or NeoTree for example).j
 
 ## Operators
 
@@ -126,7 +126,7 @@ Once text is selected it can be manipulated with an [operator](#Operators)
 
 ### Bufferline
 
-- <Shift> + h / l : cycle through buffers
+- Shift + h / l : cycle through buffers
 - :BufferLinePickClose : Close specific tab (choose with the keys that are displayed in the top bar)
 
 ### Neotree
