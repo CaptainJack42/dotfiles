@@ -129,11 +129,12 @@ Once text is selected it can be manipulated with an [operator](#Operators)
 ### Bufferline
 
 - Shift + h / l : cycle through buffers
-- :BufferLinePickClose : Close specific tab (choose with the keys that are displayed in the top bar)
+- :BufferLinePickClose / Space + b + d : Close specific buffer (choose with the keys that are displayed in the top bar)
+- :BufferLinePick / Space + b + p : Pick buffer to show.
 
 ### Neotree
 
-open with `:Neotree`
+open with `:Neotree` or Space + e
 
 - . : set root dir
 - / : fuzzy finder
@@ -162,7 +163,15 @@ open with `:Neotree`
 
 ### ToggleTerm
 
-open a floating Terminal with `:ToggleTerm`
+open a floating Terminal with `:ToggleTerm` or Space + t + f
+
+### Session Manager
+
+- :SessionManager save\_current\_session / Space + S + s : Save the current Session.
+- :SessionManager load\_session / Space + S + l : Select and load a session.
+- :SessionManager load\_load\_current\_dir\_session / Space + S + . : Load session from the current dir.
+- :SessionManager load\_last\_session / Space + S + l : Load the last session.
+- :SessionManager delete\_session / Space + S + d : Select and delete session.
 
 ## Getting Help
 
