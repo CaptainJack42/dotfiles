@@ -68,15 +68,17 @@ Commands can be combined (e.g. `:wq` -> save and quit)
 
 ### Searching
 
-- :/*search* : search for *search* forwards
+- :/*search* : search for *search* forwards, ommit `:` to instantly start searching.
 - :?*search* : search for *search* backwards
     -> \c flag to ignore case
     -> :set ic to always ignore case (noic to not ignore case, invic to invert setting)
+- # : search for the word that is currently under the cursor.
 - n : repeat search forwards
 - N : repeat search backwards
 - :s/*word*/*replace* : replace *word* with *replace*, add `/g` flag to replace in the whole line
 - :%s/*word*/*replace*/g : replace *word* with *replace* in the whole file, add `/gc` instead of `/g` for a prompt on every *word*.
 - :noh will disable highlighting until the next search.
+- Ctrl + ] : jump to the definition of a symbol (will need a tag file, created for example with ctags).
 
 ## Editing
 
