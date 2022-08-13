@@ -44,6 +44,9 @@ local config = {
       neovide_cursor_antialiasing = false,
       neovide_refresh_rate = 60,
       neovide_refresh_rate_idle = 5,
+      neovide_cursor_animation_length = 0.03,
+      neovide_scroll_animation_length = 0.05,
+      neovide_confirm_quit = true,
     },
   },
 
@@ -129,11 +132,11 @@ local config = {
 	    filesystem = {
 	      filtered_items = {
 	        hide_gitignored = true,
-	        hide_dotfiles = false,
+	        hide_dotfiles = true,
 	      },
 	    },
 	    window = {
-	      width = 30,
+	      width = 27,
 	    },
 	    config = function()
 	      require("neo-tree").setup()
@@ -264,6 +267,8 @@ local config = {
     n = {
       -- second key is the lefthand side of the map
       ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
+      ["<leader>bd"] = { ":BufferLinePickClose<cr>", desc = "Pick Buffer to close"},
+      ["<leader>bp"] = { ":BufferLinePick<cr>", desc = "Pick Buffer" },
     },
     t = {
       -- setting a mapping to false will disable it
@@ -283,21 +288,15 @@ local config = {
       pattern = "plugins.lua",
       command = "source <afile> | PackerSync",
     })
-    vim.api.nvim_create_augroup("neotree", {})
-    vim.api.nvim_create_autocmd("UiEnter", {
-      desc = "Open Neotree automatically",
-      group = "neotree",
-      callback = function()
-        if vim.fn.argc() == 0 then
-          vim.cmd "Neotree toggle"
-        end
-      end,
-    })
+    --[[ vim.api.nvim_create_augroup("neotree", {}) ]]
     --[[ vim.api.nvim_create_autocmd("UiEnter", { ]]
-    --[[   command = "set nornu nonu | Neotree toggle", ]]
-    --[[ }) ]]
-    --[[ vim.api.nvim_create_autocmd("BufEnter", { ]]
-    --[[   command = "set rnu nu", ]]
+    --[[   desc = "Open Neotree automatically", ]]
+    --[[   group = "neotree", ]]
+    --[[   callback = function() ]]
+    --[[     if vim.fn.argc() == 0 then ]]
+    --[[       vim.cmd "Neotree toggle" ]]
+    --[[     end ]]
+    --[[   end, ]]
     --[[ }) ]]
     -- Set up custom filetypes
     -- vim.filetype.add {
