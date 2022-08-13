@@ -12,7 +12,7 @@
 
 ---
 
-- Editor: [VSCode](https://code.visualstudio.com/) and [neovim](https://github.com/neovim/neovim) (with [AstroNvim](https://github.com/AstroNvim/AstroNvim))
+- Editor: [neovim](https://github.com/neovim/neovim) (with [AstroNvim](https://github.com/AstroNvim/AstroNvim) and [neovide](https://github.com/neovide/neovide)) and [VSCode](https://code.visualstudio.com/)
 - File Manager: [Ranger](https://github.com/ranger/ranger)
 - Music: [Spotify-TUI](https://github.com/Rigellute/spotify-tui)
 - System Monitor: [bottom](https://github.com/clementtsang/bottom)
