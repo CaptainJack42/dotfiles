@@ -40,6 +40,10 @@ local config = {
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
+      neovide_cursor_trail_length = 0.4,
+      neovide_cursor_antialiasing = false,
+      neovide_refresh_rate = 60,
+      neovide_refresh_rate_idle = 5,
     },
   },
 
@@ -127,6 +131,9 @@ local config = {
 	        hide_gitignored = true,
 	        hide_dotfiles = false,
 	      },
+	    },
+	    window = {
+	      width = 30,
 	    },
 	    config = function()
 	      require("neo-tree").setup()
@@ -276,7 +283,12 @@ local config = {
       pattern = "plugins.lua",
       command = "source <afile> | PackerSync",
     })
-
+    vim.api.nvim_create_augroup("neotree", {})
+    vim.api.nvim_create_autocmd("UiEnter", {
+      desc = "Open Neotree automatically",
+      group = "neotree",
+      command = "Neotree toggle",
+    })
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
