@@ -287,8 +287,18 @@ local config = {
     vim.api.nvim_create_autocmd("UiEnter", {
       desc = "Open Neotree automatically",
       group = "neotree",
-      command = "Neotree toggle",
+      callback = function()
+        if vim.fn.argc() == 0 then
+          vim.cmd "Neotree toggle"
+        end
+      end,
     })
+    --[[ vim.api.nvim_create_autocmd("UiEnter", { ]]
+    --[[   command = "set nornu nonu | Neotree toggle", ]]
+    --[[ }) ]]
+    --[[ vim.api.nvim_create_autocmd("BufEnter", { ]]
+    --[[   command = "set rnu nu", ]]
+    --[[ }) ]]
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
