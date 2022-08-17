@@ -3,7 +3,7 @@ local config = {
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
-    channel = "nightly", -- "stable" or "nightly"
+    channel = "stable", -- "stable" or "nightly"
     version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
     branch = "main", -- branch name (NIGHTLY ONLY)
     commit = nil, -- commit hash (NIGHTLY ONLY)
@@ -36,7 +36,7 @@ local config = {
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
     opt = {
-      relativenumber = false, -- sets vim.opt.relativenumber
+      relativenumber = true, -- sets vim.opt.relativenumber
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
@@ -47,6 +47,7 @@ local config = {
       neovide_cursor_animation_length = 0.03,
       neovide_scroll_animation_length = 0.05,
       neovide_confirm_quit = true,
+      neovide_remember_window_size = false,
     },
   },
 
@@ -116,17 +117,18 @@ local config = {
 		  ["simrat39/rust-tools.nvim"] = { disable = false },
 		  ["nvim-lua/plenary.nvim"] = { disable = false },
 		  ["mfussenegger/nvim-dap"] = { disable = false },
---      {"vimwiki/vimwiki",
---        config = function()
---          require("vimwiki").setup({})
---        end
---      },
---      ["chipsenkbeil/vimwiki-server.nvim"] = {
---        tag = 'v0.*',
---        config = function()
---          require("vimwiki-server").setup()
---        end
---      },
+		  {
+        "p00f/clangd_extensions.nvim",
+        after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
+        config = function()
+          require("clangd_extensions").setup {
+            server = astronvim.lsp.server_settings "clangd",
+          }
+        end,
+      },
+    },
+    ["mason-lspconfig"] = {
+      ensure_installed = { "clangd" },
     },
 	  ["neo-tree"] = {
 	    filesystem = {
@@ -253,7 +255,13 @@ local config = {
       --     },
       --   },
       -- },
+      clangd = {
+        capabilities = {
+          offsetEncoding = "utf-8",
+        },
+      },
     },
+    skip_setup = { "clangd" },
   },
 
   -- Diagnostics configuration (for vim.diagnostics.config({}))
@@ -288,16 +296,26 @@ local config = {
       pattern = "plugins.lua",
       command = "source <afile> | PackerSync",
     })
-    --[[ vim.api.nvim_create_augroup("neotree", {}) ]]
-    --[[ vim.api.nvim_create_autocmd("UiEnter", { ]]
-    --[[   desc = "Open Neotree automatically", ]]
-    --[[   group = "neotree", ]]
-    --[[   callback = function() ]]
-    --[[     if vim.fn.argc() == 0 then ]]
-    --[[       vim.cmd "Neotree toggle" ]]
-    --[[     end ]]
-    --[[   end, ]]
-    --[[ }) ]]
+    -- vim.api.nvim_create_augroup("neotree", {})
+    -- vim.api.nvim_create_autocmd("UiEnter", {
+    --   desc = "Open Neotree automatically",
+    --   group = "neotree",
+    --   callback = function()
+    --     if vim.fn.argc() == 0 then
+    --       vim.cmd "Neotree toggle"
+    --     end
+    --   end,
+    -- })
+    -- vim.api.nvim_create_augroup("neotree", {})
+    -- vim.api.nvim_create_autocmd("VimEnter", {
+    --   desc = "Open Neotree automatically",
+    --   group = "neotree",
+    --   callback = function()
+    --     if vim.fn.argc() == 0 then
+    --       vim.cmd "Neotree toggle"
+    --     end
+    --   end,
+    -- })
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
