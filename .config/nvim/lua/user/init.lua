@@ -178,6 +178,27 @@ local config = {
     packer = {
       compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
     },
+    ["akinsho/bufferline.nvim"] = {
+      groups = {
+        options = {
+          toggle_hidden_on_enter = true
+        },
+        items = {
+          {
+            name = "master",
+            matcher = function(buf)
+              return buf.name:match('_master')
+            end,
+          },
+          {
+            name = "slave",
+            matcher = function(buf)
+                return buf.name:match('_slave')
+            end,
+          },
+        },
+      },
+    },
   },
 
   -- LuaSnip Options
@@ -275,8 +296,9 @@ local config = {
     n = {
       -- second key is the lefthand side of the map
       ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
-      ["<leader>bd"] = { ":BufferLinePickClose<cr>", desc = "Pick Buffer to close"},
+      ["<leader>bd"] = { ":BufferLinePickClose<cr>", desc = "Pick Buffer to close" },
       ["<leader>bp"] = { ":BufferLinePick<cr>", desc = "Pick Buffer" },
+      ["<leader>bt"] = { ":BufferLineTogglePin<cr>", desc = "Toggle Pin for Buffer" },
     },
     t = {
       -- setting a mapping to false will disable it
