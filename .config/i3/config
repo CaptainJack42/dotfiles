@@ -26,7 +26,11 @@ set $mod Mod4
 set $up k
 set $down j
 set $left h
-set $right l 
+set $right l
+
+################# set var for toolwait script.
+
+set $toolwait ~/.config/i3/scripts/i3-toolwait.py
 
 ################# Single and Dual screen
 
@@ -78,26 +82,26 @@ workspace $ws2 output $secondMonitor
 workspace $ws3 output $firstMonitor
 workspace $ws4 output $secondMonitor
 workspace 1    output $firstMonitor
-workspace 2    output $secondMonitor
+workspace 2    output $firstMonitor
 workspace 3    output $firstMonitor
-workspace 4    output $secondMonitor
+workspace 4    output $firstMonitor
 workspace 5    output $firstMonitor
-workspace 6    output $secondMonitor
+workspace 6    output $firstMonitor
 workspace 7    output $firstMonitor
-workspace 8    output $secondMonitor
+workspace 8    output $firstMonitor
 workspace 9    output $firstMonitor
-workspace 10   output $secondMonitor
-workspace 11   output $firstMonitor
+workspace 10   output $firstMonitor
+workspace 11   output $secondMonitor
 workspace 12   output $secondMonitor
-workspace 13   output $firstMonitor
+workspace 13   output $secondMonitor
 workspace 14   output $secondMonitor
-workspace 15   output $firstMonitor
+workspace 15   output $secondMonitor
 workspace 16   output $secondMonitor
-workspace 17   output $firstMonitor
+workspace 17   output $secondMonitor
 workspace 18   output $secondMonitor
-workspace 19   output $firstMonitor
+workspace 19   output $secondMonitor
 workspace 20   output $secondMonitor
-workspace 21   output $firstMonitor
+workspace 21   output $secondMonitor
 workspace 22   output $secondMonitor
 
 # switch to workspace
@@ -425,10 +429,6 @@ for_window [class="Spotify"] move to workspace $ws4
 # Autotiling
 exec_always --no-startup-id autotiling
 
-# Browser
-# assign [class="firefox"] $ws2
-exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
-# for_window [class="firefox"] focus
 
 # Text-editor
 # exec --no-startup-id geany
@@ -450,15 +450,23 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
 # Terminal
 # assign [class="Terminator"] $ws1
 # exec --no-startup-id i3-msg "workspace $ws1; exec alacritty"
-exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty'
+exec --no-startup-id i3-msg "$toolwait alacritty; move container to workspace $ws1"
+# for_window [class="Alacritty"] move container to $ws1
+
+# Browser
+# assign [class="firefox"] $ws2
+# for_window [class="Firefox"] move container to $ws2
+exec --no-startup-id i3-msg "$toolwait firefox; move container to workspace $ws2"
+# for_window [class="firefox"] focus
 
 # Vim / Terminal
-exec --no-startup-id i3-msg 'workspace $ws3; exec alacritty'
+exec --no-startup-id i3-msg "$toolwait 'alacritty -e nvim'; move container to workspace $ws3"
+# for_window [class="neovide"] move container to $ws3 
 
 # Music
 # assign [class="^Spotify$"] $ws4
-for_window [class="^Spotify$"] floating disable; assign $ws4
 exec --no-startup-id spotify
+for_window [class="^Spotify$"] floating disable; assign $ws4
 # for_window [class="Spotify"] focus
 
 
@@ -594,6 +602,8 @@ bindsym control+mod1+f exec --no-startup-id firefox;focus
 # bindsym control+mod1+v exec --no-startup-id vivaldi-stable;focus
 # bindsym control+mod1+g exec --no-startup-id chromium;focus
 
+# vim
+bindsym $mod+space exec --no-startup-id i3-msg "exec alacritty -e nvim"
 # Text Editor
 # bindsym $mod+F2 exec --no-startup-id geany;focus
 # bindsym $mod+F2 exec --no-startup-id atom;focus
