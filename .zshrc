@@ -89,14 +89,6 @@ plugins=(
 	fzf
 )
 
-# Config for history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey '^ ' autosuggest-accept
-
-# Vim bindings instead of emacs
-bindkey -v
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -137,9 +129,13 @@ alias sudo=$'nocorrect sudo\t'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PAGER="less"
-export LESS="-FXR"
-# source $HOME/.config/i3status-rust/gh_token.sh
+# Vim bindings instead of emacs
+bindkey -v
+
+# Config for history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey '^ ' autosuggest-accept
 
 # ENV Variables needed for Xilinx SDK
 export LC_ALL=C
@@ -148,3 +144,4 @@ export PATH=$PATH:$HOME/.xilinx/SDK/2019.1/bin:$HOME/.xilinx/Vivado/2019.1/bin
 export PATH=$PATH:/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin
 
 export PATH=$PATH:$HOME/.cargo/bin/
+

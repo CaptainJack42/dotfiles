@@ -32,10 +32,16 @@ name = "awesome"
 # # format = "{artist}  {title}"
 # on_collapsed_click = "spotify"
 
+# [[block]]
+# block = "net"
+# format = "{ssid}: {signal_strength} {speed_down;K*b} {graph_down:4;M*_b#250} {speed_up;K*b} {graph_up:4;M*_b#50}"
+# on_click = "nm-connection-editor"
+
 [[block]]
-block = "net"
-format = "{ssid}: {signal_strength} {speed_down;K*b} {graph_down:4;M*_b#250} {speed_up;K*b} {graph_up:4;M*_b#50}"
-on_click = "nm-connection-editor"
+block = "networkmanager"
+on_click = "alacritty -e nmtui"
+ap_format = "{ssid}: {strength}"
+device_format = "{icon}{ap}"
 
 [[block]]
 block = "disk_space"
