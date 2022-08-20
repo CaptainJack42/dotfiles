@@ -197,7 +197,10 @@ bindsym $mod+mod1+y move workspace to output $firstMonitor $secondMonitor
 ################# menu's in arcolinux
 
 # start dmenu
-bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#131620' -nf '#61AFEF' -sb '#61AFEF' -sf '#131620' -fn 'NotoMonoRegular:bold:pixelsize=14'
+# bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#131620' -nf '#61AFEF' -sb '#61AFEF' -sf '#131620' -fn 'NotoMonoRegular:bold:pixelsize=14'
+
+# start rofi
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-7/launcher.sh
 
 # start xfce4-appfinder
 # bindsym mod1+F2 exec --no-startup-id xfce4-appfinder --collapsed
@@ -215,10 +218,11 @@ bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#131620' -nf '#61AFEF' -sb
 # bindsym $mod+F12 exec --no-startup-id rofi -show drun -font "Noto Sans 13"
 
 ################# how to exit, logoff, suspend, ...
+bindsym control+mod1+s exec --no-startup-id ~/.config/rofi/powermenu/type-5/powermenu.sh
 
 # Backup exit
 # Press ctrl+alt+x - check toolbar for next choices
-bindsym control+mod1+s mode "$mode_system"
+# bindsym control+mod1+s mode "$mode_system"
 
 set $Locker blurlock && sleep 1
 
