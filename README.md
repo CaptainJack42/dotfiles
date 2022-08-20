@@ -21,4 +21,5 @@
 - Shell prompt: [starship](https://starship.rs)
 - Font: [JetBrains Mono](https://aur.archlinux.org/packages/nerd-fonts-jetbrains-mono)
 - Git diff viewer: [git-delta](https://github.com/dandavison/delta)
+- Lockscreen: [i3lock](https://github.com/i3/i3lock) (with a [custom script](/blurlock) to set the background, needs to be moved to somewhere on `$PATH`)
 
