@@ -471,17 +471,19 @@ exec_always --no-startup-id autotiling
 # Terminal
 # assign [class="Terminator"] $ws1
 # exec --no-startup-id i3-msg "workspace $ws1; exec alacritty"
-exec --no-startup-id i3-msg "$toolwait alacritty; move container to workspace $ws1"
+assign [instance="main_shell"] $ws1
+exec --no-startup-id i3-msg "alacritty --class main_shell"
 # for_window [class="Alacritty"] move container to $ws1
 
 # Browser
 # assign [class="firefox"] $ws2
 # for_window [class="Firefox"] move container to $ws2
-exec --no-startup-id i3-msg "$toolwait firefox; move container to workspace $ws2"
+exec --no-startup-id i3-msg "firefox; move container to workspace $ws2"
 # for_window [class="firefox"] focus
 
 # Vim / Terminal
-exec --no-startup-id i3-msg "$toolwait 'alacritty -e nvim'; move container to workspace $ws3"
+assign [instance="main_vim"] $ws3
+exec --no-startup-id i3-msg "'alacritty --class main_vim -e nvim'"
 # for_window [class="neovide"] move container to $ws3 
 
 # Music
@@ -535,10 +537,8 @@ for_window [class="^Timeshift-gtk$"] move scratchpad
 # exec --no-startup-id conky -c ~/.config/i3/system-overview
 
 # feh sets wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/pixelart_night_stars_clouds_trees_cozy.png
-# exec_always --no-startup-id feh --randomize --bg-fill /usr/share/backgrounds/active/* &
-# for other Arch Linux based distros
-# exec --no-startup-id feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
+# exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/pixelart_night_stars_clouds_trees_cozy.png
+exec_always --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpaper/landscape/* &
 
 # Polybar
 # exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -888,10 +888,10 @@ set $col_grey    #ABB2BF
 bar {
     height 24
     workspace_buttons yes
-	font pango:FontAwesome 10
+	font pango:Play, FontAwesome 10
     # font pango:DejaVu Sans Mono, material-nf 12
-	# position top
-    position bottom
+	position top
+    # position bottom
 
 	# system icons
     tray_output none
@@ -959,25 +959,25 @@ bar {
         active_workspace       $col_cyan  $col_black $col_cyan
         inactive_workspace     $col_white $col_black $col_white
         urgent_workspace       $col_white $col_red   $col_black
-        }
-
     }
-    ##STOP THEMING BAR
 
-    ##START THEMING WM
-    #Theme name : ArcoLinux Mind
+}
+##STOP THEMING BAR
 
-    # Window color settings
-    # class                 border  backgr. text    indicator
-    client.focused          $col_cyan  $col_cyan    $col_black $col_magenta
-    client.unfocused        $col_black $col_black   $col_cyan  $col_blue
-    client.focused_inactive $col_black $col_black   $col_cyan  $col_blue
-    client.placeholder      $col_black $col_black   $col_cyan  $col_blue
-    client.urgent           $col_red   $col_magenta $col_cyan  $col_blue
+##START THEMING WM
+#Theme name : ArcoLinux Mind
 
-    client.background       $col_black
+# Window color settings
+# class                 border  backgr. text    indicator
+client.focused          $col_cyan  $col_cyan    $col_black $col_magenta
+client.unfocused        $col_black $col_black   $col_cyan  $col_blue
+client.focused_inactive $col_black $col_black   $col_cyan  $col_blue
+client.placeholder      $col_black $col_black   $col_cyan  $col_blue
+client.urgent           $col_red   $col_magenta $col_cyan  $col_blue
 
-    ##STOP THEMING WM
+client.background       $col_black
+
+##STOP THEMING WM
 
 ######################################## THE END 
 
