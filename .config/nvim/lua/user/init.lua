@@ -40,14 +40,6 @@ local config = {
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
-      neovide_cursor_trail_length = 0.4,
-      neovide_cursor_antialiasing = false,
-      neovide_refresh_rate = 60,
-      neovide_refresh_rate_idle = 5,
-      neovide_cursor_animation_length = 0.03,
-      neovide_scroll_animation_length = 0.05,
-      neovide_confirm_quit = true,
-      neovide_remember_window_size = false,
     },
   },
 
@@ -129,6 +121,16 @@ local config = {
       {
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
+      },
+      ["mfussenegger/nvim-dap-python"] = {
+        config = function()
+          require("dap-python").setup("~/.virtualenv/debugpy/bin/python")
+        end,
+      },
+      ["theHamsta/nvim-dap-virtual-text"] = {
+        config = function()
+          require("nvim-dap-virtual-text").setup()
+        end,
       },
     },
     ["mason-lspconfig"] = {
@@ -225,6 +227,8 @@ local config = {
         ["<leader>"] = {
           -- which-key registration table for normal mode, leader prefix
           -- ["N"] = { "<cmd>tabnew<cr>", "New Buffer" },
+          b = { name = "Bufferline" },
+          d = { name = "Debug Adapter" },
         },
       },
     },
@@ -303,6 +307,10 @@ local config = {
       ["<leader>bd"] = { ":BufferLinePickClose<cr>", desc = "Pick Buffer to close" },
       ["<leader>bp"] = { ":BufferLinePick<cr>", desc = "Pick Buffer" },
       ["<leader>bt"] = { ":BufferLineTogglePin<cr>", desc = "Toggle Pin for Buffer" },
+      ["<leader>d"] = false,
+      ["<leader>db"] = { ":lua require'dap'.toggle_breakpoint()<cr>", desc = "Toggle Breakpoint" },
+      ["<leader>dl"] = { ":lua require('dap').continue()<cr>", desc = "Launch Debug Adapter" },
+      ["<leader>dt"] = { ":lua require'dap'.terminate()<cr>", desc = "Terminate Debug Adapter" },
     },
     t = {
       -- setting a mapping to false will disable it
