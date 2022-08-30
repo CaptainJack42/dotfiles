@@ -42,6 +42,9 @@ block = "networkmanager"
 on_click = "alacritty -e nmtui"
 ap_format = "{ssid}: {strength}"
 device_format = "{icon}{ap}"
+[block.theme_overrides]
+good_bg = "#131620"
+good_fg = "#828791"
 
 [[block]]
 block = "disk_space"
@@ -98,7 +101,7 @@ on_click = "alacritty -e btm"
 [[block]]
 block = "sound"
 format = "{output_description} {volume}"
-on_click = "easyeffects"
+on_click = "alacritty -e pulsemixer"
 
 [[block]]
 block = "pacman"
@@ -113,9 +116,9 @@ idle_fg = "#131620"
 
 [[block]]
 block = "uptime"
-on_click = "archlinux-logout"
+on_click = "$HOME/.config/rofi/powermenu/type-5/powermenu.sh"
 
 [[block]]
 block = "time"
-interval = 5
-format = "%a %d-%m-%C %R"
+interval = 1
+format = "%a %d-%m-%C %T"
