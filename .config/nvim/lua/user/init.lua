@@ -132,6 +132,7 @@ local config = {
           require("nvim-dap-virtual-text").setup()
         end,
       },
+      ["lervag/vimtex"] = { disable = false }
     },
     ["mason-lspconfig"] = {
       ensure_installed = { "clangd" },
