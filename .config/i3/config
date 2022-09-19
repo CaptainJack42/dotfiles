@@ -715,6 +715,9 @@ for_window [title="^Terminator Preferences$"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 for_window [window_role="setup"] floating enable
+for_window [class="Minecraft* 1.19.2"] gaps inner 0
+for_window [class="Minecraft* 1.19.2"] gaps outer 0
+for_window [class="Minecraft* 1.19.2"] border none
 
 ################# give focus to applications       
 
