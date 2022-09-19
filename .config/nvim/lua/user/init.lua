@@ -5,8 +5,8 @@ local config = {
     remote = "origin", -- remote to use
     channel = "stable", -- "stable" or "nightly"
     version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "main", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
+    --[[ branch = "main", -- branch name (NIGHTLY ONLY) ]]
+    --[[ commit = nil, -- commit hash (NIGHTLY ONLY) ]]
     pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
     skip_prompts = false, -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
@@ -40,6 +40,10 @@ local config = {
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
+      vimtex_view_method = 'zathura',
+      latex_view_general_viewer = 'zathura',
+      vimtex_compiler_progname = 'nvr',
+      vimtex_quickfix_open_on_warning = 0,
     },
   },
 
@@ -190,20 +194,6 @@ local config = {
         options = {
           toggle_hidden_on_enter = true
         },
-        items = {
-          {
-            name = "master",
-            matcher = function(buf)
-              return buf.name:match('_master')
-            end,
-          },
-          {
-            name = "slave",
-            matcher = function(buf)
-                return buf.name:match('_slave')
-            end,
-          },
-        },
       },
     },
   },
@@ -230,6 +220,7 @@ local config = {
           -- ["N"] = { "<cmd>tabnew<cr>", "New Buffer" },
           b = { name = "Bufferline" },
           d = { name = "Debug Adapter" },
+          x = { name = "Vimtex" },
         },
       },
     },
@@ -312,6 +303,8 @@ local config = {
       ["<leader>db"] = { ":lua require'dap'.toggle_breakpoint()<cr>", desc = "Toggle Breakpoint" },
       ["<leader>dl"] = { ":lua require('dap').continue()<cr>", desc = "Launch Debug Adapter" },
       ["<leader>dt"] = { ":lua require'dap'.terminate()<cr>", desc = "Terminate Debug Adapter" },
+      ["<leader>xc"] = { ":VimtexCompile<cr>", desc = "Compile LaTeX Document" },
+      ["<leader>xd"] = { ":VimtexClean<cr>", desc = "Clean LaTeX Document" },
     },
     t = {
       -- setting a mapping to false will disable it
