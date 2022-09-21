@@ -18,7 +18,7 @@ local config = {
   },
 
   -- Set colorscheme
-  colorscheme = "default_theme",
+  colorscheme = "carbonfox",
 
   -- Override highlight groups in any theme
   highlights = {
@@ -138,6 +138,17 @@ local config = {
       },
       ["lervag/vimtex"] = { disable = false },
       ["ThePrimeagen/vim-be-good"] = { disable = false },
+      {
+        "EdenEast/nightfox.nvim",
+        as = "nightfox",
+        run = ":NightfoxCompile",
+        config = function()
+          require("nightfox").setup({
+            transparent = false,
+            -- terminal_colors = true,
+          })
+        end,
+      }
     },
     ["mason-lspconfig"] = {
       ensure_installed = { "clangd" },

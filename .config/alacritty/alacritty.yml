@@ -655,6 +655,39 @@ schemes:
       magenta: '0xbb9af7'
       cyan: '0x0db9d7'
       white: '0xacb0d0'
+
+  nightfox-carbonfox:
+    &nightfox-carbonfox
+    # Nightfox Alacritty Colors
+    # Style: carbonfox
+    # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/nightfox_alacritty.yml
+    # Default colors
+    primary:
+      background: '0x161616'
+      foreground: '0xf2f4f8'
+    # Normal colors
+    normal:
+      black:   '0x282828'
+      red:     '0xee5396'
+      green:   '0x25be6a'
+      yellow:  '0x08bdba'
+      blue:    '0x78a9ff'
+      magenta: '0xbe95ff'
+      cyan:    '0x33b1ff'
+      white:   '0xdfdfe0'
+    # Bright colors
+    bright:
+      black:   '0x484848'
+      red:     '0xf16da6'
+      green:   '0x46c880'
+      yellow:  '0x2dc7c4'
+      blue:    '0x8cb6ff'
+      magenta: '0xc8a5ff'
+      cyan:    '0x52bdff'
+      white:   '0xe4e4e5'
+    indexed_colors:
+      - { index: 16, color: '0x3ddbd9' }
+      - { index: 17, color: '0xff7eb6' }
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -700,7 +733,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: JetBrains Mono
+    family: Hack Nerd Font
   
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -710,7 +743,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrains Mono
+    family: Hack Nerd Font
   
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -720,7 +753,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrains Mono
+    family: Hack Nerd Font
   
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -730,12 +763,12 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrains Mono
+    family: Hack Nerd Font
   
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
     # Point size
-  size: 9.0
+  size: 10.0
     # Offset is the extra space around each character. `offset.y` can be thought
     # of as modifying the line spacing, and `offset.x` as modifying the letter
     # spacing.
@@ -763,7 +796,7 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 # draw_bold_text_with_bright_colors: true
 # Colors (Tomorrow Night)
-colors: *one_dark
+colors: *nightfox-carbonfox
   # Default colors
 #  primary:
 #    background: '#1E1E3F'
@@ -1004,7 +1037,7 @@ style:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  shape: Block
+  shape: Beam
 
   # Cursor blinking state
   #
@@ -1013,14 +1046,14 @@ style:
   #   - Off: Disable blinking by default
   #   - On: Enable blinking by default
   #   - Always: Force the cursor to always blink
-  blinking: Always
+  blinking: On
   # Vi mode cursor style
   #
   # If the vi mode cursor style is `None` or not specified, it will fall back to
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-  # vi_mode_style: None
+  vi_mode_style: Block
   # Cursor blinking interval in milliseconds.
   #blink_interval: 750
   # If this is `true`, the cursor will be rendered as a hollow box when the
@@ -1336,7 +1369,7 @@ key_bindings:
   - { key: Space,  mods: Alt, mode: ~Search,    action: ToggleViMode            }
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
   #- { key: Escape,                      mode: Vi|~Search, action: ClearSelection          }
-  #- { key: I,                           mode: Vi|~Search, action: ToggleViMode            }
+  - { key: I,                           mode: Vi|~Search, action: ToggleViMode            }
   #- { key: I,                           mode: Vi|~Search, action: ScrollToBottom          }
   #- { key: C,      mods: Control,       mode: Vi|~Search, action: ToggleViMode            }
   #- { key: Y,      mods: Control,       mode: Vi|~Search, action: ScrollLineUp            }
@@ -1447,4 +1480,3 @@ key_bindings:
   #print_events: false
   # Highlight window damage information.
   #highlight_damage: false
-theme: ShadesOfPurple
