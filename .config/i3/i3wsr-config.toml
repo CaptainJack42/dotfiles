@@ -1,0 +1,26 @@
+[icons]
+# font awesome
+firefox = ""
+Alacritty = ""
+Thunderbird = ""
+Gpick = ""
+Nautilus = "📘"
+# smile emoji
+MyNiceProgram = "😛"
+
+[aliases]
+TelegramDesktop = "Telegram"
+"Org\\.gnome\\.Nautilus" = "Nautilus"
+"Gimp-\\d\\.\\d\\d" = "Gimp"
+"Microsoft Teams - Preview" = "Teams"
+"Minecraft* \\.\\.\\" = "Minecraft"
+
+[general]
+separator = "  "
+# default_icon = "" # ""
+wm_property = "class"
+
+[options]
+remove_duplicates = true
+no_names = false
+no_icon_names = true

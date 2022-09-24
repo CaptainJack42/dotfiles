@@ -22,66 +22,28 @@ set $not_mod Mod4
 
 ################# Define the movements keys - variables
 
-# This is setup for qwerty
-# set $right to m if using azerty keyboard
+# This is setup for qwerty / qwertz
 set $up k
 set $down j
 set $left h
 set $right l
-
-################# set var for toolwait script.
-
-set $toolwait ~/.config/i3/scripts/i3-toolwait.py
 
 ################# Single and Dual screen
 
 # current displays
 exec --no-startup-id xrandr --output DP-0 --mode 3840x2160+0+0 HDMI-0 --res 1920x1080+2160+960
 
-# setting variables for later use
-# use xrandr and/or arandr to know the names of your monitors
-# use this line to tell which monitor is on the right
-# xrandr --output DVI-I-2 --right-of DVI-I-1 --auto
-# exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
-# exec --no-startup-id xrandr --output DVI-I-0 --right-of HDMI-0 --auto
-# exec --no-startup-id xrandr --output DVI-1 --right-of DVI-0 --auto
-# exec --no-startup-id xrandr --output DVI-D-1 --right-of DVI-I-1 --auto
-# exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
-
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 # using names instead of numbers for the workspaces
-set $ws1 "shell"
-set $ws2 "Browser"
-set $ws3 "Vim"
-set $ws4 "Spotify"
 
 # current setup
 
 set $firstMonitor HDMI-0
 set $secondMonitor DP-0
 
-# Other Examples
+# Bind workspaces to specific monitors
 
-#set $firstMonitor DP3
-#set $secondMonitor LVDS1
-
-#set $firstMonitor DVI-I-0
-#set $secondMonitor HDMI-0
-
-#set $firstMonitor DVI-0
-#set $secondMonitor DVI-1
-
-#set $firstMonitor DVI-I-1
-#set $secondMonitor DVI-D-1
-
-#set $firstMonitor HDMI-1
-#set $secondMonitor HDMI-2
-
-workspace $ws1 output $firstMonitor 
-workspace $ws2 output $secondMonitor
-workspace $ws3 output $firstMonitor
-workspace $ws4 output $secondMonitor
 workspace 1    output $firstMonitor
 workspace 2    output $firstMonitor
 workspace 3    output $firstMonitor
@@ -106,129 +68,94 @@ workspace 21   output $secondMonitor
 workspace 22   output $secondMonitor
 
 # switch to workspace
-bindsym $mod+less workspace $ws1
-bindsym $mod+m    workspace $ws1
-bindsym $mod+y    workspace $ws2
-bindsym $mod+comma workspace $ws2
-bindsym $mod+x    workspace $ws3
-bindsym $mod+period workspace $ws3
-bindsym $mod+c    workspace $ws4
-bindsym $mod+minus workspace $ws4
-bindsym $mod+1    workspace 1
-bindsym $mod+2    workspace 2
-bindsym $mod+3    workspace 3
-bindsym $mod+4    workspace 4
-bindsym $mod+5    workspace 5
-bindsym $mod+6    workspace 6
-bindsym $mod+7    workspace 7
-bindsym $mod+8    workspace 8
-bindsym $mod+9    workspace 9
-bindsym $mod+0    workspace 10
-bindsym $mod+F1   workspace 11
-bindsym $mod+F2   workspace 12
-bindsym $mod+F3   workspace 13
-bindsym $mod+F4   workspace 14
-bindsym $mod+F5   workspace 15
-bindsym $mod+F6   workspace 16
-bindsym $mod+F7   workspace 17
-bindsym $mod+F8   workspace 18
-bindsym $mod+F9   workspace 19
-bindsym $mod+F10  workspace 20
-bindsym $mod+F11  workspace 21
-bindsym $mod+F12  workspace 22
+bindsym $mod+1    workspace number 1
+bindsym $mod+2    workspace number 2
+bindsym $mod+3    workspace number 3 
+bindsym $mod+4    workspace number 4 
+bindsym $mod+5    workspace number 5 
+bindsym $mod+6    workspace number 6 
+bindsym $mod+7    workspace number 7 
+bindsym $mod+8    workspace number 8 
+bindsym $mod+9    workspace number 9 
+bindsym $mod+0    workspace number 10
+bindsym $mod+F1   workspace number 11
+bindsym $mod+F2   workspace number 12
+bindsym $mod+F3   workspace number 13
+bindsym $mod+F4   workspace number 14
+bindsym $mod+F5   workspace number 15
+bindsym $mod+F6   workspace number 16
+bindsym $mod+F7   workspace number 17
+bindsym $mod+F8   workspace number 18
+bindsym $mod+F9   workspace number 19
+bindsym $mod+F10  workspace number 20
+bindsym $mod+F11  workspace number 21
+bindsym $mod+F12  workspace number 22
 
 
 # move focused container to workspace and focus workspace
-bindsym $mod+Shift+less move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+m move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+y    move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+comma    move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+x    move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+period    move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+c    move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+minus    move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+1    move container to workspace 1;    workspace 1
-bindsym $mod+Shift+2    move container to workspace 2;    workspace 2
-bindsym $mod+Shift+3    move container to workspace 3;    workspace 3
-bindsym $mod+Shift+4    move container to workspace 4;    workspace 4
-bindsym $mod+Shift+5    move container to workspace 5;    workspace 5
-bindsym $mod+Shift+6    move container to workspace 6;    workspace 6
-bindsym $mod+Shift+7    move container to workspace 7;    workspace 7
-bindsym $mod+Shift+8    move container to workspace 8;    workspace 8
-bindsym $mod+Shift+9    move container to workspace 9;    workspace 9
-bindsym $mod+Shift+0    move container to workspace 10;   workspace 10
-bindsym $mod+Shift+F1   move container to workspace 11;   workspace 11
-bindsym $mod+Shift+F2   move container to workspace 12;   workspace 12
-bindsym $mod+Shift+F3   move container to workspace 13;   workspace 13
-bindsym $mod+Shift+F4   move container to workspace 14;   workspace 14
-bindsym $mod+Shift+F5   move container to workspace 15;   workspace 15
-bindsym $mod+Shift+F6   move container to workspace 16;   workspace 16
-bindsym $mod+Shift+F7   move container to workspace 17;   workspace 17
-bindsym $mod+Shift+F8   move container to workspace 18;   workspace 18
-bindsym $mod+Shift+F9   move container to workspace 19;   workspace 19
-bindsym $mod+Shift+F10  move container to workspace 20;   workspace 20
-bindsym $mod+Shift+F11  move container to workspace 21;   workspace 21
-bindsym $mod+Shift+F12  move container to workspace 22;   workspace 22
+bindsym $mod+Shift+1    move container to workspace number 1;    workspace number 1
+bindsym $mod+Shift+2    move container to workspace number 2;    workspace number 2
+bindsym $mod+Shift+3    move container to workspace number 3;    workspace number 3  
+bindsym $mod+Shift+4    move container to workspace number 4;    workspace number 4  
+bindsym $mod+Shift+5    move container to workspace number 5;    workspace number 5  
+bindsym $mod+Shift+6    move container to workspace number 6;    workspace number 6  
+bindsym $mod+Shift+7    move container to workspace number 7;    workspace number 7  
+bindsym $mod+Shift+8    move container to workspace number 8;    workspace number 8  
+bindsym $mod+Shift+9    move container to workspace number 9;    workspace number 9  
+bindsym $mod+Shift+0    move container to workspace number 10;   workspace number 10  
+bindsym $mod+Shift+F1   move container to workspace number 11;   workspace number 11
+bindsym $mod+Shift+F2   move container to workspace number 12;   workspace number 12
+bindsym $mod+Shift+F3   move container to workspace number 13;   workspace number 13 
+bindsym $mod+Shift+F4   move container to workspace number 14;   workspace number 14 
+bindsym $mod+Shift+F5   move container to workspace number 15;   workspace number 15 
+bindsym $mod+Shift+F6   move container to workspace number 16;   workspace number 16 
+bindsym $mod+Shift+F7   move container to workspace number 17;   workspace number 17 
+bindsym $mod+Shift+F8   move container to workspace number 18;   workspace number 18 
+bindsym $mod+Shift+F9   move container to workspace number 19;   workspace number 19 
+bindsym $mod+Shift+F10  move container to workspace number 20;   workspace number 20
+bindsym $mod+Shift+F11  move container to workspace number 21;   workspace number 21
+bindsym $mod+Shift+F12  move container to workspace number 22;   workspace number 22
 
 # move focused container to workspace without focusing workspace
-bindsym $mod+$not_mod+less move container to workspace $ws1
-bindsym $mod+$not_mod+m move container to workspace $ws1
-bindsym $mod+$not_mod+y    move container to workspace $ws2
-bindsym $mod+$not_mod+comma    move container to workspace $ws2
-bindsym $mod+$not_mod+x    move container to workspace $ws3
-bindsym $mod+$not_mod+period    move container to workspace $ws3
-bindsym $mod+$not_mod+c    move container to workspace $ws4
-bindsym $mod+$not_mod+minus    move container to workspace $ws4
-bindsym $mod+$not_mod+1    move container to workspace 1
-bindsym $mod+$not_mod+2    move container to workspace 2
-bindsym $mod+$not_mod+3    move container to workspace 3
-bindsym $mod+$not_mod+4    move container to workspace 4
-bindsym $mod+$not_mod+5    move container to workspace 5
-bindsym $mod+$not_mod+6    move container to workspace 6
-bindsym $mod+$not_mod+7    move container to workspace 7
-bindsym $mod+$not_mod+8    move container to workspace 8
-bindsym $mod+$not_mod+9    move container to workspace 9
-bindsym $mod+$not_mod+0    move container to workspace 10
-bindsym $mod+$not_mod+F1   move container to workspace 11
-bindsym $mod+$not_mod+F2   move container to workspace 12
-bindsym $mod+$not_mod+F3   move container to workspace 13
-bindsym $mod+$not_mod+F4   move container to workspace 14
-bindsym $mod+$not_mod+F5   move container to workspace 15
-bindsym $mod+$not_mod+F6   move container to workspace 16
-bindsym $mod+$not_mod+F7   move container to workspace 17
-bindsym $mod+$not_mod+F8   move container to workspace 18
-bindsym $mod+$not_mod+F9   move container to workspace 19
-bindsym $mod+$not_mod+F10  move container to workspace 20
-bindsym $mod+$not_mod+F11  move container to workspace 21
-bindsym $mod+$not_mod+F12  move container to workspace 22
+bindsym $mod+$not_mod+1    move container to workspace number 1
+bindsym $mod+$not_mod+2    move container to workspace number 2
+bindsym $mod+$not_mod+3    move container to workspace number 3  
+bindsym $mod+$not_mod+4    move container to workspace number 4  
+bindsym $mod+$not_mod+5    move container to workspace number 5  
+bindsym $mod+$not_mod+6    move container to workspace number 6  
+bindsym $mod+$not_mod+7    move container to workspace number 7  
+bindsym $mod+$not_mod+8    move container to workspace number 8  
+bindsym $mod+$not_mod+9    move container to workspace number 9  
+bindsym $mod+$not_mod+0    move container to workspace number 10  
+bindsym $mod+$not_mod+F1   move container to workspace number 11
+bindsym $mod+$not_mod+F2   move container to workspace number 12
+bindsym $mod+$not_mod+F3   move container to workspace number 13 
+bindsym $mod+$not_mod+F4   move container to workspace number 14 
+bindsym $mod+$not_mod+F5   move container to workspace number 15 
+bindsym $mod+$not_mod+F6   move container to workspace number 16 
+bindsym $mod+$not_mod+F7   move container to workspace number 17 
+bindsym $mod+$not_mod+F8   move container to workspace number 18 
+bindsym $mod+$not_mod+F9   move container to workspace number 19 
+bindsym $mod+$not_mod+F10  move container to workspace number 20
+bindsym $mod+$not_mod+F11  move container to workspace number 21
+bindsym $mod+$not_mod+F12  move container to workspace number 22
+
 
 workspace_auto_back_and_forth yes
 
 # Change Output Monitor for Workspace
 bindsym $mod+Shift+Tab move workspace to output $firstMonitor $secondMonitor
 
-################# menu's in arcolinux
+# Start i3 workspace rename
+exec_always --no-startup-id /usr/bin/i3wsr --config ~/.config/i3/i3wsr-config.toml
+
+################# menu's
 
 # start dmenu
 # bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#131620' -nf '#61AFEF' -sb '#61AFEF' -sf '#131620' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 # start rofi
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-7/launcher.sh
-
-# start xfce4-appfinder
-# bindsym mod1+F2 exec --no-startup-id xfce4-appfinder --collapsed
-
-# start xfce-appfinder
-# bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
-
-# start xlunch app launcher
-# bindsym mod1+F5 exec --no-startup-id xlunch --config ~/.config/xlunch/default.conf --input ~/.config/xlunch/entries.dsv
-
-# start rofi full
-# bindsym $mod+F11 exec --no-startup-id "rofi -font 'Noto Sans 13' -theme-str 'window {width: 100%;height: 100%;}' -show drun"
-
-# start rofi small
-# bindsym $mod+F12 exec --no-startup-id rofi -show drun -font "Noto Sans 13"
 
 ################# how to exit, logoff, suspend, ...
 bindsym control+mod1+s exec --no-startup-id ~/.config/rofi/powermenu/type-5/powermenu.sh
@@ -449,9 +376,9 @@ font pango:monospace 12
 # assign [class="Geary|Evolution"]                                                    → 9
 
 # Workspace 10 music related
-assign [class="Spotify|spotify"]                                                    → $ws4
+assign [class="Spotify|spotify"]                                                    → 12: music
 # fix for spotify not moving to workspace 10
-for_window [class="Spotify"] move to workspace $ws4
+for_window [class="Spotify"] move to workspace number 12: music
 
 ################# autostart - execute applications at boot time
 
@@ -475,34 +402,34 @@ exec_always --no-startup-id autotiling
 # exec --no-startup-id evolution
 
 # VSCode
-# assign [class="Code"] $ws3
-#exec --no-startup-id '~/.config/i3/scripts/on_workspace_init.py "$ws3","i3-msg layout tabbed; exec code"'
-# exec --no-startup-id i3-msg 'workspace $ws3; layout toggle tabbed; exec code'
+# assign [class="Code"] $ws_vim
+#exec --no-startup-id '~/.config/i3/scripts/on_workspace_init.py "$ws_vim","i3-msg layout tabbed; exec code"'
+# exec --no-startup-id i3-msg 'workspace $ws_vim; layout toggle tabbed; exec code'
 # for_window [class="Code"] focus parent; layout tabbed; focus
-# exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/layouts/workspace-code.json; exec code'
+# exec --no-startup-id i3-msg 'workspace $ws_vim; append_layout ~/.config/i3/layouts/workspace-code.json; exec code'
 
 # Terminal
-# assign [class="Terminator"] $ws1
-# exec --no-startup-id i3-msg "workspace $ws1; exec alacritty"
-assign [instance="main_shell"] $ws1
+# assign [class="Terminator"] $ws_shell
+# exec --no-startup-id i3-msg "workspace $ws_shell; exec alacritty"
+assign [instance="main_shell"] $ws_shell
 exec --no-startup-id i3-msg "alacritty --class main_shell"
-# for_window [class="Alacritty"] move container to $ws1
+# for_window [class="Alacritty"] move container to $ws_shell
 
 # Browser
-# assign [class="firefox"] $ws2
-# for_window [class="Firefox"] move container to $ws2
-exec --no-startup-id i3-msg "firefox; move container to workspace $ws2"
+# assign [class="firefox"] $ws_browser
+# for_window [class="Firefox"] move container to $ws_browser
+exec --no-startup-id i3-msg "firefox; move container to workspace $ws_browser"
 # for_window [class="firefox"] focus
 
 # Vim / Terminal
-assign [instance="main_vim"] $ws3
+assign [instance="main_vim"] $ws_vim
 exec --no-startup-id i3-msg "'alacritty --class main_vim -e nvim'"
-# for_window [class="neovide"] move container to $ws3 
+# for_window [class="neovide"] move container to $ws_vim 
 
 # Music
-# assign [class="^Spotify$"] $ws4
+# assign [class="^Spotify$"] $ws_music
 exec --no-startup-id spotify
-for_window [class="^Spotify$"] floating disable; assign $ws4
+for_window [class="^Spotify$"] floating disable; assign $ws_music
 # for_window [class="Spotify"] focus
 
 
@@ -637,7 +564,7 @@ bindsym control+mod1+f exec --no-startup-id firefox;focus
 # bindsym control+mod1+g exec --no-startup-id chromium;focus
 
 # vim
-bindsym $mod+space exec --no-startup-id i3-msg "exec alacritty -e nvim"
+# bindsym $mod+space exec --no-startup-id i3-msg "exec alacritty -e nvim"
 # Text Editor
 # bindsym $mod+F2 exec --no-startup-id geany;focus
 # bindsym $mod+F2 exec --no-startup-id atom;focus
