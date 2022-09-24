@@ -148,7 +148,13 @@ local config = {
             -- terminal_colors = true,
           })
         end,
-      }
+      },
+      ["junegunn/fzf"] = {
+        disable = false,
+        run = "fzf#install",
+      },
+      ["junegunn/fzf.vim"] = { disable = false },
+      ["airblade/vim-rooter"] = { disable = false },
     },
     ["mason-lspconfig"] = {
       ensure_installed = { "clangd" },
