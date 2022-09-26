@@ -13,14 +13,16 @@ TelegramDesktop = "Telegram"
 "Org\\.gnome\\.Nautilus" = "Nautilus"
 "Gimp-\\d\\.\\d\\d" = "Gimp"
 "Microsoft Teams - Preview" = "Teams"
-"Minecraft* \\.\\.\\" = "Minecraft"
+"org.jabref.gui.JabRef*" = "JabRef"
+"Minecraft*" = "Minecraft"
+"libreoffice-*" = "LibreOffice"
 
 [general]
-separator = "  "
+separator = " | "
 # default_icon = "" # ""
 wm_property = "class"
 
 [options]
-remove_duplicates = true
+remove_duplicates = false
 no_names = false
 no_icon_names = true
