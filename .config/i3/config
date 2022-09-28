@@ -301,9 +301,11 @@ bindsym $mod+a focus parent
 # old resize keybindings
 # resize window (you can also use the mouse for that)
 
-bindsym $mod+r mode "resize"
+set $mode_resize resize (h) shrink width, (l) grow width, (k) shrink height, (j) grow height, (Esc/Return) exit
 
-mode "resize" {
+bindsym $mod+r mode "$mode_resize"
+
+mode "$mode_resize" {
       #  These bindings trigger as soon as you enter the resize mode
 
       #  Pressing left will shrink the window’s width.
