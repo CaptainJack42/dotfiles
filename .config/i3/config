@@ -644,7 +644,8 @@ for_window [class="^Vlc$"] floating disable
 # for_window [class="Xfce4-settings-manager"] floating disable
 # for_window [class="Xfce4-taskmanager"] floating enable
 
-for_window [title="Picture-in-Picture"] floating enable; sticky enable
+for_window [title="Picture-in-Picture"] floating enable
+for_window [title="Picture-in-Picture"] sticky enable
 
 # for_window [instance="gimp"] floating disable
 for_window [instance="script-fu"] border normal
