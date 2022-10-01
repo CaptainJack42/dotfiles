@@ -282,7 +282,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+g layout toggle tabbed splith
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -413,19 +413,19 @@ exec_always --no-startup-id autotiling
 # Terminal
 # assign [class="Terminator"] $ws_shell
 # exec --no-startup-id i3-msg "workspace $ws_shell; exec alacritty"
-assign [instance="main_shell"] workspace number 1
-exec --no-startup-id i3-msg "alacritty --class main_shell"
+# assign [instance="main_shell"] workspace number 1
+# exec --no-startup-id i3-msg "alacritty --class main_shell"
 # for_window [class="Alacritty"] move container to $ws_shell
 
 # Browser
 # assign [class="firefox"] $ws_browser
 # for_window [class="Firefox"] move container to $ws_browser
-exec --no-startup-id i3-msg "firefox; move container to workspace number 11"
+# exec --no-startup-id i3-msg "firefox; move container to workspace number 11"
 # for_window [class="firefox"] focus
 
 # Vim / Terminal
-assign [instance="main_vim"] workspace number 2
-exec --no-startup-id i3-msg "'alacritty --class main_vim'"
+# assign [instance="main_vim"] workspace number 2
+# exec --no-startup-id i3-msg "'alacritty --class main_vim'"
 # for_window [class="neovide"] move container to $ws_vim 
 
 # Music
@@ -630,7 +630,7 @@ bindsym Print exec --no-startup-id flameshot gui
 # for_window [class="Font-manager"] floating enable
 # for_window [class="qt5ct|Lxappearance] floating enable
 # for_window [class="Nitrogen"] floating disable
-for_window [class="Pavucontrol"] floating disable
+# for_window [class="Pavucontrol"] floating disable
 # for_window [class="Peek"] floating enable
 # for_window [class="^Skype$"] floating enable
 for_window [class="^Spotify$"] floating disable
@@ -643,6 +643,8 @@ for_window [class="^Vlc$"] floating disable
 # for_window [class="Xfce4-appfinder"] floating enable
 # for_window [class="Xfce4-settings-manager"] floating disable
 # for_window [class="Xfce4-taskmanager"] floating enable
+
+for_window [title="Picture-in-Picture"] floating enable; sticky enable
 
 # for_window [instance="gimp"] floating disable
 for_window [instance="script-fu"] border normal
