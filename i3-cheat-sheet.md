@@ -1,24 +1,19 @@
 # i3-WM Cheatsheat
 
-- Modkey: **`META`** (`mod`)
+- Modkey: **`ALT`** (`mod`)
 
 Config location: `$HOME/.config/i3/config`
-i3status config location: `$HOME/.config/i3/i3status.conf` (adjust status command in config)
+i3status config location: `$HOME/.config/i3status-rs/config.toml` (adjust status command in config)
 
 ## Hotkeys for Applications
 
-- Dmenu: `mod + D`
+- Rofi: `mod + D`
 - Terminal: `mod + Enter` / `ctrl + alt_left + T` / `mod + KP_Enter`
-- Arcolinux Welcome app: `ctrl + alt_left + w`
-- Archlinux Tweak Tool: `ctrl + alt_left + e`
-- Rofi Theme Selector: `ctrl + alt_left + r`
-- Pavucontrol: `ctrl + alt_left + u`
 - Firefox: `ctrl + alt_left + f`
-- Dolphing: `mod + e` / `mod + Shift + Enter` / `mod + Shift + KP_Enter`
 - Flameshot: `Print`
 - Toggle status Bar: `mod + b`
 - Mode System Power: `ctrl + alt_left + x`
-- arch logout Screen: `ctrl + alt_left + s`
+- Rofi power menu: `ctrl + alt_left + s`
 - kill focused Window: `mod + q` / `mod + Shift + q`
 - xkill: `mod + esc`
 
@@ -78,28 +73,24 @@ Enter with `mod + r`
 - grow height: `j` / `down`
 - shrink height: `k` / `up`
 - grow width: `l` / `right`
-- escape resize mode: `esc` / `enter` / `mod + r`
+- exit resize mode: `esc` / `enter` / `mod + r`
 
 ### Workspace management
 
-Workspaces with *odd* numbers, the Terminal and Code Workspace will always be on HDMI-0 (primary Screen) and Workspaces with *even* numbers, the Browser and Spotify Workspace will be on DP-0 (secondary (big) Screen).
+Workspace 1-0 are on primary screen and F1-F12 are on secondary screen.
 
-- Workspace Terminal:       `mod + <`
-- Workspace Browser:        `mod + y`
-- Workspace Code:           `mod + x`
-- Workspace Spotify:        `mod + c`
-- Other Workspaces:         `mod + <1-10, F1-F12, '<', y, x, c>`
+- Other Workspaces:         `mod + <1-10, F1-F12>`
 - Next Workspace:           `alt_left + tab` / `ctrl + alt_left + up`
 - Previous Workspace:       `alt_left + Shift + tab` / `ctrl + alt_left + down`
 - Workspace back and forth: `mod + tab`
-- Move focused window (container) to Workspace: `mod + ctrl + <1-10, F1-F12, '<', y, x, c>`
+- Move focused window (container) to Workspace (without switching to the workspace): `mod + not_mod + <1-10, F1-F12, '<', y, x, c>`
 - Move focused window (container) to Workspace: `mod + Shift + <1-10, F1-F12, '<', y, x, c>`
-- Move entire Workspace to other Monitor: `mod + alt_left + y`
+- Move entire Workspace to other Monitor: `mod + Shift + Tab`
 
 The previous Workspace can also be accessed by pressing the Keybind to the current Workspace (e.g. Start on **Workspace 1** -> `mod + 5` -> **Workspace 5** -> `mod + 5` -> **Workspace 1**)
 
 ## i3 management
 
-<!-- - reload config file: `mod + Shift + c` -->
+- reload config file: `mod + Shift + c`
 - restart i3: `mod + Shift + r`
 - exit i3 (don't use this i guess): `mod + Shift + e`
