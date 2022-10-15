@@ -181,30 +181,13 @@ mode "$mode_system" {
 }
 
 bindsym $mod+Pause mode "$mode_system"
-# set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
-# mode "$mode_system" {
-#     bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
-#     bindsym l exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout, mode "default"
-#     bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
-#     bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
-#     bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
-#     bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
-#
-#     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
-
-# ArcoLinux Logout
-# bindsym $mod+Ctrl+s exec --no-startup-id archlinux-logout
-# bindsym $mod+X exec --no-startup-id archlinux-logout
 
 ################# reload changed configuration     
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # reload the configuration file
-# bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload
 
 ################# Stopping an application          
 
@@ -286,6 +269,9 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# Pin floating windows
+bindsym $mod+$not_mod+p sticky toggle
 
 # focus the child container
 # bindsym $mod+d focus child
@@ -392,42 +378,6 @@ for_window [class="Spotify"] move to workspace number 12:[F2]
 # Autotiling
 exec_always --no-startup-id autotiling
 
-
-# Text-editor
-# exec --no-startup-id geany
-# exec --no-startup-id atom
-
-# File manager
-# exec --no-startup-id thunar
-
-# Mail clients
-# exec --no-startup-id evolution
-
-# VSCode
-# assign [class="Code"] $ws_vim
-#exec --no-startup-id '~/.config/i3/scripts/on_workspace_init.py "$ws_vim","i3-msg layout tabbed; exec code"'
-# exec --no-startup-id i3-msg 'workspace $ws_vim; layout toggle tabbed; exec code'
-# for_window [class="Code"] focus parent; layout tabbed; focus
-# exec --no-startup-id i3-msg 'workspace $ws_vim; append_layout ~/.config/i3/layouts/workspace-code.json; exec code'
-
-# Terminal
-# assign [class="Terminator"] $ws_shell
-# exec --no-startup-id i3-msg "workspace $ws_shell; exec alacritty"
-# assign [instance="main_shell"] workspace number 1
-# exec --no-startup-id i3-msg "alacritty --class main_shell"
-# for_window [class="Alacritty"] move container to $ws_shell
-
-# Browser
-# assign [class="firefox"] $ws_browser
-# for_window [class="Firefox"] move container to $ws_browser
-# exec --no-startup-id i3-msg "firefox; move container to workspace number 11"
-# for_window [class="firefox"] focus
-
-# Vim / Terminal
-# assign [instance="main_vim"] workspace number 2
-# exec --no-startup-id i3-msg "'alacritty --class main_vim'"
-# for_window [class="neovide"] move container to $ws_vim 
-
 # Music
 # assign [class="^Spotify$"] $ws_music
 exec --no-startup-id spotify
@@ -443,15 +393,6 @@ for_window [class="^Spotify$"] floating disable; assign workspace number 12
 # Authentication dialog
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Updater
-# exec --no-startup-id pamac-tray
-
-# bluetooth
-# exec --no-startup-id blueberry-tray
-
-# network
-# exec --no-startup-id nm-applet
-
 # num lock activated
 exec_always --no-startup-id numlockx on
 
@@ -459,190 +400,44 @@ exec_always --no-startup-id numlockx on
 for_window [class="^Nextcloud$"] move scratchpad
 exec --no-startup-id nextcloud
 
-# timeshift
-for_window [class="^Timeshift-gtk$"] move scratchpad
-# exec --no-startup-id timeshift-launcher # doesn't work, needs root privileges
-# insync
-# exec --no-startup-id insync start
-
-# volume
-# exec --no-startup-id pasystray
-# exec --no-startup-id volumeicon
-
-# variety
-# exec --no-startup-id variety
-
-# clipman
-# exec --no-startup-id xfce4-clipman
-
-# Conky
-# exec --no-startup-id conky -c ~/.config/i3/system-overview
-
 # feh sets wallpaper
-# exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/pixelart_night_stars_clouds_trees_cozy.png
-exec_always --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpaper/landscape/* &
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/pixelart_night_stars_clouds_trees_cozy.png
 
 # Polybar
 # exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 ################# system applications       
 
-# exec --no-startup-id xfce4-power-manager &
-# ommitted next line to get super key to bring up the menu in xfce and avoid error then in i3
-# IF xfsettingsd is activated you can not change themes
-# exec --no-startup-id xfsettingsd &
-# exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-
 #### Audio Effects + Control
 exec_always --no-startup-id i3-msg "easyeffects --gapplication-service -l mic_noise_reduction"
 
 ################# applications keyboard shortcuts  
 
-# not workspace related
-
-# ArcoLinux Welcome App
-# bindsym control+mod1+w exec --no-startup-id arcolinux-welcome-app
-
-# ArchLinux Tweak Tool
-# bindsym control+mod1+e exec --no-startup-id archlinux-tweak-tool
-
-# conky
-# bindsym $mod+c exec --no-startup-id conky-toggle
-# bindsym $mod+control+c exec --no-startup-id killall conky
-# bindsym control+mod1+Next exec --no-startup-id conky-rotate -n
-# bindsym control+mod1+Prior exec --no-startup-id conky-rotate -p
-
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty;focus
 bindsym $mod+KP_Enter exec --no-startup-id alacritty;focus
 bindsym control+mod1+t exec --no-startup-id alacritty; focus
-# bindsym control+mod1+Return exec --no-startup-id terminator; focus
-# bindsym control+mod1+KP_Enter exec --no-startup-id terminator; focus
-# bindsym F12 exec --no-startup-id xfce4-terminal --drop-down; focus
-
-# System monitor
-# bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
-
-# settings
-# bindsym control+mod1+m exec --no-startup-id xfce4-settings-manager
-
-# catfish
-# bindsym control+mod1+c exec --no-startup-id catfish;focus
-
-# archlinux-logout
-# bindsym control+mod1+s exec --no-startup-id archlinux-logout
-# bindsym control+mod1+l exec --no-startup-id archlinux-logout
-
-# rofi theme selector
-# bindsym control+mod1+r exec --no-startup-id rofi-theme-selector
-
-# arcolinux conflict
-# bindsym $mod+m exec --no-startup-id pragha;focus
-
-# htop
-# arcolinux conflict
-# bindsym $mod+h exec --no-startup-id htop;focus
-
-# pavucontrol
-# bindsym control+mod1+u exec --no-startup-id pavucontrol
-
-# start xfce-appfinder
-# arcolinux does not seem to work
-# bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
-
-# pamac-manager
-# bindsym control+mod1+p exec --no-startup-id pamac-manager
 
 # xkill
 bindsym --release $mod+Escape exec xkill
 
 # Function Keybinds
 # Browser
-# bindsym $mod+F1 exec --no-startup-id exo-open --launch webbrowser;focus
 # qwerty/azerty conflict with w
-# bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser;focus
 bindsym control+mod1+f exec --no-startup-id firefox;focus
-# bindsym control+mod1+v exec --no-startup-id vivaldi-stable;focus
-# bindsym control+mod1+g exec --no-startup-id chromium;focus
-
-# vim
-# bindsym $mod+space exec --no-startup-id i3-msg "exec alacritty -e nvim"
-# Text Editor
-# bindsym $mod+F2 exec --no-startup-id geany;focus
-# bindsym $mod+F2 exec --no-startup-id atom;focus
-
-# Basic Draw Tool
-# bindsym $mod+F3 exec --no-startup-id inkscape;focus
-
-# Advanced Draw Tool
-# bindsym $mod+F4 exec --no-startup-id gimp;focus
-
-# document comparison
-# bindsym $mod+F5 exec --no-startup-id meld;focus
-# bindsym control+mod1+i exec --no-startup-id nitrogen;focus
-
-# video player
-# bindsym $mod+F6 exec --no-startup-id vlc;focus
-
-# virtual machine
-# bindsym $mod+F7 exec --no-startup-id virtualbox;focus
 
 # file management
 for_window [class="Thunar"] focus
 bindsym $mod+e exec --no-startup-id i3-msg "exec alacritty -e ranger"
-# bindsym $mod+Shift+Return exec --no-startup-id dolphin;focus
-# bindsym $mod+Shift+KP_Enter exec --no-startup-id dolphin;focus
-# bindsym control+mod1+b exec --no-startup-id thunar;focus
-
-# mail application
-# bindsym $mod+F9 exec --no-startup-id evolution;focus
-# bindsym $mod+F9 exec --no-startup-id geary;focus
-# bindsym control+mod1+e exec --no-startup-id geary;focus
-
-# music
-# bindsym $mod+F10 exec --no-startup-id spotify;focus
-# bindsym control+mod1+m exec --no-startup-id spotify;focus
 
 ################# screenshots                      
 
 bindsym Print exec --no-startup-id flameshot gui
-# bindsym Control+Print exec --no-startup-id xfce4-screenshooter
-# bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
-# bindsym $mod+Control+Print exec --no-startup-id flameshot gui
-# bindsym shift+Print exec --no-startup-id shutter
 
 ################# floating or tiled rules         
 
-# floating enabled from some programs - find with xprop
-
-# for_window [class="Arcolinux-welcome-app.py"] floating enable
-# for_window [class="Archlinux-tweak-tool.py"] floating enable
-# for_window [class="Arcolinux-calamares-tool.py"] floating enable
-# for_window [class="Bleachbit"] floating disable
-# for_window [class="Blueberry.py"] floating enable
-# for_window [class="Brasero"] floating disable
-# for_window [class="Galculator"] floating enable
-# for_window [class="Gnome-disks"] floating disable
-# for_window [class="^Gnome-font-viewer$"] floating enable
-# for_window [class="^Gpick$"] floating enable
-# for_window [class="Hexchat"] floating disable
-# for_window [class="Imagewriter"] floating enable
-# for_window [class="Font-manager"] floating enable
-# for_window [class="qt5ct|Lxappearance] floating enable
-# for_window [class="Nitrogen"] floating disable
-# for_window [class="Pavucontrol"] floating disable
-# for_window [class="Peek"] floating enable
-# for_window [class="^Skype$"] floating enable
 for_window [class="^Spotify$"] floating disable
-# for_window [class="System-config-printer.py"] floating enable
-# for_window [class="Unetbootin.elf"] floating enable
-# for_window [class="Usb-creator-gtk"] floating enable
 for_window [class="^Vlc$"] floating disable
-# for_window [class="Wine"] floating disable
-# for_window [class="Xfburn"] floating disable
-# for_window [class="Xfce4-appfinder"] floating enable
-# for_window [class="Xfce4-settings-manager"] floating disable
-# for_window [class="Xfce4-taskmanager"] floating enable
 
 for_window [title="Picture-in-Picture"] floating enable
 for_window [title="Picture-in-Picture"] sticky enable
@@ -660,9 +455,6 @@ for_window [title="^Terminator Preferences$"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 for_window [window_role="setup"] floating enable
-for_window [class="Minecraft* 1.19.2"] gaps inner 0
-for_window [class="Minecraft* 1.19.2"] gaps outer 0
-for_window [class="Minecraft* 1.19.2"] border none
 
 ################# give focus to applications       
 
@@ -733,12 +525,6 @@ set $border_size 2
 # Border control
 hide_edge_borders none
 bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
-
-# changing border style
-# super+t in arcolinux is starting terminal
-# bindsym $mod+x border normal
-# bindsym $mod+y border pixel 1
-# bindsym $mod+u border none
 
 new_window pixel $border_size
 #new_window normal
@@ -932,11 +718,11 @@ client.background       $col_black
 ################# Scratchpad
 
 # move the currently focused window to the scratchpad
-bindsym Mod4+Shift+minus move scratchpad
+bindsym $not_mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym Mod4+minus scratchpad show
+bindsym $not_mod+minus scratchpad show
 
 ################# mouse settings in i3             
 
