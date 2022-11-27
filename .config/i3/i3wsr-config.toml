@@ -16,6 +16,7 @@ TelegramDesktop = "Telegram"
 "org.jabref.gui.JabRef*" = "JabRef"
 "Minecraft*" = "Minecraft"
 "libreoffice-*" = "LibreOffice"
+"com-st-microxplorer-maingui-STM32CubeMX" = "CubeMX"
 
 [general]
 separator = " | "
@@ -23,6 +24,6 @@ separator = " | "
 wm_property = "class"
 
 [options]
-remove_duplicates = false
+remove_duplicates = true
 no_names = false
 no_icon_names = true

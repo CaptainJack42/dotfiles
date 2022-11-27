@@ -526,7 +526,7 @@ set $border_size 2
 hide_edge_borders none
 bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 
-new_window pixel $border_size
+# new_window pixel $border_size
 #new_window normal
 # new_window none
 
@@ -603,7 +603,7 @@ mode "$mode_gaps_outer" {
 ################# picom of i3wm                  
 
 # if you want transparency on non-focused windows, ...
-exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
+# exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 
 bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
@@ -620,10 +620,11 @@ set $col_grey    #ABB2BF
 
 
 bar {
-    height 24
+    height 20
     workspace_buttons yes
-	font pango:Play, FontAwesome 10
-    # font pango:DejaVu Sans Mono, material-nf 12
+	# font pango:Play, FontAwesome 10
+	font pango:Noto Sans Regular, FontAwesome 10
+    # font pango:DejaVu Sans Mono, material-nf 10
 	position top
     # position bottom
 
