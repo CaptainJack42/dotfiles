@@ -15,7 +15,8 @@
 
 ---
 
-- Editor: [neovim](https://github.com/neovim/neovim) (with [AstroNvim](https://github.com/AstroNvim/AstroNvim))
+- Editor: [neovim](https://github.com/neovim/neovim) (with [nvchad](https://github.com/NvChad/NvChad))
+- Alternatively the old config with AstroNvim (with [AstroNvim](https://github.com/AstroNvim/AstroNvim))
 - File Manager: [Ranger](https://github.com/ranger/ranger)
 - Spotify: [spicetify-cli](https://github.com/spicetify/spicetify-cli)
 - System Monitor: [bottom](https://github.com/clementtsang/bottom)
