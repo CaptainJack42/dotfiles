@@ -73,11 +73,11 @@ M.rust = {
 
 M.session_manager = {
   n = {
-    ["<leader>Sl"] = { "<cmd>SessionManager! load_last_session <CR>", "Load last session" },
-    ["<leader>Ss"] = { "<cmd>SessionManager! save_current_session <CR>", "Save this session" },
-    ["<leader>Sd"] = { "<cmd>SessionManager! delete_session <CR>", "Delete session" },
-    ["<leader>Sf"] = { "<cmd>SessionManager! load_session <CR>", "Search sessions" },
-    ["<leader>S."] = { "<cmd>SessionManager! load_current_dir_session <CR>", "Load current directory session" },
+    ["<leader>Sl"] = { ":SessionManager load_last_session<CR>", "Load last session" },
+    ["<leader>Ss"] = { ":SessionManager save_current_session<CR>", "Save this session" },
+    ["<leader>Sd"] = { ":SessionManager delete_session<CR>", "Delete session" },
+    ["<leader>Sf"] = { ":SessionManager load_session<CR>", "Search sessions" },
+    ["<leader>S."] = { ":SessionManager load_current_dir_session<CR>", "Load current directory session" },
   }
 }
 
