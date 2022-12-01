@@ -1,21 +1,21 @@
 [theme]
 name = "bad-wolf"
 [theme.overrides]
-idle_bg = "#090B10"
-idle_fg = "#828791"
-info_bg = "#C678DD"
-info_fg = "#131620"
-good_bg = "#60B067"
-good_fg = "#131620"
-warning_bg = "#E1D10C"
-warning_fg = "#131620"
-critical_bg = "#DA6567"
-critical_fg = "#131620"
+idle_bg = "#282828"
+idle_fg = "#A89984"
+info_bg = "#D79921"
+info_fg = "#282828"
+good_bg = "#689D6A"
+good_fg = "#282828"
+warning_bg = "#B16286"
+warning_fg = "#282828"
+critical_bg = "#CC241D"
+critical_fg = "#282828"
 separator = "\ue0b2"
 separator_bg = "auto"
 separator_fg = "auto"
-alternating_tint_bg = "#090B10"
-alternating_tint_fg = "#090B10"
+alternating_tint_bg = "#282828"
+alternating_tint_fg = "#282828"
 
 [icons]
 name = "awesome"
@@ -42,9 +42,6 @@ block = "networkmanager"
 on_click = "alacritty -e nmtui"
 ap_format = "{ssid}: {strength}"
 device_format = "{icon}{ap}"
-[block.theme_overrides]
-good_bg = "#131620"
-good_fg = "#828791"
 
 [[block]]
 block = "disk_space"
