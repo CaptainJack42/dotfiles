@@ -16,9 +16,10 @@
 ################# Define the $mod variable/key
 
 # Key to rule them all : Super(Windows) or Alt key - see definition above
-# set Alt key
-set $mod Mod1 
-set $not_mod Mod4
+# set Win key
+set $mod Mod4
+# set $mod_right Mod5
+set $sup Mod1
 
 ################# Define the movements keys - variables
 
@@ -41,6 +42,11 @@ exec --no-startup-id xrandr --output DP-0 --mode 3840x2160+0+0 HDMI-0 --res 1920
 
 set $firstMonitor HDMI-0
 set $secondMonitor DP-0
+
+################ Variables for default programs
+set $app_launcher ~/.config/rofi/launchers/type-7/launcher.sh
+set $power_menu ~/.config/rofi/powermenu/type-5/powermenu.sh
+set $terminal alacritty
 
 # Bind workspaces to specific monitors
 
@@ -67,7 +73,7 @@ workspace 20   output $secondMonitor
 workspace 21   output $secondMonitor
 workspace 22   output $secondMonitor
 
-# switch to workspace
+# switch to workspace 
 bindsym $mod+1    workspace number 1:[1]
 bindsym $mod+2    workspace number 2:[2]
 bindsym $mod+3    workspace number 3:[3]
@@ -90,7 +96,6 @@ bindsym $mod+F9   workspace number 19:[F9]
 bindsym $mod+F10  workspace number 20:[F10]
 bindsym $mod+F11  workspace number 21:[F11]
 bindsym $mod+F12  workspace number 22:[F12]
-
 
 # move focused container to workspace and focus workspace
 bindsym $mod+Shift+1    move container to workspace number 1:[1];    workspace number 1:[1]
@@ -117,29 +122,28 @@ bindsym $mod+Shift+F11  move container to workspace number 21:[F11];   workspace
 bindsym $mod+Shift+F12  move container to workspace number 22:[F12];   workspace number 22:[F12]
 
 # move focused container to workspace without focusing workspace
-bindsym $mod+$not_mod+1    move container to workspace number 1:[1]
-bindsym $mod+$not_mod+2    move container to workspace number 2:[2]
-bindsym $mod+$not_mod+3    move container to workspace number 3:[3]   
-bindsym $mod+$not_mod+4    move container to workspace number 4:[4]   
-bindsym $mod+$not_mod+5    move container to workspace number 5:[5]   
-bindsym $mod+$not_mod+6    move container to workspace number 6:[6]   
-bindsym $mod+$not_mod+7    move container to workspace number 7:[7]   
-bindsym $mod+$not_mod+8    move container to workspace number 8:[8]   
-bindsym $mod+$not_mod+9    move container to workspace number 9:[9]   
-bindsym $mod+$not_mod+0    move container to workspace number 10:[0]
-bindsym $mod+$not_mod+F1   move container to workspace number 11:[F1]
-bindsym $mod+$not_mod+F2   move container to workspace number 12:[F2]
-bindsym $mod+$not_mod+F3   move container to workspace number 13:[F3]  
-bindsym $mod+$not_mod+F4   move container to workspace number 14:[F4]  
-bindsym $mod+$not_mod+F5   move container to workspace number 15:[F5]  
-bindsym $mod+$not_mod+F6   move container to workspace number 16:[F6]  
-bindsym $mod+$not_mod+F7   move container to workspace number 17:[F7]  
-bindsym $mod+$not_mod+F8   move container to workspace number 18:[F8]  
-bindsym $mod+$not_mod+F9   move container to workspace number 19:[F9]  
-bindsym $mod+$not_mod+F10  move container to workspace number 20:[F10]
-bindsym $mod+$not_mod+F11  move container to workspace number 21:[F11]
-bindsym $mod+$not_mod+F12  move container to workspace number 22:[F12]
-
+bindsym $mod+$sup+1    move container to workspace number 1:[1]
+bindsym $mod+$sup+2    move container to workspace number 2:[2]
+bindsym $mod+$sup+3    move container to workspace number 3:[3]   
+bindsym $mod+$sup+4    move container to workspace number 4:[4]   
+bindsym $mod+$sup+5    move container to workspace number 5:[5]   
+bindsym $mod+$sup+6    move container to workspace number 6:[6]   
+bindsym $mod+$sup+7    move container to workspace number 7:[7]   
+bindsym $mod+$sup+8    move container to workspace number 8:[8]   
+bindsym $mod+$sup+9    move container to workspace number 9:[9]   
+bindsym $mod+$sup+0    move container to workspace number 10:[0]
+bindsym $mod+$sup+F1   move container to workspace number 11:[F1]
+bindsym $mod+$sup+F2   move container to workspace number 12:[F2]
+bindsym $mod+$sup+F3   move container to workspace number 13:[F3]  
+bindsym $mod+$sup+F4   move container to workspace number 14:[F4]  
+bindsym $mod+$sup+F5   move container to workspace number 15:[F5]  
+bindsym $mod+$sup+F6   move container to workspace number 16:[F6]  
+bindsym $mod+$sup+F7   move container to workspace number 17:[F7]  
+bindsym $mod+$sup+F8   move container to workspace number 18:[F8]  
+bindsym $mod+$sup+F9   move container to workspace number 19:[F9]  
+bindsym $mod+$sup+F10  move container to workspace number 20:[F10]
+bindsym $mod+$sup+F11  move container to workspace number 21:[F11]
+bindsym $mod+$sup+F12  move container to workspace number 22:[F12]
 
 workspace_auto_back_and_forth yes
 
@@ -149,16 +153,19 @@ bindsym $mod+Shift+Tab move workspace to output $firstMonitor $secondMonitor
 # Start i3 workspace rename
 exec_always --no-startup-id /usr/bin/i3wsr --config ~/.config/i3/i3wsr-config.toml
 
+# Start xss-lock
+exec --no-startup-id xss-lock -- blurlock
 ################# menu's
 
 # start dmenu
 # bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#131620' -nf '#61AFEF' -sb '#61AFEF' -sf '#131620' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 # start rofi
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-7/launcher.sh
+bindsym $mod+d exec --no-startup-id $app_launcher
+bindsym $sup+d exec --no-startup-id $app_launcher
 
 ################# how to exit, logoff, suspend, ...
-bindsym control+mod1+s exec --no-startup-id ~/.config/rofi/powermenu/type-5/powermenu.sh
+bindsym control+mod1+s exec --no-startup-id $power_menu
 
 # Backup exit
 # Press ctrl+alt+x - check toolbar for next choices
@@ -194,6 +201,7 @@ bindsym $mod+Shift+c reload
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+q kill
+bindsym $sup+q kill
 
 ################# Moving around in i3              
 
@@ -208,6 +216,10 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+bindsym $sup+$left focus left
+bindsym $sup+$down focus down
+bindsym $sup+$up focus up
+bindsym $sup+$right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -220,6 +232,10 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
+bindsym $sup+Shift+$left move left
+bindsym $sup+Shift+$down move down
+bindsym $sup+Shift+$up move up
+bindsym $sup+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -232,7 +248,7 @@ bindsym $mod+Shift+Right move right
 # next/previous workspace
 
 bindsym Mod1+Tab workspace next
-bindsym Mod1+Ctrl+Tab workspace prev
+bindsym Mod1+Shift+Tab workspace prev
 # bindsym $mod+Tab workspace back_and_forth
 
 # navigate workspaces next / previous
@@ -271,7 +287,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Pin floating windows
-bindsym $mod+$not_mod+p sticky toggle
+bindsym $mod+Shift+p sticky toggle
 
 # focus the child container
 # bindsym $mod+d focus child
@@ -400,8 +416,9 @@ exec_always --no-startup-id numlockx on
 for_window [class="^Nextcloud$"] move scratchpad
 exec --no-startup-id nextcloud
 
+
 # feh sets wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/pixelart_night_stars_clouds_trees_cozy.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/gruv-material-texture.png
 
 # Polybar
 # exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -409,12 +426,13 @@ exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/pixelart_night_
 ################# system applications       
 
 #### Audio Effects + Control
-exec_always --no-startup-id i3-msg "easyeffects --gapplication-service -l mic_noise_reduction"
+exec_always --no-startup-id i3-msg "easyeffects"
 
 ################# applications keyboard shortcuts  
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty;focus
+bindsym $sup+Return exec --no-startup-id alacritty;focus
 bindsym $mod+KP_Enter exec --no-startup-id alacritty;focus
 bindsym control+mod1+t exec --no-startup-id alacritty; focus
 
@@ -429,6 +447,7 @@ bindsym control+mod1+f exec --no-startup-id firefox;focus
 # file management
 for_window [class="Thunar"] focus
 bindsym $mod+e exec --no-startup-id i3-msg "exec alacritty -e ranger"
+bindsym $sup+e exec --no-startup-id i3-msg "exec alacritty -e ranger"
 
 ################# screenshots                      
 
@@ -720,12 +739,12 @@ client.background       $col_black
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
-bindsym $not_mod+Shift+minus move scratchpad
+bindsym $sup+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
-bindsym $not_mod+minus scratchpad show
+bindsym $sup+minus scratchpad show
 
 ################# mouse settings in i3             
 
