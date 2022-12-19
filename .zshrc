@@ -108,8 +108,14 @@ eval "$(starship init zsh)"
 #fi
 
 export EDITOR='nvim'
+export VISUAL='nvim'
+
+export PAGER='bat'
 
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
+
+export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE='clear:ls*'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -127,8 +133,10 @@ alias cat="bat"
 alias sl="sl -adeF"
 alias vi="nvim"
 alias vim="nvim"
+alias mutt="neomutt"
 alias sudo=$'nocorrect sudo\t'
 alias yay="paru"
+alias :q="exit"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
