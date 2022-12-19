@@ -5,7 +5,10 @@ M.general = {
     [";"] = { ":", "command mode", opts = { nowait = true } },
     ["<leader>h"] = { ':lua require("nvterm.terminal").toggle "horizontal" <cr>', "Toggle horizontal Terminal" },
     ["<leader>v"] = { ':lua require("nvterm.terminal").toggle "vertical" <cr>', "Toggle vertical Terminal" },
-    ["<leader>pf"] = { ':lua vim.lsp.buf.formatting() <CR>', "Format Buffer" },
+    ["<leader>pf"] = { ':lua vim.lsp.buf.format() <CR>', "Format Buffer" },
+    ["<leader>up"] = { ':PackerSync <CR>', "Run PackerSync" },
+    -- ["oo"] = {'o<Esc>k', "Add blank line below without going to insert mode" },
+    -- ["OO"] = {'O<Esc>j', "Add blank line above without going to insert mode" },
   },
   v = {
     -- Stay in indent mode
