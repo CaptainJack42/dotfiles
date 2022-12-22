@@ -256,7 +256,7 @@ bindsym Mod1+Ctrl+Up workspace next
 bindsym Mod1+Ctrl+Down workspace prev
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# for_window [urgent=latest] focus
 
 ################# Tiling parameters                
 
