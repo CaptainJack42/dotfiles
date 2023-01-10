@@ -32,7 +32,8 @@ set $right l
 ################# Single and Dual screen
 
 # current displays
-exec --no-startup-id xrandr --output DP-0 --mode 3840x2160+0+0 HDMI-0 --res 1920x1080+2160+960
+# exec --no-startup-id xrandr --output DP-0 --mode 3840x2160+0+0 HDMI-0 --res 1920x1080+2160+960
+exec_always --no-startup-id xrandr HDMI-0 --res 1920x1080
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -278,7 +279,8 @@ bindsym $mod+f fullscreen toggle
 # bindsym $mod+s layout toggle stacking
 # bindsym $mod+t layout toggle tabbed
 # bindsym $mod+e layout toggle split
-bindsym $mod+g layout toggle tabbed splith
+# bindsym $mod+g layout toggle tabbed splith
+bindsym $mod+g exec i3-autolayout tabmode
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -392,7 +394,8 @@ for_window [class="Spotify"] move to workspace number 12:[F2]
 # exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 
 # Autotiling
-exec_always --no-startup-id autotiling
+# exec_always --no-startup-id autotiling
+exec_always --no-startup-id i3-autolayout autolayout
 
 # Music
 # assign [class="^Spotify$"] $ws_music
@@ -414,7 +417,11 @@ exec_always --no-startup-id numlockx on
 
 # nextcloud
 for_window [class="^Nextcloud$"] move scratchpad
-exec --no-startup-id nextcloud
+# exec --no-startup-id nextcloud
+
+# Open KDE connect app
+for_window [class="^.*kdeconnect.*$"] move scratchpad
+exec --no-startup-id kdeconnect-app
 
 
 # feh sets wallpaper
