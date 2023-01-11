@@ -276,8 +276,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 # qwerty/azerty issue for letter z
-# bindsym $mod+s layout toggle stacking
-# bindsym $mod+t layout toggle tabbed
+bindsym $mod+s layout toggle stacking splitv
+bindsym $mod+t layout toggle tabbed splitv
 # bindsym $mod+e layout toggle split
 # bindsym $mod+g layout toggle tabbed splith
 bindsym $mod+g exec i3-autolayout tabmode
