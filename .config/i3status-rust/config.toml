@@ -1,19 +1,19 @@
 [theme]
-name = "bad-wolf"
+name = "gruvbox-dark"
 [theme.overrides]
-idle_bg = "#282828"
-idle_fg = "#A89984"
-info_bg = "#D79921"
-info_fg = "#282828"
-good_bg = "#689D6A"
-good_fg = "#282828"
-warning_bg = "#B16286"
-warning_fg = "#282828"
-critical_bg = "#CC241D"
-critical_fg = "#282828"
-separator = "\ue0b2"
-separator_bg = "auto"
-separator_fg = "auto"
+# idle_bg = "#282828"
+# idle_fg = "#A89984"
+# info_bg = "#D79921"
+# info_fg = "#282828"
+# good_bg = "#689D6A"
+# good_fg = "#282828"
+# warning_bg = "#B16286"
+# warning_fg = "#282828"
+# critical_bg = "#CC241D"
+# critical_fg = "#282828"
+# separator = ""
+# separator_bg = "auto"
+# separator_fg = "auto"
 alternating_tint_bg = "#282828"
 alternating_tint_fg = "#282828"
 
@@ -42,6 +42,7 @@ block = "networkmanager"
 on_click = "alacritty -e nmtui"
 ap_format = "{ssid}: {strength}"
 device_format = "{icon}{ap}"
+primary_only = true
 
 [[block]]
 block = "disk_space"
@@ -97,12 +98,12 @@ on_click = "alacritty -e btm"
 
 [[block]]
 block = "sound"
-format = "{output_description} {volume}"
+format = "{output_description} - {volume}"
 on_click = "alacritty -e pulsemixer"
 
 [[block]]
 block = "pacman"
-format = "{pacman} + {aur} = {both} updates"
+format = "{pacman} + {aur}"
 aur_command = "paru -Qua"
 warning_updates_regex = "(linux)"
 # critical_updates_regex = "(linux)"
