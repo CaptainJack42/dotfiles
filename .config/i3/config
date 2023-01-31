@@ -423,6 +423,9 @@ for_window [class="^Nextcloud$"] move scratchpad
 for_window [class="^.*kdeconnect.*$"] move scratchpad
 exec --no-startup-id kdeconnect-app
 
+# Open Social club in floating window
+for_window [class="socialclubhelper.exe"] floating enable
+
 
 # feh sets wallpaper
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/gruv-material-texture.png
@@ -649,7 +652,7 @@ bar {
     height 20
     workspace_buttons yes
 	# font pango:Play, FontAwesome 10
-	font pango:Noto Sans Regular, FontAwesome 10
+	font pango:Noto Sans Regular, FontAwesome 8
     # font pango:DejaVu Sans Mono, material-nf 10
 	position top
     # position bottom
