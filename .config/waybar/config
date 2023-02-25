@@ -1,0 +1,235 @@
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"sway/mode",
+		"sway/workspaces",
+		"custom/arrow10",
+		"sway/window"
+	],
+
+	"modules-right": [
+		"custom/arrow9",
+		"wireplumber",
+		"custom/arrow8",
+		"network",
+		"custom/arrow7",
+		"memory",
+		"custom/arrow6",
+		"cpu",
+		"custom/arrow5",
+		"temperature",
+		"custom/arrow4",
+		/* "battery", */
+		/* "custom/arrow3", */
+		/* "sway/language", */
+		/* "custom/arrow2", */
+		"tray",
+		"clock#date",
+		"custom/arrow1",
+		"clock#time"
+	],
+
+	// Modules
+
+	"battery": {
+		"interval": 10,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format-time": "{H}:{M:02}",
+		"format": "{icon} {capacity}% ({time})",
+		"format-charging": " {capacity}% ({time})",
+		"format-charging-full": " {capacity}%",
+		"format-full": "{icon} {capacity}%",
+		"format-alt": "{icon} {power}W",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": true
+	},
+
+	"clock#time": {
+		"interval": 10,
+		"format": "{:%H:%M}",
+		"tooltip": true
+	},
+
+	"clock#date": {
+		"interval": 20,
+		"format": "{:%e %b %Y}",
+		"tooltip": true
+		//"tooltip-format": "{:%e %B %Y}"
+	},
+
+	"cpu": {
+		"interval": 5,
+		"tooltip": true,
+		"format": " {usage}%, {max_frequency}GHz",
+		"format-alt": " {load}",
+		"on-click-right": "alacritty -e btm",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
+	},
+
+	"sway/language": {
+		"format": " {}",
+		"min-length": 5,
+		"on-click": "swaymsg 'input * xkb_switch_layout next'",
+		"tooltip": true
+	},
+
+	"memory": {
+		"interval": 5,
+		"format": " {used:0.1f}G/{total:0.1f}G",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		},
+		"tooltip": true
+	},
+
+	"network": {
+		"interval": 5,
+		"format-wifi": " {essid} ({signalStrength}%)",
+		"format-ethernet": " LAN",
+		"format-disconnected": "No connection",
+		"format-alt": " {ipaddr}/{cidr}",
+		"tooltip-format-ethernet": " {ifname}",
+		"tooltip": true
+	},
+
+	"sway/mode": {
+		"format": "{}",
+		"tooltip": true
+	},
+
+	"sway/window": {
+		"format": "{}",
+		"max-length": 30,
+		"tooltip": true
+	},
+
+	"sway/workspaces": {
+		"disable-scroll-wraparound": true,
+		"smooth-scrolling-threshold": 4,
+		"enable-bar-scroll": true,
+		"format": "{name}"
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"tooltip": true
+	},
+
+	"wireplumber": {
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": " 0%",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-right-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click": "alacritty -e pulsemixer",
+		"tooltip": true
+	},
+
+	"temperature": {
+		"critical-threshold": 90,
+		"interval": 5,
+		"format": "{icon} {temperatureC}°",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": true
+	},
+
+	"tray": {
+		"icon-size": 18
+		//"spacing": 10
+	},
+
+	"custom/arrow1": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow2": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow3": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow4": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow5": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow6": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow7": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow8": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow9": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow10": {
+		"format": "",
+		"tooltip": false
+	}
+}
+
+// vi:ft=jsonc
