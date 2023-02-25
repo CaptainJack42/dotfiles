@@ -1,0 +1,13 @@
+# System configuration (monitors, etc.)
+
+output $first_monitor bg $HOME/.config/sway/arch.png stretch
+
+input "type:keyboard" {
+        xkb_layout de
+        xkb_variant ,nodeadkeys
+        xkb_options caps:escape
+    }
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+        dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway

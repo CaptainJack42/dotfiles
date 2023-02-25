@@ -1,0 +1,43 @@
+# Variables used in the sway config
+
+# KEY DEFINITIONS TO REMEMBER
+# $mod = Set below
+# Mod4 = Super key
+# Mod1 = ALT key
+# Control = CTRL key
+# Shift = SHIFT key
+# Escape = ESCAPE key
+# Return = ENTER or RETURN key
+# KP_Enter = Keypad Enter
+# Pause = PAUSE key
+# Print = PRINT key
+# Tab = TAB key
+
+################# Define the $mod variable/key
+
+# Key to rule them all : Super(Windows) or Alt key - see definition above
+# set Win key
+set $mod Mod4
+# set $mod_right Mod5
+set $sup Mod1
+
+################# Define the movements keys - variables
+
+# This is setup for qwerty / qwertz
+set $up k
+set $down j
+set $left h
+set $right l
+
+################# Single and Dual screen
+
+# current displays
+# exec --no-startup-id xrandr --output DP-0 --mode 3840x2160+0+0 HDMI-0 --res 1920x1080+2160+960
+
+set $first_monitor HDMI-A-1
+
+################ default programs
+set $app_launcher ~/.config/rofi/launchers/type-7/launcher.sh
+set $power_menu ~/.config/rofi/powermenu/type-5/powermenu.sh
+set $terminal alacritty
+

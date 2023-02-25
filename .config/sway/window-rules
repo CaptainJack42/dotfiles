@@ -1,0 +1,39 @@
+################# assign applications to workspaces 
+# Spotify on 12
+assign [class="Spotify|spotify"]                                                    → 12: music
+# fix for spotify not moving to workspace 10
+for_window [class="Spotify"] move to workspace number 12:[F2]
+for_window [class="^Spotify$"] floating disable; assign workspace number 12
+
+# nextcloud
+for_window [class="^Nextcloud$"] move scratchpad
+# exec --no-startup-id nextcloud
+
+# Open KDE connect app
+for_window [class="^.*kdeconnect.*$"] move scratchpad
+
+# Open Social club in floating window
+for_window [class="socialclubhelper.exe"] floating enable
+
+for_window [class="Thunar"] focus
+
+for_window [class="^Spotify$"] floating disable
+for_window [class="^Vlc$"] floating disable
+
+for_window [title="Picture-in-Picture"] floating enable
+for_window [title="Picture-in-Picture"] sticky enable
+
+# for_window [instance="gimp"] floating disable
+for_window [instance="script-fu"] border normal
+for_window [instance="variety"] floating disable
+
+for_window [title="Copying"] floating enable
+for_window [title="Deleting"] floating enable
+for_window [title="Moving"] floating enable
+for_window [title="^Terminator Preferences$"] floating enable
+
+# for_window [window_role="^gimp-toolbox-color-dialog$"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="^Preferences$"] floating enable
+for_window [window_role="setup"] floating enable
+

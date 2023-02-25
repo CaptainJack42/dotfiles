@@ -1,0 +1,30 @@
+################# bar appearance                   
+set $col_black   #282828
+set $col_red     #CC241D
+set $col_green   #98971A
+set $col_yellow  #D79921
+set $col_blue 	 #458588
+set $col_magenta #B16286
+set $col_cyan    #689D6A
+set $col_white   #A89984
+set $col_grey    #928374
+
+
+bar {
+        bar swaybar_command waybar
+}
+
+##STOP THEMING BAR
+
+##START THEMING WM
+#Theme name : ArcoLinux Mind
+
+# Window color settings
+# class                 border  backgr. text    indicator
+client.focused          $col_cyan  $col_cyan    $col_black $col_magenta
+client.unfocused        $col_black $col_black   $col_cyan  $col_blue
+client.focused_inactive $col_black $col_black   $col_cyan  $col_blue
+client.placeholder      $col_black $col_black   $col_cyan  $col_blue
+client.urgent           $col_red   $col_magenta $col_cyan  $col_blue
+
+client.background       $col_black

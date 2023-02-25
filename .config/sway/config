@@ -1,0 +1,11 @@
+################# Start of all the settings
+
+include $HOME/.config/sway/vars
+include $HOME/.config/sway/system
+include $HOME/.config/sway/workspaces
+include $HOME/.config/sway/keybinds
+include $HOME/.config/sway/misc
+include $HOME/.config/sway/window-rules
+include $HOME/.config/sway/autostart
+include $HOME/.config/sway/colors
+

@@ -1,0 +1,108 @@
+# Workspace configuration
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+# using names instead of numbers for the workspaces
+
+# Bind workspaces to specific monitors
+
+workspace 1    output $firstMonitor
+workspace 2    output $firstMonitor
+workspace 3    output $firstMonitor
+workspace 4    output $firstMonitor
+workspace 5    output $firstMonitor
+workspace 6    output $firstMonitor
+workspace 7    output $firstMonitor
+workspace 8    output $firstMonitor
+workspace 9    output $firstMonitor
+workspace 10   output $firstMonitor
+workspace 11   output $secondMonitor
+workspace 12   output $secondMonitor
+workspace 13   output $secondMonitor
+workspace 14   output $secondMonitor
+workspace 15   output $secondMonitor
+workspace 16   output $secondMonitor
+workspace 17   output $secondMonitor
+workspace 18   output $secondMonitor
+workspace 19   output $secondMonitor
+workspace 20   output $secondMonitor
+workspace 21   output $secondMonitor
+workspace 22   output $secondMonitor
+
+# switch to workspace 
+bindsym $mod+1    workspace number 1:[1]
+bindsym $mod+2    workspace number 2:[2]
+bindsym $mod+3    workspace number 3:[3]
+bindsym $mod+4    workspace number 4:[4]
+bindsym $mod+5    workspace number 5:[5]
+bindsym $mod+6    workspace number 6:[6]
+bindsym $mod+7    workspace number 7:[7]
+bindsym $mod+8    workspace number 8:[8]
+bindsym $mod+9    workspace number 9:[9]
+bindsym $mod+0    workspace number 10:[0]
+bindsym $mod+F1   workspace number 11:[F1]
+bindsym $mod+F2   workspace number 12:[F2]
+bindsym $mod+F3   workspace number 13:[F3]
+bindsym $mod+F4   workspace number 14:[F4]
+bindsym $mod+F5   workspace number 15:[F5]
+bindsym $mod+F6   workspace number 16:[F6]
+bindsym $mod+F7   workspace number 17:[F7]
+bindsym $mod+F8   workspace number 18:[F8]
+bindsym $mod+F9   workspace number 19:[F9]
+bindsym $mod+F10  workspace number 20:[F10]
+bindsym $mod+F11  workspace number 21:[F11]
+bindsym $mod+F12  workspace number 22:[F12]
+
+# move focused container to workspace and focus workspace
+bindsym $mod+Shift+1    move container to workspace number 1:[1];    workspace number 1:[1]
+bindsym $mod+Shift+2    move container to workspace number 2:[2];    workspace number 2:[2]
+bindsym $mod+Shift+3    move container to workspace number 3:[3];    workspace number 3:[3]   
+bindsym $mod+Shift+4    move container to workspace number 4:[4];    workspace number 4:[4]   
+bindsym $mod+Shift+5    move container to workspace number 5:[5];    workspace number 5:[5]   
+bindsym $mod+Shift+6    move container to workspace number 6:[6];    workspace number 6:[6]   
+bindsym $mod+Shift+7    move container to workspace number 7:[7];    workspace number 7:[7]   
+bindsym $mod+Shift+8    move container to workspace number 8:[8];    workspace number 8:[8]   
+bindsym $mod+Shift+9    move container to workspace number 9:[9];    workspace number 9:[9]   
+bindsym $mod+Shift+0    move container to workspace number 10:[0];   workspace number 10:[0]
+bindsym $mod+Shift+F1   move container to workspace number 11:[F1];   workspace number 11:[F1]  
+bindsym $mod+Shift+F2   move container to workspace number 12:[F2];   workspace number 12:[F2]  
+bindsym $mod+Shift+F3   move container to workspace number 13:[F3];   workspace number 13:[F3]   
+bindsym $mod+Shift+F4   move container to workspace number 14:[F4];   workspace number 14:[F4]   
+bindsym $mod+Shift+F5   move container to workspace number 15:[F5];   workspace number 15:[F5]   
+bindsym $mod+Shift+F6   move container to workspace number 16:[F6];   workspace number 16:[F6]   
+bindsym $mod+Shift+F7   move container to workspace number 17:[F7];   workspace number 17:[F7]   
+bindsym $mod+Shift+F8   move container to workspace number 18:[F8];   workspace number 18:[F8]   
+bindsym $mod+Shift+F9   move container to workspace number 19:[F9];   workspace number 19:[F9]   
+bindsym $mod+Shift+F10  move container to workspace number 20:[F10];   workspace number 20:[F10]
+bindsym $mod+Shift+F11  move container to workspace number 21:[F11];   workspace number 21:[F11]
+bindsym $mod+Shift+F12  move container to workspace number 22:[F12];   workspace number 22:[F12]
+
+# move focused container to workspace without focusing workspace
+bindsym $mod+$sup+1    move container to workspace number 1:[1]
+bindsym $mod+$sup+2    move container to workspace number 2:[2]
+bindsym $mod+$sup+3    move container to workspace number 3:[3]   
+bindsym $mod+$sup+4    move container to workspace number 4:[4]   
+bindsym $mod+$sup+5    move container to workspace number 5:[5]   
+bindsym $mod+$sup+6    move container to workspace number 6:[6]   
+bindsym $mod+$sup+7    move container to workspace number 7:[7]   
+bindsym $mod+$sup+8    move container to workspace number 8:[8]   
+bindsym $mod+$sup+9    move container to workspace number 9:[9]   
+bindsym $mod+$sup+0    move container to workspace number 10:[0]
+bindsym $mod+$sup+F1   move container to workspace number 11:[F1]
+bindsym $mod+$sup+F2   move container to workspace number 12:[F2]
+bindsym $mod+$sup+F3   move container to workspace number 13:[F3]  
+bindsym $mod+$sup+F4   move container to workspace number 14:[F4]  
+bindsym $mod+$sup+F5   move container to workspace number 15:[F5]  
+bindsym $mod+$sup+F6   move container to workspace number 16:[F6]  
+bindsym $mod+$sup+F7   move container to workspace number 17:[F7]  
+bindsym $mod+$sup+F8   move container to workspace number 18:[F8]  
+bindsym $mod+$sup+F9   move container to workspace number 19:[F9]  
+bindsym $mod+$sup+F10  move container to workspace number 20:[F10]
+bindsym $mod+$sup+F11  move container to workspace number 21:[F11]
+bindsym $mod+$sup+F12  move container to workspace number 22:[F12]
+
+workspace_auto_back_and_forth yes
+
+# Change Output Monitor for Workspace
+bindsym $mod+Shift+Tab move workspace to output $firstMonitor $secondMonitor
+

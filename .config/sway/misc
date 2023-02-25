@@ -1,0 +1,40 @@
+################# Focus shouldn't follow mouse
+focus_follows_mouse no
+
+################# Mouse Warping 
+mouse_warping none
+
+################# choose the font                  
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# choose your font
+font pango:monospace 12
+
+# Border control
+set $border_size 2
+hide_edge_borders none
+
+# new_float pixel 1
+default_floating_border pixel 1
+# new_float none
+
+################# Popups  control                  
+
+# Popups during fullscreen mode
+popup_during_fullscreen smart
+
+################# sway gaps next                     
+
+# Settings for sway next gap git
+# https://github.com/Airblader/sway/tree/gaps-next
+# delete or uncomment the following lines if you do not have it or do not
+# want it
+set $gap_size 1 
+
+for_window [class="^.*"] border pixel $border_size
+gaps inner $gap_size
+gaps outer $gap_size
+# smart_gaps on
+# smart_borders on
+

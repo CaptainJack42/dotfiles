@@ -1,0 +1,221 @@
+# Keybindings
+
+# start rofi
+bindsym $mod+d exec --no-startup-id $app_launcher
+bindsym $sup+d exec --no-startup-id $app_launcher
+
+################# how to exit, logoff, suspend, ...
+bindsym control+mod1+s exec --no-startup-id $power_menu
+
+################# reload changed configuration     
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+################# Stopping an application          
+
+# kill focused window
+bindsym $mod+Shift+q kill
+bindsym $mod+q kill
+bindsym $sup+q kill
+
+################# Moving around in sway              
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $sup+$left focus left
+bindsym $sup+$down focus down
+bindsym $sup+$up focus up
+bindsym $sup+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $sup+Shift+$left move left
+bindsym $sup+Shift+$down move down
+bindsym $sup+Shift+$up move up
+bindsym $sup+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+################# moving around workspaces         
+
+# next/previous workspace
+
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+# bindsym $mod+Tab workspace back_and_forth
+
+# navigate workspaces next / previous
+bindsym Mod1+Ctrl+Up workspace next
+bindsym Mod1+Ctrl+Down workspace prev
+
+# switch to workspace with urgent window automatically
+# for_window [urgent=latest] focus
+
+
+################# Tiling parameters                
+
+# orientation for new workspaces
+# default_orientation horizontal
+
+# split in horizontal orientation
+bindsym $mod+v layout toggle split
+
+# split in vertical orientation
+# bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+# Super + F in arcolinux is execute thunar
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout toggle stacking splitv
+bindsym $mod+t layout toggle tabbed splitv
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# Pin floating windows
+bindsym $mod+Shift+p sticky toggle
+
+################# resize  
+
+set $mode_resize resize (h) shrink width, (l) grow width, (k) shrink height, (j) grow height, (Esc/Return) exit
+
+bindsym $mod+r mode "$mode_resize"
+
+mode "$mode_resize" {
+      #  These bindings trigger as soon as you enter the resize mode
+
+      #  Pressing left will shrink the window’s width.
+      #  Pressing right will grow the window’s width.
+      #  Pressing up will shrink the window’s height.
+      #  Pressing down will grow the window’s height.
+      bindsym $left       resize shrink width 10 px or 10 ppt
+      bindsym $down       resize grow height 10 px or 10 ppt
+      bindsym $up         resize shrink height 10 px or 10 ppt
+      bindsym $right      resize grow width 10 px or 10 ppt
+
+      #  same bindings, but for the arrow keys
+      bindsym Left        resize shrink width 10 px or 10 ppt
+      bindsym Down        resize grow height 10 px or 10 ppt
+      bindsym Up          resize shrink height 10 px or 10 ppt
+      bindsym Right       resize grow width 10 px or 10 ppt
+
+      #  back to normal: Enter or Escape
+      bindsym Return mode "default"
+      bindsym Escape mode "default"
+}
+
+################# sway gaps change                   
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 3
+        bindsym minus gaps inner current minus 3
+        bindsym 0     gaps inner current set 0
+        bindsym 1     gaps inner current set $gap_size
+
+        bindsym Shift+plus  gaps inner all plus 3
+        bindsym Shift+minus gaps inner all minus 3
+        bindsym Shift+0     gaps inner all set 0
+        bindsym Shift+1     gaps inner all set $gap_size
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 3
+        bindsym minus gaps outer current minus 3
+        bindsym 0     gaps outer current set 0
+        bindsym 1     gaps outer current set $gap_size
+
+
+        bindsym Shift+plus  gaps outer all plus 3
+        bindsym Shift+minus gaps outer all minus 3
+        bindsym Shift+0     gaps outer all set 0
+        bindsym Shift+1     gaps outer all set $gap_size
+
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+################# applications keyboard shortcuts  
+
+# terminal
+bindsym $mod+Return exec --no-startup-id alacritty;focus
+bindsym $sup+Return exec --no-startup-id alacritty;focus
+bindsym $mod+KP_Enter exec --no-startup-id alacritty;focus
+bindsym control+mod1+t exec --no-startup-id alacritty; focus
+
+# Function Keybinds
+# Browser
+# qwerty/azerty conflict with w
+bindsym control+mod1+f exec --no-startup-id firefox;focus
+
+# file management
+
+bindsym $mod+e exec --no-startup-id "alacritty -e ranger"
+bindsym $sup+e exec --no-startup-id "alacritty -e ranger"
+
+################# screenshots                      
+
+bindsym Print exec --no-startup-id flameshot gui
+
+################# Audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
+bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master toggle"
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
+
+################# Scratchpad
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $sup+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+bindsym $sup+minus scratchpad show
+

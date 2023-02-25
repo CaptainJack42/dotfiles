@@ -1,0 +1,20 @@
+# USER APPLICATIONS TO START AT BOOT
+# Autotiling
+exec_always --no-startup-id autotiling
+# exec_always --no-startup-id sway-autolayout autolayout
+
+# Music
+# assign [class="^Spotify$"] $ws_music
+exec --no-startup-id spotify
+# for_window [class="Spotify"] focus
+
+# Authentication dialog
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# num lock activated
+exec_always --no-startup-id numlockx on
+
+exec_always --no-startup-id sway-msg easyeffects
+
+exec --no-startup-id kdeconnect-app
+
