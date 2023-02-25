@@ -197,7 +197,8 @@ bindsym $sup+e exec --no-startup-id "alacritty -e ranger"
 
 ################# screenshots                      
 
-bindsym Print exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id "grimshot --notify save window -  | swappy -f -"
+bindsym Shift+Print exec --no-startup-id "grimshot --notify save output -  | swappy -f -"
 
 ################# Audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
