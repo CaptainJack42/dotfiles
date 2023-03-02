@@ -10,7 +10,7 @@ for_window [class="^Nextcloud$"] move scratchpad
 # exec --no-startup-id nextcloud
 
 # Open KDE connect app
-for_window [class="^.*kdeconnect.*$"] move scratchpad
+for_window [class="org.kde.kdeconnect.app"] move scratchpad
 
 # Open Social club in floating window
 for_window [class="socialclubhelper.exe"] floating enable
