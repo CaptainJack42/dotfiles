@@ -1,10 +1,13 @@
 # System configuration (monitors, etc.)
 
-output $first_monitor bg $HOME/.config/sway/arch.png stretch
+output $firstMonitor mode 2560x1440@165Hz pos 0 300
+output $secondMonitor mode 1920x1200@60Hz transform 270 pos 2560 0 bg $wallpaper stretch
 
 input "type:keyboard" {
         xkb_layout de
         xkb_variant ,nodeadkeys
         xkb_options caps:escape
     }
+
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 

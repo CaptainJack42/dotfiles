@@ -10,10 +10,6 @@ set $col_white   #A89984
 set $col_grey    #928374
 
 
-bar {
-        bar swaybar_command waybar
-}
-
 ##STOP THEMING BAR
 
 ##START THEMING WM

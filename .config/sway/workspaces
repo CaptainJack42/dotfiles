@@ -6,28 +6,28 @@
 
 # Bind workspaces to specific monitors
 
-workspace 1    output $firstMonitor
-workspace 2    output $firstMonitor
-workspace 3    output $firstMonitor
-workspace 4    output $firstMonitor
-workspace 5    output $firstMonitor
-workspace 6    output $firstMonitor
-workspace 7    output $firstMonitor
-workspace 8    output $firstMonitor
-workspace 9    output $firstMonitor
-workspace 10   output $firstMonitor
-workspace 11   output $secondMonitor
-workspace 12   output $secondMonitor
-workspace 13   output $secondMonitor
-workspace 14   output $secondMonitor
-workspace 15   output $secondMonitor
-workspace 16   output $secondMonitor
-workspace 17   output $secondMonitor
-workspace 18   output $secondMonitor
-workspace 19   output $secondMonitor
-workspace 20   output $secondMonitor
-workspace 21   output $secondMonitor
-workspace 22   output $secondMonitor
+workspace 1:[1]      output $firstMonitor
+workspace 2:[2]      output $firstMonitor
+workspace 3:[3]      output $firstMonitor
+workspace 4:[4]      output $firstMonitor
+workspace 5:[5]      output $firstMonitor
+workspace 6:[6]      output $firstMonitor
+workspace 7:[7]      output $firstMonitor
+workspace 8:[8]      output $firstMonitor
+workspace 9:[9]      output $firstMonitor
+workspace 10:[0]     output $firstMonitor
+workspace 11:[F1]    output $secondMonitor
+workspace 12:[F2]    output $secondMonitor
+workspace 13:[F3]    output $secondMonitor
+workspace 14:[F4]    output $secondMonitor
+workspace 15:[F5]    output $secondMonitor
+workspace 16:[F6]    output $secondMonitor
+workspace 17:[F7]    output $secondMonitor
+workspace 18:[F8]    output $secondMonitor
+workspace 19:[F9]    output $secondMonitor
+workspace 20:[F10]   output $secondMonitor
+workspace 21:[F11]   output $secondMonitor
+workspace 22:[F12]   output $secondMonitor
 
 # switch to workspace 
 bindsym $mod+1    workspace number 1:[1]

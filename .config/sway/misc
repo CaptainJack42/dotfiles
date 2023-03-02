@@ -38,3 +38,4 @@ gaps outer $gap_size
 # smart_gaps on
 # smart_borders on
 
+bar swaybar_command waybar

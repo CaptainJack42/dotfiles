@@ -1,7 +1,6 @@
 # USER APPLICATIONS TO START AT BOOT
 # Autotiling
 exec_always --no-startup-id autotiling
-# exec_always --no-startup-id sway-autolayout autolayout
 
 # Music
 # assign [class="^Spotify$"] $ws_music
@@ -17,4 +16,7 @@ exec_always --no-startup-id numlockx on
 exec_always --no-startup-id sway-msg easyeffects
 
 exec --no-startup-id kdeconnect-app
+
+# Waybar
+# exec_always --no-startup-id "pkill -f waybar; waybar"
 
