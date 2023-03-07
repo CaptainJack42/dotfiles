@@ -1,7 +1,7 @@
 # System configuration (monitors, etc.)
 
 output $firstMonitor mode 2560x1440@165Hz pos 0 300 adaptive_sync on bg $wallpaper stretch
-output $secondMonitor mode 1920x1200@60Hz transform 270 pos 2560 0 bg $wallpaper stretch
+output $secondMonitor mode 1920x1200@60Hz transform 90 pos 2560 0 bg $wallpaper stretch
 
 input "type:keyboard" {
         xkb_layout de
