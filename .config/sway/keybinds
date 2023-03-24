@@ -32,10 +32,6 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-bindsym $sup+$left focus left
-bindsym $sup+$down focus down
-bindsym $sup+$up focus up
-bindsym $sup+$right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
