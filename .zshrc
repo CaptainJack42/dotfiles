@@ -128,10 +128,10 @@ export HISTIGNORE='clear:ls*'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias find="fd"
+# alias find="fd"
 alias cat="bat"
 alias sl="sl -adeF"
-alias vi="nvim"
+alias vi=$"nvim"
 alias vim="nvim"
 alias mutt="neomutt"
 alias sudo=$'nocorrect sudo\t'
@@ -157,3 +157,4 @@ export LC_ALL=C
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
 
+eval "$(zellij setup --generate-auto-start zsh)"
