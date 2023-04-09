@@ -1,6 +1,6 @@
 ################# assign applications to workspaces 
 # Spotify on 12
-assign [class="Spotify|spotify"]                                                    → 12: music
+assign [class="Spotify|spotify"]                                                    → 12
 # fix for spotify not moving to workspace 10
 for_window [class="Spotify"] move to workspace number 12:[F2]
 for_window [class="^Spotify$"] floating disable; assign workspace number 12
