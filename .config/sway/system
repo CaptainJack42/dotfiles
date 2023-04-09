@@ -5,9 +5,19 @@ output $secondMonitor mode 1920x1200@60Hz transform 90 pos 2560 0 bg $wallpaper 
 
 input "type:keyboard" {
         xkb_layout de
-        xkb_variant ,nodeadkeys
+        xkb_variant nodeadkeys
         xkb_options caps:escape
     }
 
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+set $locker 'swaylock -f -c 000000'
+
+exec swayidle -w \\
+        timeout 600 $locker \\
+        timeout 900 'swaymsg "output * power off"' \\
+                resume 'swaymsg "output * power on"' \\
+        timeout 1200 'systemctl suspend' \\
+                resume 'swaymsg "output * power on"' \\
+        before-sleep $locker \\
 
