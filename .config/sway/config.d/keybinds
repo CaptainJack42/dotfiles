@@ -205,6 +205,11 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
+################# Movie mode (turn off 2nd monitor)
+
+bindsym $mod+Shift+m output $secondMonitor power off
+bindsym $mod+Ctrl+m output $secondMonitor power on
+
 ################# Scratchpad
 
 # move the currently focused window to the scratchpad
