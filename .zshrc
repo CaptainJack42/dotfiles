@@ -87,6 +87,7 @@ plugins=(
 	python
 	zsh-autosuggestions
 	fzf
+  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -150,6 +151,7 @@ bindkey '^ ' autosuggest-accept
 
 # ENV Variables needed for Xilinx SDK
 export LC_ALL=C
+source $HOME/.config/zsh/env.zsh
 #source ~/.xilinx/SDK/2019.1/settings64.sh
 # export PATH=$PATH:$HOME/.xilinx/SDK/2019.1/bin:$HOME/.xilinx/Vivado/2019.1/bin
 # export PATH=$PATH:/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin
