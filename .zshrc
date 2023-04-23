@@ -81,13 +81,13 @@ plugins=(
 	z
 	git
   # zsh-autocomplete
+  zsh-vi-mode
 	zsh-navigation-tools
 	zsh-syntax-highlighting
 	history-substring-search
 	python
 	zsh-autosuggestions
 	fzf
-  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -138,8 +138,8 @@ alias mutt="neomutt"
 alias sudo=$'nocorrect sudo\t'
 alias yay="paru"
 alias :q="exit"
+alias zj="zellij"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Vim bindings instead of emacs
 bindkey -v
@@ -156,7 +156,8 @@ source $HOME/.config/zsh/env.zsh
 # export PATH=$PATH:$HOME/.xilinx/SDK/2019.1/bin:$HOME/.xilinx/Vivado/2019.1/bin
 # export PATH=$PATH:/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin
 
-export PATH=$PATH:$HOME/.cargo/bin
+source "$HOME/.cargo/env"
+
 export PATH=$PATH:$HOME/.local/bin
 
 # eval "$(zellij setup --generate-auto-start zsh)"
