@@ -1,0 +1,3 @@
+plugins = [
+  "zakk4223/hyprNStack",
+]
