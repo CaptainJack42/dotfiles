@@ -37,7 +37,8 @@ set $right l
 set $firstMonitor DP-3
 set $secondMonitor HDMI-A-1
 
-set $wallpaper $HOME/.config/sway/arch.png
+set $wallpaper_wide $HOME/Pictures/wallpapers/pxfuel-2k.jpg
+set $wallpaper_vert $HOME/Pictures/wallpapers/pxfuel-1200p.jpg
  
 ################ default programs
 set $app_launcher ~/.config/rofi/launchers/type-7/launcher.sh
