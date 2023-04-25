@@ -13,7 +13,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # num lock activated
 exec_always --no-startup-id numlockx on
 
-exec_always --no-startup-id sway-msg easyeffects
+exec_always --no-startup-id easyeffects
+
+exec_always --no-startup-id swayidle -w
 
 exec --no-startup-id kdeconnect-app
 
