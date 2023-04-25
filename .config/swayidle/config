@@ -1,0 +1,5 @@
+timeout 600 'swaylock -f -c 282828 --indicator-radius 100 --indicator-thickness 7 --ring-color fabd2f --key-hl-color 98971a --line-color 00000000 --inside-color 00000088 --separator-color 00000000'
+timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+timeout 1200 'systemctl suspend' resume 'swaymsg "output * dpms on"'
+before-sleep 'swaylock -f -c 282828 --indicator-radius 100 --indicator-thickness 7 --ring-color fabd2f --key-hl-color 98971a --line-color 00000000 --inside-color 00000088 --separator-color 00000000'
+
