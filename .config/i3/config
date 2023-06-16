@@ -33,7 +33,7 @@ set $right l
 
 # current displays
 # exec --no-startup-id xrandr --output DP-0 --mode 3840x2160+0+0 HDMI-0 --res 1920x1080+2160+960
-exec_always --no-startup-id xrandr HDMI-0 --res 1920x1080
+# exec_always --no-startup-id xrandr HDMI-0 --res 1920x1080
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -41,8 +41,12 @@ exec_always --no-startup-id xrandr HDMI-0 --res 1920x1080
 
 # current setup
 
-set $firstMonitor HDMI-0
-set $secondMonitor DP-0
+set $firstMonitor DP-4
+set $secondMonitor DP-1
+
+# exec --no-startup-id xrandr --output $firstMonitor --mode 2560x1440+0+300 $secondMonitor --res 1920x1200+2560+0
+exec --no-startup-id autorandr --change
+exec --no-startup-id setxkbmap -option caps:escape
 
 ################ Variables for default programs
 set $app_launcher ~/.config/rofi/launchers/type-7/launcher.sh
@@ -163,7 +167,6 @@ exec --no-startup-id xss-lock -- blurlock
 
 # start rofi
 bindsym $mod+d exec --no-startup-id $app_launcher
-bindsym $sup+d exec --no-startup-id $app_launcher
 
 ################# how to exit, logoff, suspend, ...
 bindsym control+mod1+s exec --no-startup-id $power_menu
@@ -217,10 +220,6 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-bindsym $sup+$left focus left
-bindsym $sup+$down focus down
-bindsym $sup+$up focus up
-bindsym $sup+$right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -233,10 +232,6 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-bindsym $sup+Shift+$left move left
-bindsym $sup+Shift+$down move down
-bindsym $sup+Shift+$up move up
-bindsym $sup+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -382,9 +377,9 @@ font pango:monospace 12
 # assign [class="Geary|Evolution"]                                                    → 9
 
 # Workspace 10 music related
-assign [class="Spotify|spotify"]                                                    → 12: music
+assign [class="Spotify|spotify"]                                                    → 20:[F10]
 # fix for spotify not moving to workspace 10
-for_window [class="Spotify"] move to workspace number 12:[F2]
+for_window [class="Spotify"] move to workspace number 20:[F10]
 
 ################# autostart - execute applications at boot time
 
@@ -394,13 +389,12 @@ for_window [class="Spotify"] move to workspace number 12:[F2]
 # exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 
 # Autotiling
-# exec_always --no-startup-id autotiling
-exec_always --no-startup-id i3-autolayout autolayout
+exec_always --no-startup-id autotiling
 
 # Music
 # assign [class="^Spotify$"] $ws_music
 exec --no-startup-id spotify
-for_window [class="^Spotify$"] floating disable; assign workspace number 12
+# for_window [class="^Spotify$"] floating disable; assign workspace number 12
 # for_window [class="Spotify"] focus
 
 
@@ -410,11 +404,24 @@ for_window [class="^Spotify$"] floating disable; assign workspace number 12
 # you may see a wheel - hashtag out things you do not want/need
 
 # Authentication dialog
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+exec --no-startup-id dex --autostart --environment i3
 # num lock activated
 exec_always --no-startup-id numlockx on
 
+# start a script to setup displays
+# uncomment the next line, use arandr to setup displays and save the file as monitor:
+exec --no-startup-id ~/.screenlayout/monitor.sh
+
+# set wallpaper
+# exec --no-startup-id sleep 2 && nitrogen --restore
+exec --no-startup-id sleep 1 && feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png
+
+# set powersavings for display:
+exec --no-startup-id xset s 480 dpms 600 600 600
+
+exec --no-startup-id dunst
 # nextcloud
 for_window [class="^Nextcloud$"] move scratchpad
 # exec --no-startup-id nextcloud
@@ -522,25 +529,31 @@ for_window [window_role="setup"] floating enable
 # Update Wallpaper
 # bindsym mod1+Shift+u exec --no-startup-id wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)
 
-################# audio settings                   
+# Multimedia Keys
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
-bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master toggle"
-# https://github.com/acrisci/playerctl/
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-bindsym XF86AudioStop exec --no-startup-id playerctl stop
-# bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-# bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-# bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-# bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+# volume
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks 
+# gradular volume control 
+bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
+bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
+
+# mute
+bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+
+# audio control
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Redirect sound to headphones
+bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ################# xbacklight                       
 
-# bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
-# bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec brightnessctl s +10% && notify-send "Brightness - $(brightnessctl g | cut -d '.' -f 1)%"
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%- && notify-send "Brightness - $(brightnessctl g | cut -d '.' -f 1)%"
 
 ################# bar toggle                       
 
@@ -649,16 +662,21 @@ set $col_grey    #928374
 
 
 bar {
-    height 20
-    workspace_buttons yes
-	# font pango:Play, FontAwesome 10
-	font pango:Noto Sans Regular, FontAwesome 8
-    # font pango:DejaVu Sans Mono, material-nf 10
-	position top
-    # position bottom
+    font pango: Noto Sans Regular 10
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position top
+    tray_output $firstMonitor
+    tray_output $secondMonitor
+#	    	i3bar_command i3bar --transparency
+# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
+# reference: https://i3wm.org/docs/userguide.html#_tray_output
+		    #tray_output primary
+    tray_padding 0
 
-	# system icons
-    tray_output none
+# When strip_workspace_numbers is set to yes,
+# any workspace that has a name of the form
+# “[n][:][NAME]” will display only the name.
+    strip_workspace_numbers no
     # tray_output $firstMonitor
     # tray_output $secondMonitor
 
@@ -705,7 +723,7 @@ bar {
 
     # OPTION 6: i3status-rust
 
-    status_command i3status-rs ~/.config/i3status-rust/config.toml
+    # status_command i3status-rs ~/.config/i3status-rust/config.toml
 
     ##START THEMING BAR
     #Theme name : ArcoLinux Mind
