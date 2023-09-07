@@ -1,7 +1,8 @@
 ################# assign applications to workspaces 
 # Spotify on 12
 for_window [class="Spotify"] move to workspace number 12:[F2]
-for_window [class="^Spotify$"] floating disable; assign workspace number 12:[F2]
+for_window [class="Spotify"] floating disable; assign workspace number 12:[F2]
+for_window [class="Spotify"] inhibit_idle visible
 
 # KDE connect app
 for_window [app_id="kdeconnect"] move scratchpad
@@ -11,6 +12,17 @@ for_window [app_id="easyeffects"] move scratchpad
 
 # Open Social club in floating window
 for_window [app_id="socialclubhelper.exe"] floating enable
+
+for_window [class="steam_app"] fullscreen enable
+for_window [class="steam_app"] move output $firstMonitor
+for_window [class="steam_app"] inhibit_idle visible
+
+for_window [class="gamescope"] move output $firstMonitor
+for_window [class="gamescope"] inhibit_idle visible
+
+for_window [class="Minecraft"] fullscreen enable
+for_window [class="Minecraft"] move output $firstMonitor
+for_window [class="Minecraft"] inhibit_idle visible
 
 for_window [class="^Spotify$"] floating disable
 for_window [class="^Vlc$"] floating disable

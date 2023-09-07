@@ -34,8 +34,9 @@ set $right l
 # current displays
 # exec --no-startup-id xrandr --output DP-0 --mode 3840x2160+0+0 HDMI-0 --res 1920x1080+2160+960
 
-set $firstMonitor DP-3
-set $secondMonitor HDMI-A-1
+set $firstMonitor DP-1
+set $secondMonitor DP-3
+set $TVMonitor HDMI-A-1
 
 set $wallpaper_wide $HOME/Pictures/wallpapers/pxfuel-2k.jpg
 set $wallpaper_vert $HOME/Pictures/wallpapers/pxfuel-1200p.jpg

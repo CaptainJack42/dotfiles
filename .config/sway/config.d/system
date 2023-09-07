@@ -2,6 +2,8 @@
 
 output $firstMonitor mode 2560x1440@165Hz pos 0 300 adaptive_sync on bg $wallpaper_wide center
 output $secondMonitor mode 1920x1200@60Hz transform 90 pos 2560 0 bg $wallpaper_vert center
+output $TVMonitor disable
+
 
 input "type:keyboard" {
         xkb_layout de

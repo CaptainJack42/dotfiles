@@ -2,7 +2,7 @@
 
 # start rofi
 bindsym $mod+d exec --no-startup-id $app_launcher
-bindsym $sup+d exec --no-startup-id $app_launcher
+# bindsym $sup+d exec --no-startup-id $app_launcher
 
 ################# how to exit, logoff, suspend, ...
 bindsym control+mod1+s exec --no-startup-id $power_menu
@@ -15,9 +15,7 @@ bindsym $mod+Shift+c reload
 ################# Stopping an application          
 
 # kill focused window
-bindsym $mod+Shift+q kill
 bindsym $mod+q kill
-bindsym $sup+q kill
 
 ################# Moving around in sway              
 
@@ -189,7 +187,6 @@ bindsym control+mod1+f exec --no-startup-id firefox;focus
 # file management
 
 bindsym $mod+e exec --no-startup-id "alacritty -e ranger"
-bindsym $sup+e exec --no-startup-id "alacritty -e ranger"
 
 ################# screenshots                      
 
@@ -209,6 +206,10 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
 bindsym $mod+Shift+m output $secondMonitor power off
 bindsym $mod+Ctrl+m output $secondMonitor power on
+
+################# TV Mode (Turn of main monitors)
+
+bindsym $mod+$sup+Shift+t output $firstMonitor toggle; output $secondMonitor toggle; output $TVMonitor toggle
 
 ################# Scratchpad
 
